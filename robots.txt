@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://firstaudit.ma/sitemap.xml
+
+# Pages importantes
+Allow: /index.html
+Allow: /articles.html
+Allow: /calculateur-salaire-net.html
+Allow: /calendrier-fiscal.html
+Allow: /simulateurs.html
+Allow: /glossaire.html

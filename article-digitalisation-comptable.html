@@ -1,0 +1,2059 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/jpeg" href="favicon.jpg">
+    <meta name="description" content="Digitalisation comptable au Maroc : logiciels, facture électronique, télédéclaration. Guide transition numérique par First Audit.">
+    <link rel="canonical" href="https://firstaudit.ma/article-digitalisation-comptable.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="fr_MA">
+    <meta name="keywords" content="digitalisation comptable Maroc, logiciel comptabilité, facture électronique Maroc">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digitalisation comptable : Guide pratique pour les PME | First Audit et Conseils</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #1e3a5f;
+            --color-secondary: #2c5f8d;
+            --color-accent: #4a90c8;
+            --color-gray: #64748b;
+            --color-light: #f8fafc;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #0f1922;
+            line-height: 1.8;
+            background: var(--color-light);
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-primary);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .article-hero {
+            margin-top: 80px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .article-category-badge {
+            display: inline-block;
+            background: var(--color-accent);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        .article-container {
+            max-width: 900px;
+            margin: -50px auto 4rem;
+            background: white;
+            padding: 4rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .article-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--color-primary);
+            margin: 3rem 0 1.5rem;
+        }
+
+        .article-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--color-secondary);
+            margin: 2rem 0 1rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #2d3748;
+        }
+
+        .article-content ul, .article-content ol {
+            margin: 1.5rem 0 1.5rem 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .highlight-box {
+            background: #e6f2ff;
+            border-left: 4px solid var(--color-accent);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .highlight-box h3 {
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+
+        .success-box {
+            background: #d1fae5;
+            border-left: 4px solid #10b981;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-accent);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 3rem;
+            transition: gap 0.3s;
+        }
+
+        .back-link:hover {
+            gap: 1rem;
+        }
+
+        footer {
+            background: var(--color-primary);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .article-hero h1 {
+                font-size: 2rem;
+            }
+            .article-container {
+                padding: 2rem;
+                margin-top: 0;
+            }
+        }
+    
+        
+        /* ========== MODE SOMBRE ========== */
+        .theme-toggle { position: fixed; bottom: 2rem; left: 2rem; width: 50px; height: 50px; border-radius: 50%; background: #ffffff; border: 2px solid #e2e8f0; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; z-index: 1000; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); }
+        [data-theme="dark"] .theme-toggle { background: #1e3a5f; border-color: #2c5f8d; }
+        .theme-toggle:hover { transform: scale(1.1); }
+        .theme-toggle .icon-sun, .theme-toggle .icon-moon { position: absolute; transition: all 0.3s ease; }
+        .theme-toggle .icon-sun { opacity: 1; }
+        .theme-toggle .icon-moon { opacity: 0; }
+        [data-theme="dark"] .theme-toggle .icon-sun { opacity: 0; }
+        [data-theme="dark"] .theme-toggle .icon-moon { opacity: 1; }
+        [data-theme="dark"] body { background: #0a1628 !important; color: #e2e8f0; }
+        [data-theme="dark"] nav { background: #0a1628 !important; border-bottom-color: #1e3a5f; }
+        [data-theme="dark"] .logo { color: #ffffff !important; }
+        [data-theme="dark"] .nav-links a { color: rgba(255, 255, 255, 0.85) !important; }
+        [data-theme="dark"] .article-hero { background: linear-gradient(135deg, #0a1628, #1e3a5f) !important; }
+        [data-theme="dark"] .article-container { background: #0f2140 !important; }
+        [data-theme="dark"] .article-content h2, [data-theme="dark"] .article-content h3 { color: #e2e8f0 !important; }
+        [data-theme="dark"] .article-content p, [data-theme="dark"] .article-content li { color: #cbd5e1 !important; }
+        [data-theme="dark"] .highlight-box { background: #1e3a5f !important; border-left-color: #60a5fa !important; }
+        [data-theme="dark"] .highlight-box h3, [data-theme="dark"] .highlight-box p, [data-theme="dark"] .highlight-box li { color: #e2e8f0 !important; }
+        [data-theme="dark"] .info-box { background: #134e4a !important; border-left-color: #10b981 !important; }
+        [data-theme="dark"] .info-box p, [data-theme="dark"] .info-box h3 { color: #d1fae5 !important; }
+        [data-theme="dark"] .warning-box { background: #78350f !important; border-left-color: #f59e0b !important; }
+        [data-theme="dark"] .warning-box p, [data-theme="dark"] .warning-box h3 { color: #fef3c7 !important; }
+        [data-theme="dark"] .download-box { background: linear-gradient(135deg, #1e3a5f, #2c5f8d) !important; }
+        [data-theme="dark"] .back-link { color: #60a5fa !important; }
+        [data-theme="dark"] footer { background: #050d18 !important; }
+        [data-theme="dark"] footer p { color: #94a3b8 !important; }
+        @media (max-width: 768px) { [data-theme="dark"] .nav-links { background: #0f2140 !important; } }
+
+    
+        /* ========== ACCENTS ROUGE ========== */
+        :root {
+            --color-red: #c41e3a;
+            --color-red-light: #fee2e2;
+            --color-red-dark: #991b1b;
+        }
+        .btn-primary, .cta-button, .btn-cta {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-red)) !important;
+        }
+        .btn-primary:hover, .cta-button:hover, .btn-cta:hover {
+            background: linear-gradient(135deg, var(--color-red), var(--color-red-dark)) !important;
+        }
+        .article-category-badge {
+            background: #c41e3a !important;
+        }
+        .highlight-box {
+            border-left-color: #c41e3a !important;
+        }
+        .warning-box, .info-box.important {
+            border-left-color: #c41e3a !important;
+        }
+        .back-link:hover {
+            color: #c41e3a !important;
+        }
+        .nav-links a:hover {
+            color: #c41e3a !important;
+        }
+        .download-btn {
+            background: linear-gradient(135deg, #c41e3a, #991b1b) !important;
+            color: white !important;
+        }
+        .download-btn:hover {
+            background: linear-gradient(135deg, #991b1b, #7f1d1d) !important;
+        }
+        /* Mode sombre - accents rouge */
+        [data-theme="dark"] .article-category-badge {
+            background: #c41e3a !important;
+        }
+        [data-theme="dark"] .highlight-box {
+            border-left-color: #f87171 !important;
+        }
+        [data-theme="dark"] .back-link:hover {
+            color: #f87171 !important;
+        }
+        [data-theme="dark"] .nav-links a:hover {
+            color: #f87171 !important;
+        }
+
+    
+        /* ========== REDESIGN BLEU/ROUGE - ARTICLE PAGE ========== */
+        :root {
+            --color-red: #c41e3a;
+            --color-red-light: #dc2626;
+        }
+        
+        /* Navigation */
+        .nav-links a:hover { color: var(--color-red) !important; }
+        
+        /* Hero gradient bleu → rouge */
+        .article-hero {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5f8d 50%, #991b1b 100%) !important;
+        }
+        
+        /* Badge catégorie */
+        .article-category-badge {
+            background: var(--color-red) !important;
+        }
+        
+        /* Highlight box - bordure rouge */
+        .highlight-box {
+            border-left: 4px solid var(--color-red) !important;
+            background: #fef2f2 !important;
+        }
+        .highlight-box h3 {
+            color: var(--color-red) !important;
+        }
+        
+        /* Warning box */
+        .warning-box {
+            border-left: 4px solid var(--color-red) !important;
+            background: #fef2f2 !important;
+        }
+        
+        /* Download box */
+        .download-box {
+            background: linear-gradient(135deg, #1e3a5f, var(--color-red)) !important;
+        }
+        .download-btn {
+            background: white !important;
+            color: var(--color-red) !important;
+        }
+        .download-btn:hover {
+            background: #fef2f2 !important;
+            transform: translateY(-3px);
+        }
+        
+        /* Liens dans le contenu */
+        .article-content a {
+            color: var(--color-red) !important;
+            text-decoration: underline;
+        }
+        .article-content a:hover {
+            color: #991b1b !important;
+        }
+        
+        /* Back link */
+        .back-link {
+            color: var(--color-red) !important;
+        }
+        .back-link:hover {
+            color: #991b1b !important;
+        }
+        
+        /* Mode sombre */
+        [data-theme="dark"] .highlight-box {
+            background: rgba(220, 38, 38, 0.15) !important;
+            border-left-color: #f87171 !important;
+        }
+        [data-theme="dark"] .highlight-box h3 {
+            color: #f87171 !important;
+        }
+        [data-theme="dark"] .warning-box {
+            background: rgba(220, 38, 38, 0.15) !important;
+            border-left-color: #f87171 !important;
+        }
+        [data-theme="dark"] .article-content a {
+            color: #f87171 !important;
+        }
+        [data-theme="dark"] .back-link {
+            color: #f87171 !important;
+        }
+
+    
+        /* ========== CORRECTION CONTRASTE ========== */
+        /* Boutons primaires - texte blanc bien visible */
+        .btn-primary, .cta-button, .hero-cta .btn-primary,
+        .calc-btn, .calculate-btn, .btn-calculate,
+        .contact-btn, .submit-btn, form button[type="submit"] {
+            background: #c41e3a !important;
+            color: #ffffff !important;
+            font-weight: 600 !important;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2) !important;
+            border: none !important;
+            padding: 1rem 2rem !important;
+            font-size: 1rem !important;
+            letter-spacing: 0.5px !important;
+        }
+        .btn-primary:hover, .cta-button:hover, .hero-cta .btn-primary:hover,
+        .calc-btn:hover, .calculate-btn:hover, .btn-calculate:hover,
+        .contact-btn:hover, .submit-btn:hover, form button[type="submit"]:hover {
+            background: #991b1b !important;
+            color: #ffffff !important;
+        }
+        
+        /* Boutons secondaires - bordure épaisse, texte lisible */
+        .btn-secondary, .hero-cta .btn-secondary {
+            border: 2px solid #c41e3a !important;
+            color: #c41e3a !important;
+            background: transparent !important;
+            font-weight: 600 !important;
+            padding: 1rem 2rem !important;
+            font-size: 1rem !important;
+        }
+        .btn-secondary:hover, .hero-cta .btn-secondary:hover {
+            background: #c41e3a !important;
+            color: #ffffff !important;
+        }
+        
+        /* Bouton télécharger - contraste amélioré */
+        .download-btn {
+            background: #ffffff !important;
+            color: #1e3a5f !important;
+            font-weight: 700 !important;
+            padding: 1rem 2rem !important;
+            font-size: 1.1rem !important;
+            border: 2px solid #ffffff !important;
+        }
+        .download-btn:hover {
+            background: #f8fafc !important;
+            color: #c41e3a !important;
+            border-color: #f8fafc !important;
+        }
+        
+        /* Badge catégorie - texte blanc sur rouge */
+        .article-category, .category-badge, .article-category-badge {
+            background: #c41e3a !important;
+            color: #ffffff !important;
+            font-weight: 600 !important;
+            font-size: 0.85rem !important;
+            padding: 0.5rem 1.25rem !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1px !important;
+        }
+        
+        /* Filtres actifs - texte blanc */
+        .filter-btn.active, .filter-btn:hover {
+            background: #c41e3a !important;
+            color: #ffffff !important;
+            border-color: #c41e3a !important;
+            font-weight: 600 !important;
+        }
+        
+        /* Résultat principal calculateur */
+        .result-main, .result-highlight, .net-salary {
+            background: linear-gradient(135deg, #1e3a5f, #c41e3a) !important;
+            color: #ffffff !important;
+        }
+        .result-main .label, .result-highlight .label {
+            color: rgba(255,255,255,0.9) !important;
+            font-size: 1rem !important;
+        }
+        .result-main .amount, .result-highlight .value, .result-main .value {
+            color: #ffffff !important;
+            font-size: 2.5rem !important;
+            font-weight: 700 !important;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2) !important;
+        }
+        
+        /* Liens navigation - meilleur contraste hover */
+        .nav-links a {
+            color: #ffffff !important;
+            font-weight: 500 !important;
+        }
+        .nav-links a:hover {
+            color: #c41e3a !important;
+        }
+        
+        /* Back link */
+        .back-link {
+            color: #c41e3a !important;
+            font-weight: 600 !important;
+        }
+        .back-link:hover {
+            color: #991b1b !important;
+        }
+        
+        /* Read more link */
+        .read-more, .article-link {
+            color: #ffffff !important;
+            font-weight: 600 !important;
+        }
+        .read-more:hover, .article-link:hover {
+            color: #c41e3a !important;
+        }
+        
+        /* Tabs/Onglets actifs */
+        .tab-btn.active, .nav-tab.active {
+            color: #c41e3a !important;
+            font-weight: 600 !important;
+            border-bottom: 3px solid #c41e3a !important;
+        }
+        
+        /* Hero texte - ombre pour lisibilité */
+        .hero h1, .hero-section h1, .article-hero h1, .page-hero h1 {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3) !important;
+        }
+        .hero p, .hero-section p, .article-hero p {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2) !important;
+        }
+        
+        /* Icônes - plus visibles */
+        .service-icon, .trust-icon, .tool-icon, .card-icon {
+            color: #c41e3a !important;
+            font-size: 2.5rem !important;
+        }
+        
+        /* Stats numbers */
+        .trust-number, .stat-number {
+            color: #c41e3a !important;
+            font-weight: 700 !important;
+            font-size: 2.5rem !important;
+        }
+        
+        /* ===== MODE SOMBRE - CONTRASTE ===== */
+        [data-theme="dark"] .btn-primary,
+        [data-theme="dark"] .cta-button,
+        [data-theme="dark"] .calc-btn,
+        [data-theme="dark"] .calculate-btn,
+        [data-theme="dark"] .contact-btn,
+        [data-theme="dark"] .submit-btn {
+            background: #dc2626 !important;
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .btn-primary:hover,
+        [data-theme="dark"] .cta-button:hover,
+        [data-theme="dark"] .calc-btn:hover {
+            background: #b91c1c !important;
+        }
+        
+        [data-theme="dark"] .btn-secondary {
+            border-color: #f87171 !important;
+            color: #f87171 !important;
+        }
+        [data-theme="dark"] .btn-secondary:hover {
+            background: #dc2626 !important;
+            color: #ffffff !important;
+            border-color: #dc2626 !important;
+        }
+        
+        [data-theme="dark"] .nav-links a {
+            color: rgba(255,255,255,0.9) !important;
+        }
+        [data-theme="dark"] .nav-links a:hover {
+            color: #f87171 !important;
+        }
+        
+        [data-theme="dark"] .article-category,
+        [data-theme="dark"] .category-badge,
+        [data-theme="dark"] .article-category-badge {
+            background: #dc2626 !important;
+            color: #ffffff !important;
+        }
+        
+        [data-theme="dark"] .filter-btn.active,
+        [data-theme="dark"] .filter-btn:hover {
+            background: #dc2626 !important;
+            color: #ffffff !important;
+        }
+        
+        [data-theme="dark"] .back-link,
+        [data-theme="dark"] .read-more:hover {
+            color: #f87171 !important;
+        }
+        
+        [data-theme="dark"] .tab-btn.active {
+            color: #f87171 !important;
+            border-bottom-color: #f87171 !important;
+        }
+        
+        [data-theme="dark"] .service-icon,
+        [data-theme="dark"] .trust-icon,
+        [data-theme="dark"] .tool-icon {
+            color: #f87171 !important;
+        }
+        
+        [data-theme="dark"] .trust-number,
+        [data-theme="dark"] .stat-number {
+            color: #f87171 !important;
+        }
+
+    
+        /* ========== VISIBILITÉ FORMULAIRES ========== */
+        /* Labels - texte foncé bien visible */
+        .form-group label, label, .label {
+            color: #ffffff !important;
+            font-weight: 600 !important;
+            font-size: 1rem !important;
+            margin-bottom: 0.5rem !important;
+            display: block !important;
+        }
+        
+        /* Texte d'aide - gris plus foncé */
+        .form-group .help-text, .help-text, .hint, small {
+            color: #475569 !important;
+            font-size: 0.875rem !important;
+        }
+        
+        /* Inputs et selects - texte bien visible */
+        input, select, textarea {
+            color: #ffffff !important;
+            font-size: 1rem !important;
+            background: #1e3a5f !important;
+        }
+        input::placeholder, textarea::placeholder {
+            color: #94a3b8 !important;
+        }
+        
+        /* Options dans select */
+        select option {
+            color: #ffffff !important;
+            background: #1e3a5f !important;
+        }
+        
+        /* Radio et checkbox labels */
+        .radio-option, .checkbox-option {
+            color: #ffffff !important;
+            font-weight: 500 !important;
+        }
+        .radio-option label, .checkbox-option label {
+            color: #ffffff !important;
+        }
+        
+        /* Section titles dans calculateur */
+        .calculator-card h2, .form-section h2, .form-section h3 {
+            color: #ffffff !important;
+            font-weight: 700 !important;
+        }
+        
+        /* Breakdown labels */
+        .breakdown-item .label {
+            color: #ffffff !important;
+            font-weight: 600 !important;
+        }
+        
+        /* Info box texte */
+        .info-box, .info-box p, .info-box li {
+            color: #ffffff !important;
+        }
+        
+        /* ===== MODE SOMBRE - FORMULAIRES ===== */
+        [data-theme="dark"] .form-group label,
+        [data-theme="dark"] label,
+        [data-theme="dark"] .label {
+            color: #f1f5f9 !important;
+        }
+        
+        [data-theme="dark"] .form-group .help-text,
+        [data-theme="dark"] .help-text,
+        [data-theme="dark"] .hint,
+        [data-theme="dark"] small {
+            color: #cbd5e1 !important;
+        }
+        
+        [data-theme="dark"] input,
+        [data-theme="dark"] select,
+        [data-theme="dark"] textarea {
+            color: #ffffff !important;
+            background: #1e3a5f !important;
+        }
+        
+        [data-theme="dark"] .radio-option,
+        [data-theme="dark"] .checkbox-option,
+        [data-theme="dark"] .radio-option label,
+        [data-theme="dark"] .checkbox-option label {
+            color: #f1f5f9 !important;
+        }
+        
+        [data-theme="dark"] .breakdown-item .label {
+            color: #f1f5f9 !important;
+        }
+
+    
+        /* ========== LOGO BLEU/ROUGE ========== */
+        .logo {
+            font-family: 'Playfair Display', serif !important;
+            font-size: 1.1rem !important;
+            font-weight: 700 !important;
+            text-decoration: none !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 0.3rem !important;
+        }
+        .logo span:first-child {
+            color: #ffffff !important;
+        }
+        .logo .accent, .logo span:last-child {
+            color: #c41e3a !important;
+        }
+        
+        /* Mode sombre */
+        [data-theme="dark"] .logo span:first-child {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .logo .accent,
+        [data-theme="dark"] .logo span:last-child {
+            color: #f87171 !important;
+        }
+
+    
+        /* ========== MODE SOMBRE - BREAKDOWN CALCUL ========== */
+        [data-theme="dark"] .breakdown {
+            background: #0f2140 !important;
+        }
+        [data-theme="dark"] .breakdown h3 {
+            color: #f1f5f9 !important;
+        }
+        [data-theme="dark"] .breakdown-item {
+            background: #1e3a5f !important;
+        }
+        [data-theme="dark"] .breakdown-item .label {
+            color: #f1f5f9 !important;
+        }
+        [data-theme="dark"] .breakdown-item .amount {
+            color: #ffffff !important;
+            font-weight: 700 !important;
+        }
+        [data-theme="dark"] .breakdown-item.positive .amount {
+            color: #4ade80 !important;
+        }
+        [data-theme="dark"] .breakdown-item.negative .amount {
+            color: #f87171 !important;
+        }
+        
+        /* Résultat principal en mode sombre */
+        [data-theme="dark"] .result-card {
+            background: linear-gradient(135deg, #059669, #047857) !important;
+        }
+        [data-theme="dark"] .result-card h2,
+        [data-theme="dark"] .result-card .subtitle {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .result-amount {
+            color: #ffffff !important;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3) !important;
+        }
+        
+        /* Calculator card en mode sombre */
+        [data-theme="dark"] .calculator-card {
+            background: #0f2140 !important;
+        }
+        [data-theme="dark"] .calculator-card h2 {
+            color: #f1f5f9 !important;
+        }
+        
+        /* Info box en mode sombre */
+        [data-theme="dark"] .info-box {
+            background: #1e3a5f !important;
+            border-color: #3b82f6 !important;
+        }
+        [data-theme="dark"] .info-box h4 {
+            color: #93c5fd !important;
+        }
+        [data-theme="dark"] .info-box ul,
+        [data-theme="dark"] .info-box li,
+        [data-theme="dark"] .info-box p {
+            color: #e2e8f0 !important;
+        }
+        
+        /* Détails ligne par ligne */
+        [data-theme="dark"] .detail-row,
+        [data-theme="dark"] .calc-row,
+        [data-theme="dark"] .result-row {
+            background: #1e3a5f !important;
+            color: #f1f5f9 !important;
+        }
+        [data-theme="dark"] .detail-row .label,
+        [data-theme="dark"] .calc-row .label,
+        [data-theme="dark"] .result-row .label {
+            color: #e2e8f0 !important;
+        }
+        [data-theme="dark"] .detail-row .value,
+        [data-theme="dark"] .calc-row .value,
+        [data-theme="dark"] .result-row .value {
+            color: #ffffff !important;
+            font-weight: 600 !important;
+        }
+        
+        /* Sections du calcul */
+        [data-theme="dark"] .section-title,
+        [data-theme="dark"] .calc-section h4 {
+            color: #f1f5f9 !important;
+        }
+        
+        /* Textes de résultat */
+        [data-theme="dark"] .result-text,
+        [data-theme="dark"] .summary-text {
+            color: #e2e8f0 !important;
+        }
+
+    
+        /* ========== TUER TOUT LE GRIS EN MODE SOMBRE ========== */
+        [data-theme="dark"] p,
+        [data-theme="dark"] span,
+        [data-theme="dark"] div,
+        [data-theme="dark"] li,
+        [data-theme="dark"] td,
+        [data-theme="dark"] th,
+        [data-theme="dark"] label,
+        [data-theme="dark"] .label,
+        [data-theme="dark"] .text,
+        [data-theme="dark"] .value,
+        [data-theme="dark"] .amount,
+        [data-theme="dark"] .help-text,
+        [data-theme="dark"] .hint,
+        [data-theme="dark"] small,
+        [data-theme="dark"] .section-subtitle,
+        [data-theme="dark"] .simulator-title p,
+        [data-theme="dark"] .card p,
+        [data-theme="dark"] .tool-card p,
+        [data-theme="dark"] .result-card .label,
+        [data-theme="dark"] .result-box .label,
+        [data-theme="dark"] .eligibility-list li,
+        [data-theme="dark"] .eligibility-list li span,
+        [data-theme="dark"] .info-box p,
+        [data-theme="dark"] .info-box li,
+        [data-theme="dark"] .note-box p,
+        [data-theme="dark"] .results-container p,
+        [data-theme="dark"] .results-container span,
+        [data-theme="dark"] .results-container div,
+        [data-theme="dark"] .form-group .help-text,
+        [data-theme="dark"] .radio-option,
+        [data-theme="dark"] .checkbox-option {
+            color: #e2e8f0 !important;
+        }
+        
+        /* Titres et valeurs importantes en BLANC */
+        [data-theme="dark"] h1,
+        [data-theme="dark"] h2,
+        [data-theme="dark"] h3,
+        [data-theme="dark"] h4,
+        [data-theme="dark"] strong,
+        [data-theme="dark"] b,
+        [data-theme="dark"] .value,
+        [data-theme="dark"] .amount,
+        [data-theme="dark"] .result-card .value,
+        [data-theme="dark"] .result-box .value,
+        [data-theme="dark"] .result-amount,
+        [data-theme="dark"] .results-header h3,
+        [data-theme="dark"] .simulator-card h2,
+        [data-theme="dark"] .simulator-card h3,
+        [data-theme="dark"] .calculator-card h2,
+        [data-theme="dark"] .calculator-card h3 {
+            color: #ffffff !important;
+        }
+        
+        /* Labels formulaires en blanc cassé */
+        [data-theme="dark"] label,
+        [data-theme="dark"] .form-group label,
+        [data-theme="dark"] .label {
+            color: #f1f5f9 !important;
+            font-weight: 600 !important;
+        }
+        
+        /* Fonds des cards en bleu foncé (pas blanc) */
+        [data-theme="dark"] .result-card,
+        [data-theme="dark"] .result-box,
+        [data-theme="dark"] .result-item,
+        [data-theme="dark"] .eligibility-list li,
+        [data-theme="dark"] .info-box,
+        [data-theme="dark"] .note-box {
+            background: #1e3a5f !important;
+        }
+        
+        /* Conteneurs principaux */
+        [data-theme="dark"] .results-container,
+        [data-theme="dark"] .simulator-card,
+        [data-theme="dark"] .calculator-card,
+        [data-theme="dark"] .calc-container {
+            background: #0f2140 !important;
+        }
+        
+        /* Tableaux */
+        [data-theme="dark"] table {
+            background: #1e3a5f !important;
+        }
+        [data-theme="dark"] table th {
+            background: #0f2140 !important;
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] table td {
+            color: #e2e8f0 !important;
+        }
+        
+        /* Footer */
+        [data-theme="dark"] footer p,
+        [data-theme="dark"] footer a,
+        [data-theme="dark"] footer span {
+            color: #cbd5e1 !important;
+        }
+
+    
+        /* ========== CARDS MODE SOMBRE - BLEU FONCÉ ========== */
+        [data-theme="dark"] .card,
+        [data-theme="dark"] .article-card,
+        [data-theme="dark"] .tool-card,
+        [data-theme="dark"] .service-card,
+        [data-theme="dark"] .calculator-card,
+        [data-theme="dark"] .simulator-card,
+        [data-theme="dark"] .result-card,
+        [data-theme="dark"] .result-box,
+        [data-theme="dark"] .glossary-item,
+        [data-theme="dark"] .month-card,
+        [data-theme="dark"] .deadline-card,
+        [data-theme="dark"] .info-box,
+        [data-theme="dark"] .note-box,
+        [data-theme="dark"] .highlight-box,
+        [data-theme="dark"] .warning-box,
+        [data-theme="dark"] .download-box,
+        [data-theme="dark"] .cta-box,
+        [data-theme="dark"] .form-container,
+        [data-theme="dark"] .calc-container,
+        [data-theme="dark"] .results-container,
+        [data-theme="dark"] .breakdown,
+        [data-theme="dark"] .breakdown-item,
+        [data-theme="dark"] .eligibility-list li,
+        [data-theme="dark"] .eligibility-result,
+        [data-theme="dark"] table,
+        [data-theme="dark"] .expert-card,
+        [data-theme="dark"] .trust-card,
+        [data-theme="dark"] .stat-card {
+            background: #0f2140 !important;
+            border-color: #ffffff !important;
+        }
+        
+        /* Cards internes (dans un conteneur) - légèrement plus clair */
+        [data-theme="dark"] .results-container .result-card,
+        [data-theme="dark"] .results-grid .result-card,
+        [data-theme="dark"] .breakdown .breakdown-item,
+        [data-theme="dark"] .calculator-card .result-box,
+        [data-theme="dark"] .simulator-card .result-card {
+            background: #1e3a5f !important;
+        }
+        
+        /* Tableaux */
+        [data-theme="dark"] table {
+            background: #0f2140 !important;
+        }
+        [data-theme="dark"] table th {
+            background: #1e3a5f !important;
+        }
+        [data-theme="dark"] table td {
+            background: #0f2140 !important;
+            border-color: #ffffff !important;
+        }
+        [data-theme="dark"] table tr:nth-child(even) td {
+            background: #162d50 !important;
+        }
+        
+        /* Inputs restent blancs pour la lisibilité */
+        [data-theme="dark"] input,
+        [data-theme="dark"] select,
+        [data-theme="dark"] textarea {
+            background: #1e3a5f !important;
+            color: #ffffff !important;
+        }
+        
+        /* Éligibilité - couleurs spéciales */
+        [data-theme="dark"] .eligibility-list li.eligible {
+            background: #14532d !important;
+            border-left-color: #4ade80 !important;
+        }
+        [data-theme="dark"] .eligibility-list li.not-eligible {
+            background: #7f1d1d !important;
+            border-left-color: #f87171 !important;
+        }
+        
+        /* Highlight/Warning boxes */
+        [data-theme="dark"] .highlight-box {
+            background: #1e3a5f !important;
+            border-left-color: #c41e3a !important;
+        }
+        [data-theme="dark"] .warning-box {
+            background: #7f1d1d !important;
+            border-left-color: #f87171 !important;
+        }
+        [data-theme="dark"] .info-box {
+            background: #1e3a5f !important;
+            border-color: #3b82f6 !important;
+        }
+        
+        /* Download box garde son gradient */
+        [data-theme="dark"] .download-box {
+            background: linear-gradient(135deg, #1e3a5f, #7f1d1d) !important;
+        }
+        
+        /* CTA box */
+        [data-theme="dark"] .cta-box {
+            background: linear-gradient(135deg, #1e3a5f, #c41e3a) !important;
+        }
+
+    
+        /* ========== ÉLIMINER TOUT LE BLANC EN MODE SOMBRE ========== */
+        /* TOUTES LES CARDS - BLEU FONCÉ */
+        [data-theme="dark"] .card,
+        [data-theme="dark"] .service-card,
+        [data-theme="dark"] .value-card,
+        [data-theme="dark"] .trust-card,
+        [data-theme="dark"] .feature-card,
+        [data-theme="dark"] .floating-card,
+        [data-theme="dark"] .credential-card,
+        [data-theme="dark"] .credential-item,
+        [data-theme="dark"] .article-card,
+        [data-theme="dark"] .tool-card,
+        [data-theme="dark"] .calculator-card,
+        [data-theme="dark"] .simulator-card,
+        [data-theme="dark"] .result-card,
+        [data-theme="dark"] .result-box,
+        [data-theme="dark"] .glossary-item,
+        [data-theme="dark"] .glossary-card,
+        [data-theme="dark"] .month-card,
+        [data-theme="dark"] .deadline-card,
+        [data-theme="dark"] .deadline-item,
+        [data-theme="dark"] .event-card,
+        [data-theme="dark"] .info-box,
+        [data-theme="dark"] .note-box,
+        [data-theme="dark"] .highlight-box,
+        [data-theme="dark"] .warning-box,
+        [data-theme="dark"] .example-box,
+        [data-theme="dark"] .testimonial-box,
+        [data-theme="dark"] .quote-box,
+        [data-theme="dark"] .cta-card,
+        [data-theme="dark"] .stat-card,
+        [data-theme="dark"] .expert-card,
+        [data-theme="dark"] .team-card,
+        [data-theme="dark"] .filter-card,
+        [data-theme="dark"] .legend-item,
+        [data-theme="dark"] .form-card,
+        [data-theme="dark"] .calc-container,
+        [data-theme="dark"] .form-container,
+        [data-theme="dark"] .results-container,
+        [data-theme="dark"] .breakdown,
+        [data-theme="dark"] .breakdown-item,
+        [data-theme="dark"] .eligibility-list li,
+        [data-theme="dark"] .eligibility-result,
+        [data-theme="dark"] table,
+        [data-theme="dark"] blockquote,
+        [data-theme="dark"] .blockquote,
+        [data-theme="dark"] [class*="card"],
+        [data-theme="dark"] [class*="box"],
+        [data-theme="dark"] [class*="item"] {
+            background: #0f2140 !important;
+            background-color: #0f2140 !important;
+            border-color: #ffffff !important;
+        }
+        
+        /* Cards internes - un peu plus clair */
+        [data-theme="dark"] .results-container .result-card,
+        [data-theme="dark"] .breakdown .breakdown-item,
+        [data-theme="dark"] .month-card .deadline-item,
+        [data-theme="dark"] .glossary-item .example-box {
+            background: #1e3a5f !important;
+        }
+        
+        /* TOUS LES TEXTES - VISIBLES */
+        [data-theme="dark"] .card *,
+        [data-theme="dark"] .service-card *,
+        [data-theme="dark"] .value-card *,
+        [data-theme="dark"] .trust-card *,
+        [data-theme="dark"] .credential-card *,
+        [data-theme="dark"] .credential-item *,
+        [data-theme="dark"] .floating-card *,
+        [data-theme="dark"] .glossary-item *,
+        [data-theme="dark"] .month-card *,
+        [data-theme="dark"] .deadline-card *,
+        [data-theme="dark"] .info-box *,
+        [data-theme="dark"] .highlight-box *,
+        [data-theme="dark"] .example-box *,
+        [data-theme="dark"] .testimonial-box *,
+        [data-theme="dark"] .quote-box *,
+        [data-theme="dark"] blockquote *,
+        [data-theme="dark"] [class*="card"] p,
+        [data-theme="dark"] [class*="card"] span,
+        [data-theme="dark"] [class*="card"] div,
+        [data-theme="dark"] [class*="card"] li,
+        [data-theme="dark"] [class*="box"] p,
+        [data-theme="dark"] [class*="box"] span {
+            color: #e2e8f0 !important;
+        }
+        
+        /* Titres dans cards - BLANC */
+        [data-theme="dark"] .card h3,
+        [data-theme="dark"] .card h4,
+        [data-theme="dark"] .service-card h3,
+        [data-theme="dark"] .value-card h3,
+        [data-theme="dark"] .trust-card h3,
+        [data-theme="dark"] .floating-card h4,
+        [data-theme="dark"] .credential-item h4,
+        [data-theme="dark"] .glossary-item h3,
+        [data-theme="dark"] .month-card h3,
+        [data-theme="dark"] .deadline-card h4,
+        [data-theme="dark"] .info-box h4,
+        [data-theme="dark"] .highlight-box h3,
+        [data-theme="dark"] .highlight-box h4,
+        [data-theme="dark"] [class*="card"] h3,
+        [data-theme="dark"] [class*="card"] h4,
+        [data-theme="dark"] [class*="card"] strong,
+        [data-theme="dark"] [class*="box"] h3,
+        [data-theme="dark"] [class*="box"] h4,
+        [data-theme="dark"] [class*="box"] strong {
+            color: #ffffff !important;
+        }
+        
+        /* Labels formulaires */
+        [data-theme="dark"] label,
+        [data-theme="dark"] .label,
+        [data-theme="dark"] .form-group label {
+            color: #f1f5f9 !important;
+            font-weight: 600 !important;
+        }
+        
+        /* Highlight box verte → bleu foncé */
+        [data-theme="dark"] .highlight-box,
+        [data-theme="dark"] .success-box,
+        [data-theme="dark"] .testimonial-box {
+            background: #1e3a5f !important;
+            border-left-color: #4ade80 !important;
+        }
+        
+        /* Warning box */
+        [data-theme="dark"] .warning-box,
+        [data-theme="dark"] .danger-box {
+            background: #1e3a5f !important;
+            border-left-color: #f87171 !important;
+        }
+        
+        /* Info box */
+        [data-theme="dark"] .info-box,
+        [data-theme="dark"] .note-box {
+            background: #1e3a5f !important;
+            border-color: #3b82f6 !important;
+        }
+        
+        /* Example box dans glossaire */
+        [data-theme="dark"] .example-box,
+        [data-theme="dark"] .example {
+            background: #162d50 !important;
+            border-color: #2c5f8d !important;
+        }
+        [data-theme="dark"] .example-box *,
+        [data-theme="dark"] .example * {
+            color: #cbd5e1 !important;
+        }
+        
+        /* Calendrier fiscal - mois cards */
+        [data-theme="dark"] .month-card {
+            background: #0f2140 !important;
+        }
+        [data-theme="dark"] .month-card h3 {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .deadline-item {
+            background: #1e3a5f !important;
+        }
+        [data-theme="dark"] .deadline-item * {
+            color: #e2e8f0 !important;
+        }
+        [data-theme="dark"] .deadline-item strong {
+            color: #ffffff !important;
+        }
+        
+        /* Filtres calendrier */
+        [data-theme="dark"] .filter-btn {
+            background: #1e3a5f !important;
+            color: #e2e8f0 !important;
+            border-color: #2c5f8d !important;
+        }
+        [data-theme="dark"] .filter-btn.active,
+        [data-theme="dark"] .filter-btn:hover {
+            background: #c41e3a !important;
+            color: #ffffff !important;
+        }
+        
+        /* Légende calendrier */
+        [data-theme="dark"] .legend-item {
+            background: transparent !important;
+        }
+        [data-theme="dark"] .legend-item span {
+            color: #e2e8f0 !important;
+        }
+        
+        /* Inputs restent blancs */
+        [data-theme="dark"] input,
+        [data-theme="dark"] select,
+        [data-theme="dark"] textarea {
+            background: #1e3a5f !important;
+            color: #ffffff !important;
+        }
+        
+        /* Tags/Badges */
+        [data-theme="dark"] .tag,
+        [data-theme="dark"] .badge,
+        [data-theme="dark"] .category-tag {
+            background: #1e3a5f !important;
+            color: #e2e8f0 !important;
+        }
+
+    
+        /* ========== CORRECTION FINALE MODE SOMBRE ========== */
+        /* FOND BLANC → BLEU FONCÉ */
+        [data-theme="dark"] .personalize-section,
+        [data-theme="dark"] .customize-section,
+        [data-theme="dark"] .filter-section,
+        [data-theme="dark"] .calendar-filters,
+        [data-theme="dark"] .form-section,
+        [data-theme="dark"] .example-box,
+        [data-theme="dark"] .example,
+        [data-theme="dark"] .note,
+        [data-theme="dark"] .tip-box,
+        [data-theme="dark"] .quote-box,
+        [data-theme="dark"] blockquote,
+        [data-theme="dark"] .testimonial,
+        [data-theme="dark"] .highlight,
+        [data-theme="dark"] [style*="background: #f"],
+        [data-theme="dark"] [style*="background:#f"],
+        [data-theme="dark"] [style*="background: rgb(2"],
+        [data-theme="dark"] [style*="background-color: #f"],
+        [data-theme="dark"] [style*="background-color:#f"],
+        [data-theme="dark"] [style*="background: #e"],
+        [data-theme="dark"] [style*="background:#e"],
+        [data-theme="dark"] [style*="background-color: #e"] {
+            background: #1e3a5f !important;
+            background-color: #1e3a5f !important;
+        }
+        
+        /* Exemple box jaune/orange → bleu */
+        [data-theme="dark"] .example-box,
+        [data-theme="dark"] .example,
+        [data-theme="dark"] [class*="example"] {
+            background: #162d50 !important;
+            border-color: #2c5f8d !important;
+        }
+        [data-theme="dark"] .example-box *,
+        [data-theme="dark"] .example *,
+        [data-theme="dark"] [class*="example"] * {
+            color: #e2e8f0 !important;
+        }
+        
+        /* LABELS FORMULAIRES - BLANC */
+        [data-theme="dark"] label,
+        [data-theme="dark"] .label,
+        [data-theme="dark"] .form-label,
+        [data-theme="dark"] .form-group label,
+        [data-theme="dark"] .filter-label,
+        [data-theme="dark"] h4,
+        [data-theme="dark"] h5 {
+            color: #ffffff !important;
+            font-weight: 600 !important;
+        }
+        
+        /* Sous-titres et descriptions */
+        [data-theme="dark"] p,
+        [data-theme="dark"] span,
+        [data-theme="dark"] .subtitle,
+        [data-theme="dark"] .description,
+        [data-theme="dark"] .help-text,
+        [data-theme="dark"] small {
+            color: #e2e8f0 !important;
+        }
+        
+        /* ICÔNES - PAS D'ORANGE, ROUGE OU BLEU */
+        [data-theme="dark"] .service-icon,
+        [data-theme="dark"] .trust-icon,
+        [data-theme="dark"] .value-icon,
+        [data-theme="dark"] .feature-icon,
+        [data-theme="dark"] .icon,
+        [data-theme="dark"] i.fa,
+        [data-theme="dark"] i.fas,
+        [data-theme="dark"] i.far,
+        [data-theme="dark"] i.fab,
+        [data-theme="dark"] [class*="icon"] {
+            color: #f87171 !important;
+            background: transparent !important;
+        }
+        
+        /* Icônes dans cards - fond transparent */
+        [data-theme="dark"] .service-card .icon-wrapper,
+        [data-theme="dark"] .value-card .icon-wrapper,
+        [data-theme="dark"] .trust-card .icon-wrapper,
+        [data-theme="dark"] .feature-card .icon-wrapper,
+        [data-theme="dark"] [class*="icon-wrapper"],
+        [data-theme="dark"] [class*="icon-box"] {
+            background: rgba(248, 113, 113, 0.15) !important;
+        }
+        
+        /* Section calendrier personnalisation */
+        [data-theme="dark"] .personalize-card,
+        [data-theme="dark"] .customize-card,
+        [data-theme="dark"] .filter-card {
+            background: #0f2140 !important;
+        }
+        
+        /* TOUS les fonds clairs → bleu foncé */
+        [data-theme="dark"] [style*="#fff"],
+        [data-theme="dark"] [style*="white"],
+        [data-theme="dark"] [style*="#FFF"],
+        [data-theme="dark"] [style*="rgb(255"],
+        [data-theme="dark"] [style*="#fef"],
+        [data-theme="dark"] [style*="#faf"],
+        [data-theme="dark"] [style*="#f0f"],
+        [data-theme="dark"] [style*="#ecf"],
+        [data-theme="dark"] [style*="#e0f"],
+        [data-theme="dark"] [style*="#dbe"],
+        [data-theme="dark"] [style*="#d1f"] {
+            background: #0f2140 !important;
+            background-color: #0f2140 !important;
+        }
+
+    
+        /* ========== FIX SPÉCIFIQUE ========== */
+        /* Calendrier - section profil/personnalisation */
+        [data-theme="dark"] .profile-section,
+        [data-theme="dark"] .profile-header,
+        [data-theme="dark"] .profile-grid,
+        [data-theme="dark"] .profile-item {
+            background: #0f2140 !important;
+        }
+        [data-theme="dark"] .profile-section h3,
+        [data-theme="dark"] .profile-header h3 {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .profile-item label {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .profile-badge {
+            background: #1e3a5f !important;
+            color: #fbbf24 !important;
+        }
+        
+        /* Glossaire - exemple box */
+        [data-theme="dark"] .glossary-example,
+        [data-theme="dark"] .term-example,
+        [data-theme="dark"] .definition-example {
+            background: #162d50 !important;
+        }
+        [data-theme="dark"] .glossary-example *,
+        [data-theme="dark"] .term-example *,
+        [data-theme="dark"] .definition-example * {
+            color: #e2e8f0 !important;
+        }
+        
+        /* Simulateurs - labels invisibles */
+        [data-theme="dark"] .simulator-form label,
+        [data-theme="dark"] .calc-form label,
+        [data-theme="dark"] .form-row label {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .simulator-subtitle,
+        [data-theme="dark"] .calc-subtitle {
+            color: #e2e8f0 !important;
+        }
+        
+        /* Logo - accent rouge */
+        [data-theme="dark"] .logo .accent {
+            color: #f87171 !important;
+        }
+        
+        /* Enlever fond rose/orange sur icônes */
+        [data-theme="dark"] .icon-bg,
+        [data-theme="dark"] .icon-wrapper,
+        [data-theme="dark"] .icon-circle,
+        [data-theme="dark"] .service-icon-wrapper {
+            background: rgba(248, 113, 113, 0.1) !important;
+        }
+        
+        /* Forcer les sections à être sombres */
+        [data-theme="dark"] section,
+        [data-theme="dark"] .section {
+            background: #0a1628 !important;
+        }
+        [data-theme="dark"] section h2,
+        [data-theme="dark"] section h3,
+        [data-theme="dark"] .section h2,
+        [data-theme="dark"] .section h3 {
+            color: #ffffff !important;
+        }
+        
+        /* Sous-sections avec fond clair → bleu */
+        [data-theme="dark"] .sub-section,
+        [data-theme="dark"] .inner-section,
+        [data-theme="dark"] .content-box {
+            background: #0f2140 !important;
+        }
+
+    
+        /* ========== MEGA FIX MODE SOMBRE ========== */
+        /* FORCER TOUT À ÊTRE SOMBRE */
+        [data-theme="dark"] .profile-section {
+            background: #0a1628 !important;
+            background-color: #0a1628 !important;
+        }
+        [data-theme="dark"] .profile-grid {
+            background: transparent !important;
+        }
+        [data-theme="dark"] .profile-item {
+            background: #0f2140 !important;
+            background-color: #0f2140 !important;
+            border-color: #ffffff !important;
+        }
+        [data-theme="dark"] .profile-item label {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .profile-header h3 {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .profile-badge {
+            background: #1e3a5f !important;
+            color: #fbbf24 !important;
+        }
+        
+        /* Month cards */
+        [data-theme="dark"] .month-card {
+            background: #0f2140 !important;
+        }
+        [data-theme="dark"] .month-header {
+            background: linear-gradient(135deg, #1e3a5f, #2c5f8d) !important;
+        }
+        [data-theme="dark"] .events-list {
+            background: #0f2140 !important;
+        }
+        [data-theme="dark"] .event-item {
+            background: #1e3a5f !important;
+            border-color: #2c5f8d !important;
+        }
+        [data-theme="dark"] .event-item:hover {
+            background: #2c5f8d !important;
+        }
+        [data-theme="dark"] .event-item * {
+            color: #e2e8f0 !important;
+        }
+        [data-theme="dark"] .event-item strong,
+        [data-theme="dark"] .event-item h4 {
+            color: #ffffff !important;
+        }
+        
+        /* Event tags - garder leurs couleurs */
+        [data-theme="dark"] .event-tag {
+            opacity: 0.9;
+        }
+        
+        /* Glossaire */
+        [data-theme="dark"] .glossary-item {
+            background: #0f2140 !important;
+        }
+        [data-theme="dark"] .glossary-item h3 {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .glossary-item p {
+            color: #e2e8f0 !important;
+        }
+        [data-theme="dark"] .glossary-example,
+        [data-theme="dark"] .example-text,
+        [data-theme="dark"] .glossary-item .example {
+            background: #162d50 !important;
+            color: #cbd5e1 !important;
+        }
+        [data-theme="dark"] .glossary-example * {
+            color: #cbd5e1 !important;
+        }
+        
+        /* Simulateurs labels */
+        [data-theme="dark"] .simulator-card label,
+        [data-theme="dark"] .calculator-card label,
+        [data-theme="dark"] .form-group label {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .simulator-card p,
+        [data-theme="dark"] .simulator-subtitle {
+            color: #e2e8f0 !important;
+        }
+        
+        /* Filter buttons calendrier */
+        [data-theme="dark"] .filter-btn {
+            background: #1e3a5f !important;
+            border-color: #2c5f8d !important;
+            color: #e2e8f0 !important;
+        }
+        [data-theme="dark"] .filter-btn.active {
+            background: #c41e3a !important;
+            border-color: #c41e3a !important;
+            color: #ffffff !important;
+        }
+        
+        /* Legend items */
+        [data-theme="dark"] .legend-item {
+            background: transparent !important;
+            color: #e2e8f0 !important;
+        }
+        [data-theme="dark"] .legend-item span {
+            color: #e2e8f0 !important;
+        }
+        
+        /* Download CTA */
+        [data-theme="dark"] .download-cta {
+            background: linear-gradient(135deg, #1e3a5f, #c41e3a) !important;
+        }
+        [data-theme="dark"] .btn-download {
+            background: #ffffff !important;
+            color: #1e3a5f !important;
+        }
+        
+        /* TOUT fond avec #f ou #e → bleu */
+        [data-theme="dark"] *[style*="background: #f"],
+        [data-theme="dark"] *[style*="background:#f"],
+        [data-theme="dark"] *[style*="background-color: #f"],
+        [data-theme="dark"] *[style*="background-color:#f"],
+        [data-theme="dark"] *[style*="background: #e"],
+        [data-theme="dark"] *[style*="background:#e"],
+        [data-theme="dark"] *[style*="background: white"],
+        [data-theme="dark"] *[style*="background:white"],
+        [data-theme="dark"] *[style*="background-color: white"],
+        [data-theme="dark"] *[style*="background-color:white"] {
+            background: #0f2140 !important;
+            background-color: #0f2140 !important;
+        }
+
+    
+        /* ========== FIX TRUST-ITEMS & ÉLÉMENTS SPÉCIFIQUES ========== */
+        /* Trust items (Les valeurs qui font notre différence) */
+        [data-theme="dark"] .trust-item {
+            background: #0f2140 !important;
+            background-color: #0f2140 !important;
+            border-color: #ffffff !important;
+        }
+        [data-theme="dark"] .trust-item h3 {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .trust-item p {
+            color: #e2e8f0 !important;
+        }
+        [data-theme="dark"] .trust-icon {
+            color: #f87171 !important;
+        }
+        
+        /* Service cards */
+        [data-theme="dark"] .service-card {
+            background: #0f2140 !important;
+            border-color: #ffffff !important;
+        }
+        [data-theme="dark"] .service-card h3 {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .service-card p {
+            color: #e2e8f0 !important;
+        }
+        [data-theme="dark"] .service-icon {
+            color: #f87171 !important;
+        }
+        
+        /* Floating cards (dans hero) */
+        [data-theme="dark"] .floating-card {
+            background: #0f2140 !important;
+            border-color: #ffffff !important;
+        }
+        [data-theme="dark"] .floating-card h4,
+        [data-theme="dark"] .floating-card span {
+            color: #ffffff !important;
+        }
+        
+        /* Credential items (expert section) */
+        [data-theme="dark"] .credential-badge,
+        [data-theme="dark"] .credential-item {
+            background: #0f2140 !important;
+            border-color: #ffffff !important;
+        }
+        [data-theme="dark"] .credential-badge span,
+        [data-theme="dark"] .credential-item span {
+            color: #ffffff !important;
+        }
+        
+        /* Article cards */
+        [data-theme="dark"] .article-card {
+            background: #0f2140 !important;
+            border-color: #ffffff !important;
+        }
+        [data-theme="dark"] .article-card h3,
+        [data-theme="dark"] .article-card h3 a {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .article-card p {
+            color: #e2e8f0 !important;
+        }
+        
+        /* Tool cards */
+        [data-theme="dark"] .tool-card {
+            background: #0f2140 !important;
+            border-color: #ffffff !important;
+        }
+        [data-theme="dark"] .tool-card h3 {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .tool-card p {
+            color: #e2e8f0 !important;
+        }
+        
+        /* Footer */
+        [data-theme="dark"] footer {
+            background: #050d18 !important;
+        }
+
+    
+        /* ========== ULTRA FIX - LABELS BLANCS ========== */
+        /* FORCER TOUS LES LABELS À ÊTRE BLANCS EN MODE SOMBRE */
+        [data-theme="dark"] label,
+        [data-theme="dark"] .label,
+        [data-theme="dark"] .form-group label,
+        [data-theme="dark"] .form-row label,
+        [data-theme="dark"] .simulator-card label,
+        [data-theme="dark"] .calculator-card label,
+        [data-theme="dark"] .calc-form label,
+        [data-theme="dark"] .simulator-form label,
+        [data-theme="dark"] [class*="form"] label,
+        [data-theme="dark"] form label {
+            color: #ffffff !important;
+            font-weight: 600 !important;
+        }
+        
+        /* Corriger result-label et result-value qui étaient en bleu */
+        [data-theme="dark"] .result-label,
+        [data-theme="dark"] .result-value {
+            color: #ffffff !important;
+        }
+        
+        /* Titres des cards - BLANCS pas bleus */
+        [data-theme="dark"] .card h3,
+        [data-theme="dark"] .card h4,
+        [data-theme="dark"] .simulator-card h3,
+        [data-theme="dark"] .calculator-card h3,
+        [data-theme="dark"] .article-card h3,
+        [data-theme="dark"] .tool-card h3,
+        [data-theme="dark"] .glossary-item h3,
+        [data-theme="dark"] .month-card h3 {
+            color: #ffffff !important;
+        }
+        
+        /* Sous-titres et descriptions - gris clair */
+        [data-theme="dark"] .subtitle,
+        [data-theme="dark"] .description,
+        [data-theme="dark"] .simulator-subtitle,
+        [data-theme="dark"] .calc-subtitle {
+            color: #e2e8f0 !important;
+        }
+        
+        /* Card icon - visible */
+        [data-theme="dark"] .card-icon {
+            color: #ffffff !important;
+        }
+        
+        /* Floating cards textes */
+        [data-theme="dark"] .floating-card strong,
+        [data-theme="dark"] .floating-card span,
+        [data-theme="dark"] .card-text strong,
+        [data-theme="dark"] .card-text span {
+            color: #ffffff !important;
+        }
+
+    
+        /* ========== ABSOLUTE FINAL - TOUT SOMBRE ========== */
+        /* FORCER TOUS LES FONDS À ÊTRE SOMBRES */
+        [data-theme="dark"] .simulator-card,
+        [data-theme="dark"] .calculator-card,
+        [data-theme="dark"] .calculator-container,
+        [data-theme="dark"] .calc-container,
+        [data-theme="dark"] .form-container,
+        [data-theme="dark"] .result-box,
+        [data-theme="dark"] .results-container,
+        [data-theme="dark"] .card,
+        [data-theme="dark"] .tool-card,
+        [data-theme="dark"] .article-card,
+        [data-theme="dark"] .glossary-item,
+        [data-theme="dark"] .month-card,
+        [data-theme="dark"] .deadline-card,
+        [data-theme="dark"] .profile-section,
+        [data-theme="dark"] .filter-section {
+            background: #0f2140 !important;
+            background-color: #0f2140 !important;
+        }
+        
+        /* FORCER TOUS LES LABELS/TITRES À ÊTRE BLANCS */
+        [data-theme="dark"] h1,
+        [data-theme="dark"] h2,
+        [data-theme="dark"] h3,
+        [data-theme="dark"] h4,
+        [data-theme="dark"] h5,
+        [data-theme="dark"] label,
+        [data-theme="dark"] .label,
+        [data-theme="dark"] strong,
+        [data-theme="dark"] b,
+        [data-theme="dark"] .title,
+        [data-theme="dark"] .card-title,
+        [data-theme="dark"] .section-title {
+            color: #ffffff !important;
+        }
+        
+        /* FORCER TOUS LES TEXTES À ÊTRE VISIBLES */
+        [data-theme="dark"] p,
+        [data-theme="dark"] span,
+        [data-theme="dark"] div,
+        [data-theme="dark"] li,
+        [data-theme="dark"] td,
+        [data-theme="dark"] .text,
+        [data-theme="dark"] .description,
+        [data-theme="dark"] .subtitle {
+            color: #e2e8f0 !important;
+        }
+        
+        /* INPUTS RESTENT BLANCS POUR ÉCRIRE */
+        [data-theme="dark"] input,
+        [data-theme="dark"] select,
+        [data-theme="dark"] textarea {
+            background: #1e3a5f !important;
+            color: #ffffff !important;
+        }
+
+    
+        /* ========== INPUTS SOMBRES ========== */
+        [data-theme="dark"] input,
+        [data-theme="dark"] select,
+        [data-theme="dark"] textarea,
+        [data-theme="dark"] input[type="text"],
+        [data-theme="dark"] input[type="number"],
+        [data-theme="dark"] input[type="email"],
+        [data-theme="dark"] input[type="tel"],
+        [data-theme="dark"] .form-group input,
+        [data-theme="dark"] .form-group select,
+        [data-theme="dark"] .form-row input,
+        [data-theme="dark"] .form-row select {
+            background: #1e3a5f !important;
+            background-color: #1e3a5f !important;
+            color: #ffffff !important;
+            border-color: #2c5f8d !important;
+        }
+        [data-theme="dark"] input::placeholder,
+        [data-theme="dark"] textarea::placeholder {
+            color: #94a3b8 !important;
+        }
+        [data-theme="dark"] input:focus,
+        [data-theme="dark"] select:focus,
+        [data-theme="dark"] textarea:focus {
+            border-color: #f87171 !important;
+            box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.2) !important;
+        }
+        [data-theme="dark"] select option {
+            background: #1e3a5f !important;
+            color: #ffffff !important;
+        }
+
+    
+        /* ========== FIX FINAL INPUTS MODE SOMBRE ========== */
+        [data-theme="dark"] input,
+        [data-theme="dark"] select,
+        [data-theme="dark"] textarea,
+        [data-theme="dark"] input[type="text"],
+        [data-theme="dark"] input[type="number"],
+        [data-theme="dark"] input[type="email"],
+        [data-theme="dark"] input[type="tel"],
+        [data-theme="dark"] .form-group input,
+        [data-theme="dark"] .form-group select,
+        [data-theme="dark"] .form-row input,
+        [data-theme="dark"] .form-row select,
+        [data-theme="dark"] .simulator-card input,
+        [data-theme="dark"] .simulator-card select,
+        [data-theme="dark"] .calculator-card input,
+        [data-theme="dark"] .calculator-card select {
+            background: #1e3a5f !important;
+            background-color: #1e3a5f !important;
+            color: #ffffff !important;
+            border: 2px solid #2c5f8d !important;
+            -webkit-text-fill-color: #ffffff !important;
+        }
+        [data-theme="dark"] input::placeholder,
+        [data-theme="dark"] textarea::placeholder {
+            color: #94a3b8 !important;
+            -webkit-text-fill-color: #94a3b8 !important;
+        }
+        [data-theme="dark"] select option {
+            background: #1e3a5f !important;
+            color: #ffffff !important;
+        }
+
+    
+        /* ========== TITRES SIMULATEURS MODE SOMBRE ========== */
+        [data-theme="dark"] .simulator-panel,
+        [data-theme="dark"] .simulator-card,
+        [data-theme="dark"] .calculator-panel,
+        [data-theme="dark"] .calculator-card {
+            background: #0f2140 !important;
+        }
+        [data-theme="dark"] .simulator-title,
+        [data-theme="dark"] .calculator-title,
+        [data-theme="dark"] .calc-header,
+        [data-theme="dark"] .simulator-header {
+            background: #0f2140 !important;
+        }
+        [data-theme="dark"] .simulator-title h2,
+        [data-theme="dark"] .calculator-title h2,
+        [data-theme="dark"] .simulator-panel h2,
+        [data-theme="dark"] .calculator-panel h2 {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .simulator-title p,
+        [data-theme="dark"] .calculator-title p,
+        [data-theme="dark"] .simulator-panel > p,
+        [data-theme="dark"] .calculator-panel > p {
+            color: #e2e8f0 !important;
+        }
+
+    
+        /* ========== FORCE ABSOLUE - FOND BLEU ========== */
+        html[data-theme="dark"] .simulator-panel,
+        html[data-theme="dark"] .simulator-panel.active,
+        html[data-theme="dark"] #panel-is,
+        html[data-theme="dark"] #panel-tpme,
+        html[data-theme="dark"] .simulator-card,
+        html[data-theme="dark"] .calculator-card,
+        html[data-theme="dark"] .calculator-container,
+        html[data-theme="dark"] .calc-container,
+        html[data-theme="dark"] .form-section,
+        html[data-theme="dark"] main .simulator-panel,
+        html[data-theme="dark"] main #panel-is,
+        html[data-theme="dark"] main #panel-tpme,
+        body[data-theme="dark"] .simulator-panel,
+        body[data-theme="dark"] #panel-is,
+        body[data-theme="dark"] #panel-tpme {
+            background: #0f2140 !important;
+            background-color: #0f2140 !important;
+        }
+        html[data-theme="dark"] .simulator-title,
+        html[data-theme="dark"] .simulator-title h2,
+        body[data-theme="dark"] .simulator-title,
+        body[data-theme="dark"] .simulator-title h2 {
+            background: #0f2140 !important;
+            color: #ffffff !important;
+        }
+        html[data-theme="dark"] .simulator-title p,
+        body[data-theme="dark"] .simulator-title p {
+            color: #e2e8f0 !important;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo"><span>First Audit</span> <span class="accent">et Conseils</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="article-hero">
+        <div class="article-category-badge">Comptabilité</div>
+        <h1>Digitalisation comptable : Guide pratique pour les PME</h1>
+        <div class="article-meta">
+            <span>10 Janvier 2026</span>
+            <span>⏱️ 4 minutes de lecture</span>
+            <span>✍️ First Audit et Conseils</span>
+        </div>
+    </section>
+
+    <div class="article-container">
+        <div class="article-content">
+            <p><strong>La transformation digitale de la comptabilité n'est plus une option mais une nécessité pour les PME marocaines.</strong> Entre gain de temps, réduction des erreurs et amélioration du pilotage, les avantages sont nombreux. Voici notre guide complet pour réussir votre transition.</p>
+
+            <h2>Pourquoi digitaliser sa comptabilité ?</h2>
+
+            <h3>Les bénéfices immédiats</h3>
+            <p>La digitalisation de votre comptabilité apporte des avantages concrets dès les premiers mois :</p>
+
+            <ul>
+                <li><strong>Gain de temps considérable :</strong> Jusqu'à 70% de temps économisé sur les tâches de saisie et de classement</li>
+                <li><strong>Réduction des erreurs :</strong> L'automatisation élimine les erreurs de saisie manuelle</li>
+                <li><strong>Accès en temps réel :</strong> Consultez votre situation financière à tout moment, de n'importe où</li>
+                <li><strong>Économies financières :</strong> Réduction des coûts de stockage papier et d'archivage</li>
+                <li><strong>Conformité facilitée :</strong> Respect automatique des obligations légales et fiscales</li>
+            </ul>
+
+            <div class="success-box">
+                <h3>✅ Témoignage client</h3>
+                <p>"Depuis que nous avons digitalisé notre comptabilité avec First Audit et Conseils, nous gagnons 2 jours par mois sur la gestion administrative. Les tableaux de bord en temps réel nous permettent de prendre de meilleures décisions commerciales."</p>
+                <p><em>— Directeur d'une PME de distribution, Rabat</em></p>
+            </div>
+
+            <h2>Les étapes clés de la digitalisation</h2>
+
+            <h3>Étape 1 : L'audit de l'existant</h3>
+            <p>Avant tout changement, il est essentiel de faire le point sur vos processus actuels :</p>
+
+            <ul>
+                <li>Analyse de vos flux comptables et financiers</li>
+                <li>Identification des tâches les plus chronophages</li>
+                <li>Évaluation de vos besoins spécifiques</li>
+                <li>Recensement de vos contraintes techniques et budgétaires</li>
+            </ul>
+
+            <h3>Étape 2 : Choix des outils adaptés</h3>
+            <p>Le marché propose de nombreuses solutions. Les critères de choix essentiels :</p>
+
+            <ol>
+                <li><strong>Conformité marocaine :</strong> Le logiciel doit être compatible avec les normes comptables et fiscales marocaines</li>
+                <li><strong>Facilité d'utilisation :</strong> Interface intuitive pour une adoption rapide par vos équipes</li>
+                <li><strong>Connectivité bancaire :</strong> Synchronisation automatique avec vos comptes bancaires</li>
+                <li><strong>Gestion des factures :</strong> Dématérialisation et archivage électronique conformes</li>
+                <li><strong>Tableaux de bord :</strong> Reporting en temps réel et indicateurs de performance</li>
+            </ol>
+
+            <h3>Étape 3 : La migration des données</h3>
+            <p>Phase critique qui nécessite rigueur et méthode :</p>
+
+            <ul>
+                <li>Nettoyage et vérification des données existantes</li>
+                <li>Import progressif des historiques comptables</li>
+                <li>Tests de cohérence et de fiabilité</li>
+                <li>Double validation pendant la période de transition</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h3>⚠️ Point de vigilance</h3>
+                <p>La migration des données est une étape sensible. Nous recommandons de la réaliser en début d'exercice fiscal et de conserver une sauvegarde complète de vos anciennes données pendant au moins 10 ans.</p>
+            </div>
+
+            <h3>Étape 4 : Formation des équipes</h3>
+            <p>Le succès de la digitalisation repose sur l'adoption par vos collaborateurs :</p>
+
+            <ul>
+                <li>Sessions de formation adaptées à chaque profil utilisateur</li>
+                <li>Documentation complète et accessible</li>
+                <li>Accompagnement personnalisé pendant les 3 premiers mois</li>
+                <li>Support technique réactif</li>
+            </ul>
+
+            <h2>Les fonctionnalités indispensables</h2>
+
+            <h3>1. Dématérialisation des factures</h3>
+            <p>La facturation électronique deviendra obligatoire progressivement à partir de juillet 2026. Anticipez cette obligation avec :</p>
+
+            <ul>
+                <li>Génération automatique de factures aux normes</li>
+                <li>Envoi électronique sécurisé</li>
+                <li>Archivage conforme avec valeur probante</li>
+                <li>Traçabilité complète de chaque document</li>
+            </ul>
+
+            <h3>2. Rapprochement bancaire automatisé</h3>
+            <p>Fini la saisie manuelle des relevés bancaires :</p>
+
+            <ul>
+                <li>Connexion sécurisée avec vos banques</li>
+                <li>Import automatique des transactions</li>
+                <li>Rapprochement intelligent avec vos écritures</li>
+                <li>Détection des anomalies et doublons</li>
+            </ul>
+
+            <h3>3. Tableaux de bord en temps réel</h3>
+            <p>Pilotez votre activité avec des indicateurs actualisés :</p>
+
+            <ul>
+                <li>Chiffre d'affaires et marge en temps réel</li>
+                <li>Trésorerie prévisionnelle</li>
+                <li>Suivi des impayés clients</li>
+                <li>Analyse des charges par catégorie</li>
+                <li>Comparaison avec les exercices précédents</li>
+            </ul>
+
+            <h2>Les erreurs à éviter</h2>
+
+            <h3>❌ Sous-estimer le temps de transition</h3>
+            <p>Prévoir 3 à 6 mois pour une transition complète, selon la taille de l'entreprise.</p>
+
+            <h3>❌ Négliger la formation</h3>
+            <p>Un outil non maîtrisé ne sera pas utilisé. Investissez dans la formation de vos équipes.</p>
+
+            <h3>❌ Choisir l'outil le moins cher</h3>
+            <p>Le critère prix ne doit pas être le seul. Privilégiez la qualité, la conformité et le support.</p>
+
+            <h3>❌ Tout vouloir digitaliser d'un coup</h3>
+            <p>Procédez par étapes : commencez par les fonctions essentielles avant d'ajouter les modules avancés.</p>
+
+            <h2>Le rôle de votre expert-comptable</h2>
+
+            <p>First Audit et Conseils vous accompagne à chaque étape de votre digitalisation :</p>
+
+            <ul>
+                <li><strong>Conseil :</strong> Sélection des outils les plus adaptés à votre activité</li>
+                <li><strong>Mise en œuvre :</strong> Configuration et paramétrage des solutions choisies</li>
+                <li><strong>Formation :</strong> Sessions dédiées pour vos équipes</li>
+                <li><strong>Support :</strong> Assistance technique et comptable en continu</li>
+                <li><strong>Optimisation :</strong> Amélioration continue de vos processus</li>
+            </ul>
+
+            <h2>Budget et retour sur investissement</h2>
+
+            <p>L'investissement dans la digitalisation comptable se compose généralement de :</p>
+
+            <ul>
+                <li><strong>Coût du logiciel :</strong> Entre 1 500 et 5 000 DH/mois selon les fonctionnalités</li>
+                <li><strong>Frais de mise en place :</strong> De 5 000 à 20 000 DH (one-time)</li>
+                <li><strong>Formation :</strong> Budget à prévoir selon le nombre d'utilisateurs</li>
+            </ul>
+
+            <div class="success-box">
+                <h3>💰 ROI attendu</h3>
+                <p>En moyenne, nos clients constatent un retour sur investissement en moins de 12 mois grâce aux économies de temps et à l'amélioration du pilotage de leur activité.</p>
+            </div>
+
+            <h2>Par où commencer ?</h2>
+
+            <p>La digitalisation de votre comptabilité est un projet stratégique qui mérite un accompagnement professionnel. Chez First Audit et Conseils, nous proposons :</p>
+
+            <ol>
+                <li>Un audit gratuit de vos besoins</li>
+                <li>Une recommandation personnalisée d'outils</li>
+                <li>Un accompagnement complet pendant la transition</li>
+                <li>Une formation adaptée à vos équipes</li>
+                <li>Un support technique et comptable illimité</li>
+            </ol>
+
+            <div class="highlight-box">
+                <h3>📞 Prêt à franchir le pas ?</h3>
+                <p>Contactez-nous pour un audit gratuit de vos processus comptables et découvrez comment la digitalisation peut transformer votre gestion financière.</p>
+                <p><strong>+212 661 26 37 21 | first.audit.conseils@gmail.com</strong></p>
+            </div>
+
+            <a href="articles.html" class="back-link">← Retour aux articles</a>
+        </div>
+    </div>
+
+        <footer>
+        <p>&copy; 2026 First Audit & Conseils - Tous droits réservés</p>
+        <p>Expert-comptable - Membre de l'Ordre des Experts Comptables du Maroc</p>
+    </footer>
+
+    <!-- Bouton Mode Sombre -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Changer de thème">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+    </button>
+
+    <script>
+        // Mode Sombre Toggle
+        const themeToggle = document.getElementById("themeToggle");
+        const html = document.documentElement;
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) { html.setAttribute("data-theme", savedTheme); }
+        if (themeToggle) {
+            themeToggle.addEventListener("click", () => {
+                const currentTheme = html.getAttribute("data-theme");
+                const newTheme = currentTheme === "dark" ? "light" : "dark";
+                html.setAttribute("data-theme", newTheme);
+                localStorage.setItem("theme", newTheme);
+            });
+        }
+    </script>
+</body>
+</html>
