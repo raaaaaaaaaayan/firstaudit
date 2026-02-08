@@ -1,0 +1,2651 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glossaire Comptable et Fiscal Marocain - +50 Termes et Fiscal | First Audit et Conseils</title>
+    <meta name="description" content="Glossaire complet des termes comptables et fiscaux au Maroc : IS, TVA, IR, CNSS, amortissement, bilan et plus de 50 définitions.">
+    <link rel="icon" type="image/jpeg" href="favicon.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --color-primary: #1e3a5f; --color-secondary: #2c5f8d; --color-accent: #4a90c8; --color-dark: #0f1922; --color-light: #f8fafc; --color-gray: #64748b; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Lato', sans-serif; color: var(--color-dark); background: var(--color-light); line-height: 1.7; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 600; }
+        nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(250, 248, 245, 0.95); backdrop-filter: blur(10px); z-index: 1000; padding: 1.5rem 0; }
+        .nav-container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--color-primary); text-decoration: none; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--color-dark); }
+        .hero { margin-top: 80px; padding: 4rem 2rem; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); text-align: center; color: white; }
+        .hero h1 { font-size: 2.8rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; opacity: 0.9; }
+        .main-content { max-width: 1000px; margin: 0 auto; padding: 4rem 2rem; }
+        .search-box { position: relative; max-width: 600px; margin: 0 auto 3rem; }
+        .search-box input { width: 100%; padding: 1.25rem 1.5rem 1.25rem 3.5rem; border: 2px solid #e2e8f0; border-radius: 50px; font-size: 1.1rem; }
+        .search-box input:focus { outline: none; border-color: var(--color-accent); }
+        .search-box .icon { position: absolute; left: 1.25rem; top: 50%; transform: translateY(-50%); font-size: 1.3rem; }
+        .results-count { text-align: center; margin-bottom: 2rem; color: var(--color-gray); }
+        .category-filter { display: flex; justify-content: center; gap: 0.75rem; margin-bottom: 3rem; flex-wrap: wrap; }
+        .cat-btn { padding: 0.6rem 1.25rem; border: 2px solid #e2e8f0; background: white; color: var(--color-gray); font-weight: 600; border-radius: 25px; cursor: pointer; transition: all 0.3s; }
+        .cat-btn:hover { border-color: var(--color-accent); color: var(--color-accent); }
+        .cat-btn.active { background: var(--color-primary); border-color: var(--color-primary); color: white; }
+        .alphabet-nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 3rem; padding: 1.5rem; background: white; border-radius: 16px; }
+        .alphabet-nav a { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; text-decoration: none; color: var(--color-primary); font-weight: 600; border-radius: 50%; transition: all 0.3s; }
+        .alphabet-nav a:hover, .alphabet-nav a.active { background: var(--color-primary); color: white; }
+        .alphabet-nav a.disabled { color: #cbd5e1; pointer-events: none; }
+        .section-letter { font-size: 2.5rem; color: var(--color-primary); margin: 2rem 0 1.5rem; padding-bottom: 0.5rem; border-bottom: 3px solid var(--color-accent); display: inline-block; }
+        .term-card { background: white; border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; box-shadow: 0 2px 10px rgba(0,0,0,0.04); border-left: 4px solid var(--color-accent); transition: transform 0.3s; }
+        .term-card:hover { transform: translateX(5px); }
+        .term-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem; }
+        .term-name { font-size: 1.25rem; font-weight: 700; color: var(--color-primary); font-family: 'Playfair Display', serif; }
+        .term-cat { padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.75rem; font-weight: 600; }
+        .term-cat.fiscal { background: #dbeafe; color: #1d4ed8; }
+        .term-cat.comptable { background: #d1fae5; color: #047857; }
+        .term-cat.social { background: #ede9fe; color: #6d28d9; }
+        .term-cat.juridique { background: #fef3c7; color: #b45309; }
+        .term-cat.finance { background: #fce7f3; color: #be185d; }
+        .term-def { color: #4a5568; line-height: 1.8; }
+        .term-ex { margin-top: 1rem; padding: 1rem; background: #f0f9ff; border-radius: 8px; font-size: 0.95rem; }
+        .term-ex strong { color: var(--color-secondary); }
+        .cta-box { background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); padding: 3rem 2rem; border-radius: 20px; text-align: center; color: white; margin-top: 4rem; }
+        .cta-box h2 { font-size: 1.8rem; margin-bottom: 1rem; }
+        .cta-box p { opacity: 0.9; margin-bottom: 2rem; }
+        .cta-box .btn { display: inline-block; padding: 1rem 2.5rem; background: white; color: var(--color-primary); text-decoration: none; border-radius: 50px; font-weight: 600; }
+        footer { background: var(--color-primary); color: white; text-align: center; padding: 2rem; margin-top: 4rem; }
+        footer p { margin: 0.5rem 0; opacity: 0.9; }
+        .footer-links { margin-top: 1rem; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+        .footer-links a { color: white; text-decoration: none; opacity: 0.8; }
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .nav-links { display: none; } }
+    
+        /* ========== MODE SOMBRE ========== */
+        .theme-toggle {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        [data-theme="dark"] .theme-toggle { background: #1e3a5f; border-color: #2c5f8d; }
+        .theme-toggle:hover { transform: scale(1.1); }
+        .theme-toggle .icon-sun, .theme-toggle .icon-moon { position: absolute; transition: all 0.3s ease; }
+        .theme-toggle .icon-sun { opacity: 1; }
+        .theme-toggle .icon-moon { opacity: 0; }
+        [data-theme="dark"] .theme-toggle .icon-sun { opacity: 0; }
+        [data-theme="dark"] .theme-toggle .icon-moon { opacity: 1; }
+        [data-theme="dark"] body { background: #0a1628 !important; color: #ffffff; }
+        [data-theme="dark"] nav, [data-theme="dark"] header { background: #0a1628 !important; border-bottom-color: #1e3a5f; }
+        [data-theme="dark"] .card h3, [data-theme="dark"] .card h4, [data-theme="dark"] .article-card h3, [data-theme="dark"] .article-card h3 a, [data-theme="dark"] table th, [data-theme="dark"] .tool-card h3, [data-theme="dark"] .month-card h3, [data-theme="dark"] .glossary-item h3, [data-theme="dark"] .deadline-card h4 { color: #ffffff !important; }
+        [data-theme="dark"] .nav-links { background: transparent; }
+        [data-theme="dark"] .nav-links a { color: rgba(255, 255, 255, 0.85) !important; }
+        [data-theme="dark"] .nav-links a:hover { color: #ffffff !important; }
+        [data-theme="dark"] main, [data-theme="dark"] section, [data-theme="dark"] .container, [data-theme="dark"] .page-header { background: #0a1628 !important; }
+        [data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3, [data-theme="dark"] .section-title, [data-theme="dark"] .page-title { color: #ffffff !important; }
+        [data-theme="dark"] p, [data-theme="dark"] .section-subtitle { color: #e2e8f0 !important; }
+        [data-theme="dark"] .card, [data-theme="dark"] .article-card, [data-theme="dark"] .tool-card, [data-theme="dark"] .glossary-item, [data-theme="dark"] .month-card, [data-theme="dark"] table, [data-theme="dark"] .result-box, [data-theme="dark"] .calculator-container, [data-theme="dark"] .simulator-card, [data-theme="dark"] .simulator-panel, [data-theme="dark"] .deadline-card { background: #0f2140 !important; }
+        [data-theme="dark"] .card h3, [data-theme="dark"] .card h4, [data-theme="dark"] .article-card h3, [data-theme="dark"] .article-card h3 a, [data-theme="dark"] table th, [data-theme="dark"] .tool-card h3, [data-theme="dark"] .month-card h3, [data-theme="dark"] .glossary-item h3, [data-theme="dark"] .deadline-card h4 { color: #ffffff !important; }
+        [data-theme="dark"] .card p, [data-theme="dark"] .article-card p, [data-theme="dark"] table td, [data-theme="dark"] .tool-card p, [data-theme="dark"] .glossary-item p, [data-theme="dark"] .deadline-card p { color: #e2e8f0 !important; }
+        [data-theme="dark"] footer { background: #050d18 !important; }
+        [data-theme="dark"] footer p, [data-theme="dark"] footer a, [data-theme="dark"] .footer-links a { color: #e2e8f0 !important; }
+        [data-theme="dark"] input, [data-theme="dark"] select, [data-theme="dark"] textarea { background: #1e3a5f !important; color: #ffffff !important; border-color: #ffffff !important; }
+        [data-theme="dark"] .breadcrumb, [data-theme="dark"] .breadcrumb a { color: #60a5fa !important; }
+        [data-theme="dark"] .article-content, [data-theme="dark"] .article-body, [data-theme="dark"] article { background: #0f2140 !important; border-radius: 12px; }
+        [data-theme="dark"] .article-content h1, [data-theme="dark"] .article-content h2, [data-theme="dark"] .article-content h3, [data-theme="dark"] .article-body h2, [data-theme="dark"] .article-body h3, [data-theme="dark"] article h1, [data-theme="dark"] article h2 { color: #ffffff !important; }
+        [data-theme="dark"] .article-content p, [data-theme="dark"] .article-content li, [data-theme="dark"] .article-body p, [data-theme="dark"] .article-body li, [data-theme="dark"] article p, [data-theme="dark"] article li { color: #f1f5f9 !important; }
+        [data-theme="dark"] .tag, [data-theme="dark"] .category, [data-theme="dark"] .article-tag { background: #1e3a5f !important; color: #ffffff !important; }
+        [data-theme="dark"] .hero-mini, [data-theme="dark"] .page-hero, [data-theme="dark"] .article-header { background: linear-gradient(135deg, #0a1628, #1e3a5f) !important; }
+        [data-theme="dark"] .articles-grid, [data-theme="dark"] .tools-grid, [data-theme="dark"] .glossary-grid { background: transparent !important; }
+        [data-theme="dark"] label { color: #ffffff !important; }
+        [data-theme="dark"] .card h3, [data-theme="dark"] .card h4, [data-theme="dark"] .article-card h3, [data-theme="dark"] .article-card h3 a, [data-theme="dark"] table th, [data-theme="dark"] .tool-card h3, [data-theme="dark"] .month-card h3, [data-theme="dark"] .glossary-item h3, [data-theme="dark"] .deadline-card h4 { color: #ffffff !important; }
+        @media (max-width: 968px) {
+            [data-theme="dark"] .nav-links { background: #0f2140 !important; }
+            [data-theme="dark"] .nav-links a { color: #ffffff !important; }
+            [data-theme="dark"] .nav-links li { border-bottom-color: #ffffff !important; }
+        }
+
+    
+        /* ========== ACCENTS ROUGE ========== */
+        :root {
+            --color-red: #c41e3a;
+            --color-red-light: #fee2e2;
+            --color-red-dark: #991b1b;
+        }
+        .btn-primary, .cta-button, .btn-cta {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-red)) !important;
+        }
+        .btn-primary:hover, .cta-button:hover, .btn-cta:hover {
+            background: linear-gradient(135deg, var(--color-red), var(--color-red-dark)) !important;
+        }
+        .article-category-badge {
+            background: #c41e3a !important;
+        }
+        .highlight-box {
+            border-left-color: #c41e3a !important;
+        }
+        .warning-box, .info-box.important {
+            border-left-color: #c41e3a !important;
+        }
+        .back-link:hover {
+            color: #c41e3a !important;
+        }
+        .nav-links a:hover {
+            color: #c41e3a !important;
+        }
+        .download-btn {
+            background: linear-gradient(135deg, #c41e3a, #991b1b) !important;
+            color: #1e293b !important;
+        }
+        .download-btn:hover {
+            background: linear-gradient(135deg, #991b1b, #7f1d1d) !important;
+        }
+        /* Mode sombre - accents rouge */
+        [data-theme="dark"] .article-category-badge {
+            background: #c41e3a !important;
+        }
+        [data-theme="dark"] .highlight-box {
+            border-left-color: #f87171 !important;
+        }
+        [data-theme="dark"] .back-link:hover {
+            color: #f87171 !important;
+        }
+        [data-theme="dark"] .nav-links a:hover {
+            color: #f87171 !important;
+        }
+
+    
+        /* ========== REDESIGN BLEU/ROUGE - TOOLS ========== */
+        :root {
+            --color-red: #c41e3a;
+            --color-red-light: #dc2626;
+            --color-red-dark: #991b1b;
+        }
+        
+        /* Navigation */
+        .nav-links a:hover { color: var(--color-red) !important; }
+        
+        /* Hero gradient */
+        .page-hero, .tools-hero, .calculator-hero {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5f8d 60%, #991b1b 100%) !important;
+        }
+        
+        /* Tabs/Onglets */
+        .tab-btn, .nav-tab {
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .tab-btn.active, .nav-tab.active,
+        .tab-btn:hover, .nav-tab:hover {
+            border-bottom-color: var(--color-red) !important;
+            color: var(--color-red) !important;
+        }
+        
+        /* Bouton calculer */
+        .calc-btn, .calculate-btn, .btn-calculate {
+            background: var(--color-red) !important;
+            border: none !important;
+            color: #1e293b !important;
+            padding: 1rem 2rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(196, 30, 58, 0.3);
+        }
+        .calc-btn:hover, .calculate-btn:hover, .btn-calculate:hover {
+            background: var(--color-red-dark) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(196, 30, 58, 0.4);
+        }
+        
+        /* Résultat principal */
+        .result-main, .result-highlight, .net-salary {
+            background: linear-gradient(135deg, #1e3a5f, var(--color-red)) !important;
+            color: #1e293b !important;
+            padding: 1.5rem;
+            border-radius: 12px;
+        }
+        .result-main .amount, .result-highlight .value {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        
+        /* Détails résultats */
+        .result-item, .result-row {
+            border-left: 3px solid var(--color-red) !important;
+            padding-left: 1rem;
+            margin: 0.5rem 0;
+        }
+        
+        /* Input focus */
+        input:focus, select:focus {
+            border-color: var(--color-red) !important;
+            box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.2) !important;
+        }
+        
+        /* Tool cards */
+        .tool-card, .calculator-card {
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .tool-card:hover, .calculator-card:hover {
+            border-color: var(--color-red) !important;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(196, 30, 58, 0.15);
+        }
+        .tool-icon, .card-icon {
+            color: var(--color-red) !important;
+        }
+        
+        /* Légende/info */
+        .info-note, .legend-item {
+            border-left: 3px solid var(--color-red);
+            padding-left: 1rem;
+            background: #fef2f2;
+        }
+        
+        /* Mode sombre */
+        [data-theme="dark"] .tab-btn.active,
+        [data-theme="dark"] .tab-btn:hover {
+            border-bottom-color: #f87171 !important;
+            color: #f87171 !important;
+        }
+        [data-theme="dark"] .calc-btn,
+        [data-theme="dark"] .calculate-btn {
+            background: #dc2626 !important;
+        }
+        [data-theme="dark"] .tool-card:hover,
+        [data-theme="dark"] .calculator-card:hover {
+            border-color: #f87171 !important;
+        }
+        [data-theme="dark"] .tool-icon,
+        [data-theme="dark"] .card-icon {
+            color: #f87171 !important;
+        }
+        [data-theme="dark"] input:focus,
+        [data-theme="dark"] select:focus {
+            border-color: #f87171 !important;
+            box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.2) !important;
+        }
+        [data-theme="dark"] .result-item,
+        [data-theme="dark"] .result-row {
+            border-left-color: #f87171 !important;
+        }
+        [data-theme="dark"] .info-note,
+        [data-theme="dark"] .legend-item {
+            background: rgba(220, 38, 38, 0.15);
+            border-left-color: #f87171;
+        }
+
+    
+        /* ========== CORRECTION CONTRASTE ========== */
+        /* Boutons primaires - texte blanc bien visible */
+        .btn-primary, .cta-button, .hero-cta .btn-primary,
+        .calc-btn, .calculate-btn, .btn-calculate,
+        .contact-btn, .submit-btn, form button[type="submit"] {
+            background: #c41e3a !important;
+            color: #1e293b !important;
+            font-weight: 600 !important;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2) !important;
+            border: none !important;
+            padding: 1rem 2rem !important;
+            font-size: 1rem !important;
+            letter-spacing: 0.5px !important;
+        }
+        .btn-primary:hover, .cta-button:hover, .hero-cta .btn-primary:hover,
+        .calc-btn:hover, .calculate-btn:hover, .btn-calculate:hover,
+        .contact-btn:hover, .submit-btn:hover, form button[type="submit"]:hover {
+            background: #991b1b !important;
+            color: #1e293b !important;
+        }
+        
+        /* Boutons secondaires - bordure épaisse, texte lisible */
+        .btn-secondary, .hero-cta .btn-secondary {
+            border: 2px solid #c41e3a !important;
+            color: #c41e3a !important;
+            background: transparent !important;
+            font-weight: 600 !important;
+            padding: 1rem 2rem !important;
+            font-size: 1rem !important;
+        }
+        .btn-secondary:hover, .hero-cta .btn-secondary:hover {
+            background: #c41e3a !important;
+            color: #1e293b !important;
+        }
+        
+        /* Bouton télécharger - contraste amélioré */
+        .download-btn {
+            background: #ffffff !important;
+            color: #1e3a5f !important;
+            font-weight: 700 !important;
+            padding: 1rem 2rem !important;
+            font-size: 1.1rem !important;
+            border: 2px solid #ffffff !important;
+        }
+        .download-btn:hover {
+            background: #f8fafc !important;
+            color: #c41e3a !important;
+            border-color: #f8fafc !important;
+        }
+        
+        /* Badge catégorie - texte blanc sur rouge */
+        .article-category, .category-badge, .article-category-badge {
+            background: #c41e3a !important;
+            color: #1e293b !important;
+            font-weight: 600 !important;
+            font-size: 0.85rem !important;
+            padding: 0.5rem 1.25rem !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1px !important;
+        }
+        
+        /* Filtres actifs - texte blanc */
+        .filter-btn.active, .filter-btn:hover {
+            background: #c41e3a !important;
+            color: #1e293b !important;
+            border-color: #c41e3a !important;
+            font-weight: 600 !important;
+        }
+        
+        /* Résultat principal calculateur */
+        .result-main, .result-highlight, .net-salary {
+            background: linear-gradient(135deg, #1e3a5f, #c41e3a) !important;
+            color: #1e293b !important;
+        }
+        .result-main .label, .result-highlight .label {
+            color: rgba(255,255,255,0.9) !important;
+            font-size: 1rem !important;
+        }
+        .result-main .amount, .result-highlight .value, .result-main .value {
+            color: #1e293b !important;
+            font-size: 2.5rem !important;
+            font-weight: 700 !important;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2) !important;
+        }
+        
+        /* Liens navigation - meilleur contraste hover */
+        .nav-links a {
+            color: #1e293b !important;
+            font-weight: 500 !important;
+        }
+        .nav-links a:hover {
+            color: #c41e3a !important;
+        }
+        
+        /* Back link */
+        .back-link {
+            color: #c41e3a !important;
+            font-weight: 600 !important;
+        }
+        .back-link:hover {
+            color: #991b1b !important;
+        }
+        
+        /* Read more link */
+        .read-more, .article-link {
+            color: #c41e3a !important;
+            font-weight: 600 !important;
+        }
+        .read-more:hover, .article-link:hover {
+            color: #c41e3a !important;
+        }
+        
+        /* Tabs/Onglets actifs */
+        .tab-btn.active, .nav-tab.active {
+            color: #c41e3a !important;
+            font-weight: 600 !important;
+            border-bottom: 3px solid #c41e3a !important;
+        }
+        
+        /* Hero texte - ombre pour lisibilité */
+        .hero h1, .hero-section h1, .article-hero h1, .page-hero h1 {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3) !important;
+        }
+        .hero p, .hero-section p, .article-hero p {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2) !important;
+        }
+        
+        /* Icônes - plus visibles */
+        .service-icon, .trust-icon, .tool-icon, .card-icon {
+            color: #c41e3a !important;
+            font-size: 2.5rem !important;
+        }
+        
+        /* Stats numbers */
+        .trust-number, .stat-number {
+            color: #c41e3a !important;
+            font-weight: 700 !important;
+            font-size: 2.5rem !important;
+        }
+        
+        /* ===== MODE SOMBRE - CONTRASTE ===== */
+        [data-theme="dark"] .btn-primary,
+        [data-theme="dark"] .cta-button,
+        [data-theme="dark"] .calc-btn,
+        [data-theme="dark"] .calculate-btn,
+        [data-theme="dark"] .contact-btn,
+        [data-theme="dark"] .submit-btn {
+            background: #dc2626 !important;
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .btn-primary:hover,
+        [data-theme="dark"] .cta-button:hover,
+        [data-theme="dark"] .calc-btn:hover {
+            background: #b91c1c !important;
+        }
+        
+        [data-theme="dark"] .btn-secondary {
+            border-color: #f87171 !important;
+            color: #f87171 !important;
+        }
+        [data-theme="dark"] .btn-secondary:hover {
+            background: #dc2626 !important;
+            color: #ffffff !important;
+            border-color: #dc2626 !important;
+        }
+        
+        [data-theme="dark"] .nav-links a {
+            color: rgba(255,255,255,0.9) !important;
+        }
+        [data-theme="dark"] .nav-links a:hover {
+            color: #f87171 !important;
+        }
+        
+        [data-theme="dark"] .article-category,
+        [data-theme="dark"] .category-badge,
+        [data-theme="dark"] .article-category-badge {
+            background: #dc2626 !important;
+            color: #ffffff !important;
+        }
+        
+        [data-theme="dark"] .filter-btn.active,
+        [data-theme="dark"] .filter-btn:hover {
+            background: #dc2626 !important;
+            color: #ffffff !important;
+        }
+        
+        [data-theme="dark"] .back-link,
+        [data-theme="dark"] .read-more:hover {
+            color: #f87171 !important;
+        }
+        
+        [data-theme="dark"] .tab-btn.active {
+            color: #f87171 !important;
+            border-bottom-color: #f87171 !important;
+        }
+        
+        [data-theme="dark"] .service-icon,
+        [data-theme="dark"] .trust-icon,
+        [data-theme="dark"] .tool-icon {
+            color: #f87171 !important;
+        }
+        
+        [data-theme="dark"] .trust-number,
+        [data-theme="dark"] .stat-number {
+            color: #f87171 !important;
+        }
+
+    
+        /* ========== VISIBILITÉ FORMULAIRES ========== */
+        /* Labels - texte foncé bien visible */
+        .form-group label, label, .label {
+            color: #1e293b !important;
+            font-weight: 600 !important;
+            font-size: 1rem !important;
+            margin-bottom: 0.5rem !important;
+            display: block !important;
+        }
+        
+        /* Texte d'aide - gris plus foncé */
+        .form-group .help-text, .help-text, .hint, small {
+            color: #475569 !important;
+            font-size: 0.875rem !important;
+        }
+        
+        /* Inputs et selects - texte bien visible */
+        input, select, textarea {
+            color: #1e293b !important;
+            font-size: 1rem !important;
+            background: #1e3a5f !important;
+        }
+        input::placeholder, textarea::placeholder {
+            color: #94a3b8 !important;
+        }
+        
+        /* Options dans select */
+        select option {
+            color: #1e293b !important;
+            background: #1e3a5f !important;
+        }
+        
+        /* Radio et checkbox labels */
+        .radio-option, .checkbox-option {
+            color: #1e293b !important;
+            font-weight: 500 !important;
+        }
+        .radio-option label, .checkbox-option label {
+            color: #1e293b !important;
+        }
+        
+        /* Section titles dans calculateur */
+        .calculator-card h2, .form-section h2, .form-section h3 {
+            color: #1e3a5f !important;
+            font-weight: 700 !important;
+        }
+        
+        /* Breakdown labels */
+        .breakdown-item .label {
+            color: #1e293b !important;
+            font-weight: 600 !important;
+        }
+        
+        /* Info box texte */
+        .info-box, .info-box p, .info-box li {
+            color: #1e293b !important;
+        }
+        
+        /* ===== MODE SOMBRE - FORMULAIRES ===== */
+        [data-theme="dark"] .form-group label,
+        [data-theme="dark"] label,
+        [data-theme="dark"] .label {
+            color: #f1f5f9 !important;
+        }
+        
+        [data-theme="dark"] .form-group .help-text,
+        [data-theme="dark"] .help-text,
+        [data-theme="dark"] .hint,
+        [data-theme="dark"] small {
+            color: #f1f5f9 !important;
+        }
+        
+        [data-theme="dark"] input,
+        [data-theme="dark"] select,
+        [data-theme="dark"] textarea {
+            color: #ffffff !important;
+            background: #1e3a5f !important;
+        }
+        
+        [data-theme="dark"] .radio-option,
+        [data-theme="dark"] .checkbox-option,
+        [data-theme="dark"] .radio-option label,
+        [data-theme="dark"] .checkbox-option label {
+            color: #f1f5f9 !important;
+        }
+        
+        [data-theme="dark"] .breakdown-item .label {
+            color: #f1f5f9 !important;
+        }
+
+    
+        /* ========== LOGO BLEU/ROUGE ========== */
+        .logo {
+            font-family: 'Playfair Display', serif !important;
+            font-size: 1.1rem !important;
+            font-weight: 700 !important;
+            text-decoration: none !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 0.3rem !important;
+        }
+        .logo span:first-child {
+            color: #1e293b !important;
+        }
+        .logo .accent, .logo span:last-child {
+            color: #c41e3a !important;
+        }
+        
+        /* Mode sombre */
+        [data-theme="dark"] .logo span:first-child {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .logo .accent,
+        [data-theme="dark"] .logo span:last-child {
+            color: #f87171 !important;
+        }
+
+    
+        /* ========== MODE SOMBRE - BREAKDOWN CALCUL ========== */
+        [data-theme="dark"] .breakdown {
+            background: #0f2140 !important;
+        }
+        [data-theme="dark"] .breakdown h3 {
+            color: #f1f5f9 !important;
+        }
+        [data-theme="dark"] .breakdown-item {
+            background: #1e3a5f !important;
+        }
+        [data-theme="dark"] .breakdown-item .label {
+            color: #f1f5f9 !important;
+        }
+        [data-theme="dark"] .breakdown-item .amount {
+            color: #ffffff !important;
+            font-weight: 700 !important;
+        }
+        [data-theme="dark"] .breakdown-item.positive .amount {
+            color: #4ade80 !important;
+        }
+        [data-theme="dark"] .breakdown-item.negative .amount {
+            color: #f87171 !important;
+        }
+        
+        /* Résultat principal en mode sombre */
+        [data-theme="dark"] .result-card {
+            background: linear-gradient(135deg, #059669, #047857) !important;
+        }
+        [data-theme="dark"] .result-card h2,
+        [data-theme="dark"] .result-card .subtitle {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .result-amount {
+            color: #ffffff !important;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3) !important;
+        }
+        
+        /* Calculator card en mode sombre */
+        [data-theme="dark"] .calculator-card {
+            background: #0f2140 !important;
+        }
+        [data-theme="dark"] .calculator-card h2 {
+            color: #f1f5f9 !important;
+        }
+        
+        /* Info box en mode sombre */
+        [data-theme="dark"] .info-box {
+            background: #1e3a5f !important;
+            border-color: #3b82f6 !important;
+        }
+        [data-theme="dark"] .info-box h4 {
+            color: #93c5fd !important;
+        }
+        [data-theme="dark"] .info-box ul,
+        [data-theme="dark"] .info-box li,
+        [data-theme="dark"] .info-box p {
+            color: #ffffff !important;
+        }
+        
+        /* Détails ligne par ligne */
+        [data-theme="dark"] .detail-row,
+        [data-theme="dark"] .calc-row,
+        [data-theme="dark"] .result-row {
+            background: #1e3a5f !important;
+            color: #f1f5f9 !important;
+        }
+        [data-theme="dark"] .detail-row .label,
+        [data-theme="dark"] .calc-row .label,
+        [data-theme="dark"] .result-row .label {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .detail-row .value,
+        [data-theme="dark"] .calc-row .value,
+        [data-theme="dark"] .result-row .value {
+            color: #ffffff !important;
+            font-weight: 600 !important;
+        }
+        
+        /* Sections du calcul */
+        [data-theme="dark"] .section-title,
+        [data-theme="dark"] .calc-section h4 {
+            color: #f1f5f9 !important;
+        }
+        
+        /* Textes de résultat */
+        [data-theme="dark"] .result-text,
+        [data-theme="dark"] .summary-text {
+            color: #ffffff !important;
+        }
+
+    
+        /* ========== TUER TOUT LE GRIS EN MODE SOMBRE ========== */
+        [data-theme="dark"] p,
+        [data-theme="dark"] span,
+        [data-theme="dark"] div,
+        [data-theme="dark"] li,
+        [data-theme="dark"] td,
+        [data-theme="dark"] th,
+        [data-theme="dark"] label,
+        [data-theme="dark"] .label,
+        [data-theme="dark"] .text,
+        [data-theme="dark"] .value,
+        [data-theme="dark"] .amount,
+        [data-theme="dark"] .help-text,
+        [data-theme="dark"] .hint,
+        [data-theme="dark"] small,
+        [data-theme="dark"] .section-subtitle,
+        [data-theme="dark"] .simulator-title p,
+        [data-theme="dark"] .card p,
+        [data-theme="dark"] .tool-card p,
+        [data-theme="dark"] .result-card .label,
+        [data-theme="dark"] .result-box .label,
+        [data-theme="dark"] .eligibility-list li,
+        [data-theme="dark"] .eligibility-list li span,
+        [data-theme="dark"] .info-box p,
+        [data-theme="dark"] .info-box li,
+        [data-theme="dark"] .note-box p,
+        [data-theme="dark"] .results-container p,
+        [data-theme="dark"] .results-container span,
+        [data-theme="dark"] .results-container div,
+        [data-theme="dark"] .form-group .help-text,
+        [data-theme="dark"] .radio-option,
+        [data-theme="dark"] .checkbox-option {
+            color: #ffffff !important;
+        }
+        
+        /* Titres et valeurs importantes en BLANC */
+        [data-theme="dark"] h1,
+        [data-theme="dark"] h2,
+        [data-theme="dark"] h3,
+        [data-theme="dark"] h4,
+        [data-theme="dark"] strong,
+        [data-theme="dark"] b,
+        [data-theme="dark"] .value,
+        [data-theme="dark"] .amount,
+        [data-theme="dark"] .result-card .value,
+        [data-theme="dark"] .result-box .value,
+        [data-theme="dark"] .result-amount,
+        [data-theme="dark"] .results-header h3,
+        [data-theme="dark"] .simulator-card h2,
+        [data-theme="dark"] .simulator-card h3,
+        [data-theme="dark"] .calculator-card h2,
+        [data-theme="dark"] .calculator-card h3 {
+            color: #ffffff !important;
+        }
+        
+        /* Labels formulaires en blanc cassé */
+        [data-theme="dark"] label,
+        [data-theme="dark"] .form-group label,
+        [data-theme="dark"] .label {
+            color: #f1f5f9 !important;
+            font-weight: 600 !important;
+        }
+        
+        /* Fonds des cards en bleu foncé (pas blanc) */
+        [data-theme="dark"] .result-card,
+        [data-theme="dark"] .result-box,
+        [data-theme="dark"] .result-item,
+        [data-theme="dark"] .eligibility-list li,
+        [data-theme="dark"] .info-box,
+        [data-theme="dark"] .note-box {
+            background: #1e3a5f !important;
+        }
+        
+        /* Conteneurs principaux */
+        [data-theme="dark"] .results-container,
+        [data-theme="dark"] .simulator-card,
+        [data-theme="dark"] .calculator-card,
+        [data-theme="dark"] .calc-container {
+            background: #0f2140 !important;
+        }
+        
+        /* Tableaux */
+        [data-theme="dark"] table {
+            background: #1e3a5f !important;
+        }
+        [data-theme="dark"] table th {
+            background: #0f2140 !important;
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] table td {
+            color: #ffffff !important;
+        }
+        
+        /* Footer */
+        [data-theme="dark"] footer p,
+        [data-theme="dark"] footer a,
+        [data-theme="dark"] footer span {
+            color: #f1f5f9 !important;
+        }
+
+    
+        /* ========== CARDS MODE SOMBRE - BLEU FONCÉ ========== */
+        [data-theme="dark"] .card,
+        [data-theme="dark"] .article-card,
+        [data-theme="dark"] .tool-card,
+        [data-theme="dark"] .service-card,
+        [data-theme="dark"] .calculator-card,
+        [data-theme="dark"] .simulator-card,
+        [data-theme="dark"] .result-card,
+        [data-theme="dark"] .result-box,
+        [data-theme="dark"] .glossary-item,
+        [data-theme="dark"] .month-card,
+        [data-theme="dark"] .deadline-card,
+        [data-theme="dark"] .info-box,
+        [data-theme="dark"] .note-box,
+        [data-theme="dark"] .highlight-box,
+        [data-theme="dark"] .warning-box,
+        [data-theme="dark"] .download-box,
+        [data-theme="dark"] .cta-box,
+        [data-theme="dark"] .form-container,
+        [data-theme="dark"] .calc-container,
+        [data-theme="dark"] .results-container,
+        [data-theme="dark"] .breakdown,
+        [data-theme="dark"] .breakdown-item,
+        [data-theme="dark"] .eligibility-list li,
+        [data-theme="dark"] .eligibility-result,
+        [data-theme="dark"] table,
+        [data-theme="dark"] .expert-card,
+        [data-theme="dark"] .trust-card,
+        [data-theme="dark"] .stat-card {
+            background: #0f2140 !important;
+            border-color: #ffffff !important;
+        }
+        
+        /* Cards internes (dans un conteneur) - légèrement plus clair */
+        [data-theme="dark"] .results-container .result-card,
+        [data-theme="dark"] .results-grid .result-card,
+        [data-theme="dark"] .breakdown .breakdown-item,
+        [data-theme="dark"] .calculator-card .result-box,
+        [data-theme="dark"] .simulator-card .result-card {
+            background: #1e3a5f !important;
+        }
+        
+        /* Tableaux */
+        [data-theme="dark"] table {
+            background: #0f2140 !important;
+        }
+        [data-theme="dark"] table th {
+            background: #1e3a5f !important;
+        }
+        [data-theme="dark"] table td {
+            background: #0f2140 !important;
+            border-color: #ffffff !important;
+        }
+        [data-theme="dark"] table tr:nth-child(even) td {
+            background: #162d50 !important;
+        }
+        
+        /* Inputs restent blancs pour la lisibilité */
+        [data-theme="dark"] input,
+        [data-theme="dark"] select,
+        [data-theme="dark"] textarea {
+            background: #1e3a5f !important;
+            color: #ffffff !important;
+        }
+        
+        /* Éligibilité - couleurs spéciales */
+        [data-theme="dark"] .eligibility-list li.eligible {
+            background: #14532d !important;
+            border-left-color: #4ade80 !important;
+        }
+        [data-theme="dark"] .eligibility-list li.not-eligible {
+            background: #7f1d1d !important;
+            border-left-color: #f87171 !important;
+        }
+        
+        /* Highlight/Warning boxes */
+        [data-theme="dark"] .highlight-box {
+            background: #1e3a5f !important;
+            border-left-color: #c41e3a !important;
+        }
+        [data-theme="dark"] .warning-box {
+            background: #7f1d1d !important;
+            border-left-color: #f87171 !important;
+        }
+        [data-theme="dark"] .info-box {
+            background: #1e3a5f !important;
+            border-color: #3b82f6 !important;
+        }
+        
+        /* Download box garde son gradient */
+        [data-theme="dark"] .download-box {
+            background: linear-gradient(135deg, #1e3a5f, #7f1d1d) !important;
+        }
+        
+        /* CTA box */
+        [data-theme="dark"] .cta-box {
+            background: linear-gradient(135deg, #1e3a5f, #c41e3a) !important;
+        }
+
+    
+        /* ========== ÉLIMINER TOUT LE BLANC EN MODE SOMBRE ========== */
+        /* TOUTES LES CARDS - BLEU FONCÉ */
+        [data-theme="dark"] .card,
+        [data-theme="dark"] .service-card,
+        [data-theme="dark"] .value-card,
+        [data-theme="dark"] .trust-card,
+        [data-theme="dark"] .feature-card,
+        [data-theme="dark"] .floating-card,
+        [data-theme="dark"] .credential-card,
+        [data-theme="dark"] .credential-item,
+        [data-theme="dark"] .article-card,
+        [data-theme="dark"] .tool-card,
+        [data-theme="dark"] .calculator-card,
+        [data-theme="dark"] .simulator-card,
+        [data-theme="dark"] .result-card,
+        [data-theme="dark"] .result-box,
+        [data-theme="dark"] .glossary-item,
+        [data-theme="dark"] .glossary-card,
+        [data-theme="dark"] .month-card,
+        [data-theme="dark"] .deadline-card,
+        [data-theme="dark"] .deadline-item,
+        [data-theme="dark"] .event-card,
+        [data-theme="dark"] .info-box,
+        [data-theme="dark"] .note-box,
+        [data-theme="dark"] .highlight-box,
+        [data-theme="dark"] .warning-box,
+        [data-theme="dark"] .example-box,
+        [data-theme="dark"] .testimonial-box,
+        [data-theme="dark"] .quote-box,
+        [data-theme="dark"] .cta-card,
+        [data-theme="dark"] .stat-card,
+        [data-theme="dark"] .expert-card,
+        [data-theme="dark"] .team-card,
+        [data-theme="dark"] .filter-card,
+        [data-theme="dark"] .legend-item,
+        [data-theme="dark"] .form-card,
+        [data-theme="dark"] .calc-container,
+        [data-theme="dark"] .form-container,
+        [data-theme="dark"] .results-container,
+        [data-theme="dark"] .breakdown,
+        [data-theme="dark"] .breakdown-item,
+        [data-theme="dark"] .eligibility-list li,
+        [data-theme="dark"] .eligibility-result,
+        [data-theme="dark"] table,
+        [data-theme="dark"] blockquote,
+        [data-theme="dark"] .blockquote,
+        [data-theme="dark"] [class*="card"],
+        [data-theme="dark"] [class*="box"],
+        [data-theme="dark"] [class*="item"] {
+            background: #0f2140 !important;
+            background-color: #0f2140 !important;
+            border-color: #ffffff !important;
+        }
+        
+        /* Cards internes - un peu plus clair */
+        [data-theme="dark"] .results-container .result-card,
+        [data-theme="dark"] .breakdown .breakdown-item,
+        [data-theme="dark"] .month-card .deadline-item,
+        [data-theme="dark"] .glossary-item .example-box {
+            background: #1e3a5f !important;
+        }
+        
+        /* TOUS LES TEXTES - VISIBLES */
+        [data-theme="dark"] .card *,
+        [data-theme="dark"] .service-card *,
+        [data-theme="dark"] .value-card *,
+        [data-theme="dark"] .trust-card *,
+        [data-theme="dark"] .credential-card *,
+        [data-theme="dark"] .credential-item *,
+        [data-theme="dark"] .floating-card *,
+        [data-theme="dark"] .glossary-item *,
+        [data-theme="dark"] .month-card *,
+        [data-theme="dark"] .deadline-card *,
+        [data-theme="dark"] .info-box *,
+        [data-theme="dark"] .highlight-box *,
+        [data-theme="dark"] .example-box *,
+        [data-theme="dark"] .testimonial-box *,
+        [data-theme="dark"] .quote-box *,
+        [data-theme="dark"] blockquote *,
+        [data-theme="dark"] [class*="card"] p,
+        [data-theme="dark"] [class*="card"] span,
+        [data-theme="dark"] [class*="card"] div,
+        [data-theme="dark"] [class*="card"] li,
+        [data-theme="dark"] [class*="box"] p,
+        [data-theme="dark"] [class*="box"] span {
+            color: #ffffff !important;
+        }
+        
+        /* Titres dans cards - BLANC */
+        [data-theme="dark"] .card h3,
+        [data-theme="dark"] .card h4,
+        [data-theme="dark"] .service-card h3,
+        [data-theme="dark"] .value-card h3,
+        [data-theme="dark"] .trust-card h3,
+        [data-theme="dark"] .floating-card h4,
+        [data-theme="dark"] .credential-item h4,
+        [data-theme="dark"] .glossary-item h3,
+        [data-theme="dark"] .month-card h3,
+        [data-theme="dark"] .deadline-card h4,
+        [data-theme="dark"] .info-box h4,
+        [data-theme="dark"] .highlight-box h3,
+        [data-theme="dark"] .highlight-box h4,
+        [data-theme="dark"] [class*="card"] h3,
+        [data-theme="dark"] [class*="card"] h4,
+        [data-theme="dark"] [class*="card"] strong,
+        [data-theme="dark"] [class*="box"] h3,
+        [data-theme="dark"] [class*="box"] h4,
+        [data-theme="dark"] [class*="box"] strong {
+            color: #ffffff !important;
+        }
+        
+        /* Labels formulaires */
+        [data-theme="dark"] label,
+        [data-theme="dark"] .label,
+        [data-theme="dark"] .form-group label {
+            color: #f1f5f9 !important;
+            font-weight: 600 !important;
+        }
+        
+        /* Highlight box verte → bleu foncé */
+        [data-theme="dark"] .highlight-box,
+        [data-theme="dark"] .success-box,
+        [data-theme="dark"] .testimonial-box {
+            background: #1e3a5f !important;
+            border-left-color: #4ade80 !important;
+        }
+        
+        /* Warning box */
+        [data-theme="dark"] .warning-box,
+        [data-theme="dark"] .danger-box {
+            background: #1e3a5f !important;
+            border-left-color: #f87171 !important;
+        }
+        
+        /* Info box */
+        [data-theme="dark"] .info-box,
+        [data-theme="dark"] .note-box {
+            background: #1e3a5f !important;
+            border-color: #3b82f6 !important;
+        }
+        
+        /* Example box dans glossaire */
+        [data-theme="dark"] .example-box,
+        [data-theme="dark"] .example {
+            background: #162d50 !important;
+            border-color: #2c5f8d !important;
+        }
+        [data-theme="dark"] .example-box *,
+        [data-theme="dark"] .example * {
+            color: #f1f5f9 !important;
+        }
+        
+        /* Calendrier fiscal - mois cards */
+        [data-theme="dark"] .month-card {
+            background: #0f2140 !important;
+        }
+        [data-theme="dark"] .month-card h3 {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .deadline-item {
+            background: #1e3a5f !important;
+        }
+        [data-theme="dark"] .deadline-item * {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .deadline-item strong {
+            color: #ffffff !important;
+        }
+        
+        /* Filtres calendrier */
+        [data-theme="dark"] .filter-btn {
+            background: #1e3a5f !important;
+            color: #ffffff !important;
+            border-color: #2c5f8d !important;
+        }
+        [data-theme="dark"] .filter-btn.active,
+        [data-theme="dark"] .filter-btn:hover {
+            background: #c41e3a !important;
+            color: #ffffff !important;
+        }
+        
+        /* Légende calendrier */
+        [data-theme="dark"] .legend-item {
+            background: transparent !important;
+        }
+        [data-theme="dark"] .legend-item span {
+            color: #ffffff !important;
+        }
+        
+        /* Inputs restent blancs */
+        [data-theme="dark"] input,
+        [data-theme="dark"] select,
+        [data-theme="dark"] textarea {
+            background: #1e3a5f !important;
+            color: #ffffff !important;
+        }
+        
+        /* Tags/Badges */
+        [data-theme="dark"] .tag,
+        [data-theme="dark"] .badge,
+        [data-theme="dark"] .category-tag {
+            background: #1e3a5f !important;
+            color: #ffffff !important;
+        }
+
+    
+        /* ========== CORRECTION FINALE MODE SOMBRE ========== */
+        /* FOND BLANC → BLEU FONCÉ */
+        [data-theme="dark"] .personalize-section,
+        [data-theme="dark"] .customize-section,
+        [data-theme="dark"] .filter-section,
+        [data-theme="dark"] .calendar-filters,
+        [data-theme="dark"] .form-section,
+        [data-theme="dark"] .example-box,
+        [data-theme="dark"] .example,
+        [data-theme="dark"] .note,
+        [data-theme="dark"] .tip-box,
+        [data-theme="dark"] .quote-box,
+        [data-theme="dark"] blockquote,
+        [data-theme="dark"] .testimonial,
+        [data-theme="dark"] .highlight,
+        [data-theme="dark"] [style*="background: #f"],
+        [data-theme="dark"] [style*="background:#f"],
+        [data-theme="dark"] [style*="background: rgb(2"],
+        [data-theme="dark"] [style*="background-color: #f"],
+        [data-theme="dark"] [style*="background-color:#f"],
+        [data-theme="dark"] [style*="background: #e"],
+        [data-theme="dark"] [style*="background:#e"],
+        [data-theme="dark"] [style*="background-color: #e"] {
+            background: #1e3a5f !important;
+            background-color: #1e3a5f !important;
+        }
+        
+        /* Exemple box jaune/orange → bleu */
+        [data-theme="dark"] .example-box,
+        [data-theme="dark"] .example,
+        [data-theme="dark"] [class*="example"] {
+            background: #162d50 !important;
+            border-color: #2c5f8d !important;
+        }
+        [data-theme="dark"] .example-box *,
+        [data-theme="dark"] .example *,
+        [data-theme="dark"] [class*="example"] * {
+            color: #ffffff !important;
+        }
+        
+        /* LABELS FORMULAIRES - BLANC */
+        [data-theme="dark"] label,
+        [data-theme="dark"] .label,
+        [data-theme="dark"] .form-label,
+        [data-theme="dark"] .form-group label,
+        [data-theme="dark"] .filter-label,
+        [data-theme="dark"] h4,
+        [data-theme="dark"] h5 {
+            color: #ffffff !important;
+            font-weight: 600 !important;
+        }
+        
+        /* Sous-titres et descriptions */
+        [data-theme="dark"] p,
+        [data-theme="dark"] span,
+        [data-theme="dark"] .subtitle,
+        [data-theme="dark"] .description,
+        [data-theme="dark"] .help-text,
+        [data-theme="dark"] small {
+            color: #ffffff !important;
+        }
+        
+        /* ICÔNES - PAS D'ORANGE, ROUGE OU BLEU */
+        [data-theme="dark"] .service-icon,
+        [data-theme="dark"] .trust-icon,
+        [data-theme="dark"] .value-icon,
+        [data-theme="dark"] .feature-icon,
+        [data-theme="dark"] .icon,
+        [data-theme="dark"] i.fa,
+        [data-theme="dark"] i.fas,
+        [data-theme="dark"] i.far,
+        [data-theme="dark"] i.fab,
+        [data-theme="dark"] [class*="icon"] {
+            color: #f87171 !important;
+            background: transparent !important;
+        }
+        
+        /* Icônes dans cards - fond transparent */
+        [data-theme="dark"] .service-card .icon-wrapper,
+        [data-theme="dark"] .value-card .icon-wrapper,
+        [data-theme="dark"] .trust-card .icon-wrapper,
+        [data-theme="dark"] .feature-card .icon-wrapper,
+        [data-theme="dark"] [class*="icon-wrapper"],
+        [data-theme="dark"] [class*="icon-box"] {
+            background: rgba(248, 113, 113, 0.15) !important;
+        }
+        
+        /* Section calendrier personnalisation */
+        [data-theme="dark"] .personalize-card,
+        [data-theme="dark"] .customize-card,
+        [data-theme="dark"] .filter-card {
+            background: #0f2140 !important;
+        }
+        
+        /* TOUS les fonds clairs → bleu foncé */
+        [data-theme="dark"] [style*="#fff"],
+        [data-theme="dark"] [style*="white"],
+        [data-theme="dark"] [style*="#FFF"],
+        [data-theme="dark"] [style*="rgb(255"],
+        [data-theme="dark"] [style*="#fef"],
+        [data-theme="dark"] [style*="#faf"],
+        [data-theme="dark"] [style*="#f0f"],
+        [data-theme="dark"] [style*="#ecf"],
+        [data-theme="dark"] [style*="#e0f"],
+        [data-theme="dark"] [style*="#dbe"],
+        [data-theme="dark"] [style*="#d1f"] {
+            background: #0f2140 !important;
+            background-color: #0f2140 !important;
+        }
+
+    
+        /* ========== FIX SPÉCIFIQUE ========== */
+        /* Calendrier - section profil/personnalisation */
+        [data-theme="dark"] .profile-section,
+        [data-theme="dark"] .profile-header,
+        [data-theme="dark"] .profile-grid,
+        [data-theme="dark"] .profile-item {
+            background: #0f2140 !important;
+        }
+        [data-theme="dark"] .profile-section h3,
+        [data-theme="dark"] .profile-header h3 {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .profile-item label {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .profile-badge {
+            background: #1e3a5f !important;
+            color: #fbbf24 !important;
+        }
+        
+        /* Glossaire - exemple box */
+        [data-theme="dark"] .glossary-example,
+        [data-theme="dark"] .term-example,
+        [data-theme="dark"] .definition-example {
+            background: #162d50 !important;
+        }
+        [data-theme="dark"] .glossary-example *,
+        [data-theme="dark"] .term-example *,
+        [data-theme="dark"] .definition-example * {
+            color: #ffffff !important;
+        }
+        
+        /* Simulateurs - labels invisibles */
+        [data-theme="dark"] .simulator-form label,
+        [data-theme="dark"] .calc-form label,
+        [data-theme="dark"] .form-row label {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .simulator-subtitle,
+        [data-theme="dark"] .calc-subtitle {
+            color: #ffffff !important;
+        }
+        
+        /* Logo - accent rouge */
+        [data-theme="dark"] .logo .accent {
+            color: #f87171 !important;
+        }
+        
+        /* Enlever fond rose/orange sur icônes */
+        [data-theme="dark"] .icon-bg,
+        [data-theme="dark"] .icon-wrapper,
+        [data-theme="dark"] .icon-circle,
+        [data-theme="dark"] .service-icon-wrapper {
+            background: rgba(248, 113, 113, 0.1) !important;
+        }
+        
+        /* Forcer les sections à être sombres */
+        [data-theme="dark"] section,
+        [data-theme="dark"] .section {
+            background: #0a1628 !important;
+        }
+        [data-theme="dark"] section h2,
+        [data-theme="dark"] section h3,
+        [data-theme="dark"] .section h2,
+        [data-theme="dark"] .section h3 {
+            color: #ffffff !important;
+        }
+        
+        /* Sous-sections avec fond clair → bleu */
+        [data-theme="dark"] .sub-section,
+        [data-theme="dark"] .inner-section,
+        [data-theme="dark"] .content-box {
+            background: #0f2140 !important;
+        }
+
+    
+        /* ========== MEGA FIX MODE SOMBRE ========== */
+        /* FORCER TOUT À ÊTRE SOMBRE */
+        [data-theme="dark"] .profile-section {
+            background: #0a1628 !important;
+            background-color: #0a1628 !important;
+        }
+        [data-theme="dark"] .profile-grid {
+            background: transparent !important;
+        }
+        [data-theme="dark"] .profile-item {
+            background: #0f2140 !important;
+            background-color: #0f2140 !important;
+            border-color: #ffffff !important;
+        }
+        [data-theme="dark"] .profile-item label {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .profile-header h3 {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .profile-badge {
+            background: #1e3a5f !important;
+            color: #fbbf24 !important;
+        }
+        
+        /* Month cards */
+        [data-theme="dark"] .month-card {
+            background: #0f2140 !important;
+        }
+        [data-theme="dark"] .month-header {
+            background: linear-gradient(135deg, #1e3a5f, #2c5f8d) !important;
+        }
+        [data-theme="dark"] .events-list {
+            background: #0f2140 !important;
+        }
+        [data-theme="dark"] .event-item {
+            background: #1e3a5f !important;
+            border-color: #2c5f8d !important;
+        }
+        [data-theme="dark"] .event-item:hover {
+            background: #2c5f8d !important;
+        }
+        [data-theme="dark"] .event-item * {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .event-item strong,
+        [data-theme="dark"] .event-item h4 {
+            color: #ffffff !important;
+        }
+        
+        /* Event tags - garder leurs couleurs */
+        [data-theme="dark"] .event-tag {
+            opacity: 0.9;
+        }
+        
+        /* Glossaire */
+        [data-theme="dark"] .glossary-item {
+            background: #0f2140 !important;
+        }
+        [data-theme="dark"] .glossary-item h3 {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .glossary-item p {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .glossary-example,
+        [data-theme="dark"] .example-text,
+        [data-theme="dark"] .glossary-item .example {
+            background: #162d50 !important;
+            color: #f1f5f9 !important;
+        }
+        [data-theme="dark"] .glossary-example * {
+            color: #f1f5f9 !important;
+        }
+        
+        /* Simulateurs labels */
+        [data-theme="dark"] .simulator-card label,
+        [data-theme="dark"] .calculator-card label,
+        [data-theme="dark"] .form-group label {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .simulator-card p,
+        [data-theme="dark"] .simulator-subtitle {
+            color: #ffffff !important;
+        }
+        
+        /* Filter buttons calendrier */
+        [data-theme="dark"] .filter-btn {
+            background: #1e3a5f !important;
+            border-color: #2c5f8d !important;
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .filter-btn.active {
+            background: #c41e3a !important;
+            border-color: #c41e3a !important;
+            color: #ffffff !important;
+        }
+        
+        /* Legend items */
+        [data-theme="dark"] .legend-item {
+            background: transparent !important;
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .legend-item span {
+            color: #ffffff !important;
+        }
+        
+        /* Download CTA */
+        [data-theme="dark"] .download-cta {
+            background: linear-gradient(135deg, #1e3a5f, #c41e3a) !important;
+        }
+        [data-theme="dark"] .btn-download {
+            background: #ffffff !important;
+            color: #1e3a5f !important;
+        }
+        
+        /* TOUT fond avec #f ou #e → bleu */
+        [data-theme="dark"] *[style*="background: #f"],
+        [data-theme="dark"] *[style*="background:#f"],
+        [data-theme="dark"] *[style*="background-color: #f"],
+        [data-theme="dark"] *[style*="background-color:#f"],
+        [data-theme="dark"] *[style*="background: #e"],
+        [data-theme="dark"] *[style*="background:#e"],
+        [data-theme="dark"] *[style*="background: white"],
+        [data-theme="dark"] *[style*="background:white"],
+        [data-theme="dark"] *[style*="background-color: white"],
+        [data-theme="dark"] *[style*="background-color:white"] {
+            background: #0f2140 !important;
+            background-color: #0f2140 !important;
+        }
+
+    
+        /* ========== FIX TRUST-ITEMS & ÉLÉMENTS SPÉCIFIQUES ========== */
+        /* Trust items (Les valeurs qui font notre différence) */
+        [data-theme="dark"] .trust-item {
+            background: #0f2140 !important;
+            background-color: #0f2140 !important;
+            border-color: #ffffff !important;
+        }
+        [data-theme="dark"] .trust-item h3 {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .trust-item p {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .trust-icon {
+            color: #f87171 !important;
+        }
+        
+        /* Service cards */
+        [data-theme="dark"] .service-card {
+            background: #0f2140 !important;
+            border-color: #ffffff !important;
+        }
+        [data-theme="dark"] .service-card h3 {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .service-card p {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .service-icon {
+            color: #f87171 !important;
+        }
+        
+        /* Floating cards (dans hero) */
+        [data-theme="dark"] .floating-card {
+            background: #0f2140 !important;
+            border-color: #ffffff !important;
+        }
+        [data-theme="dark"] .floating-card h4,
+        [data-theme="dark"] .floating-card span {
+            color: #ffffff !important;
+        }
+        
+        /* Credential items (expert section) */
+        [data-theme="dark"] .credential-badge,
+        [data-theme="dark"] .credential-item {
+            background: #0f2140 !important;
+            border-color: #ffffff !important;
+        }
+        [data-theme="dark"] .credential-badge span,
+        [data-theme="dark"] .credential-item span {
+            color: #ffffff !important;
+        }
+        
+        /* Article cards */
+        [data-theme="dark"] .article-card {
+            background: #0f2140 !important;
+            border-color: #ffffff !important;
+        }
+        [data-theme="dark"] .article-card h3,
+        [data-theme="dark"] .article-card h3 a {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .article-card p {
+            color: #ffffff !important;
+        }
+        
+        /* Tool cards */
+        [data-theme="dark"] .tool-card {
+            background: #0f2140 !important;
+            border-color: #ffffff !important;
+        }
+        [data-theme="dark"] .tool-card h3 {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .tool-card p {
+            color: #ffffff !important;
+        }
+        
+        /* Footer */
+        [data-theme="dark"] footer {
+            background: #050d18 !important;
+        }
+
+    
+        /* ========== ULTRA FIX - LABELS BLANCS ========== */
+        /* FORCER TOUS LES LABELS À ÊTRE BLANCS EN MODE SOMBRE */
+        [data-theme="dark"] label,
+        [data-theme="dark"] .label,
+        [data-theme="dark"] .form-group label,
+        [data-theme="dark"] .form-row label,
+        [data-theme="dark"] .simulator-card label,
+        [data-theme="dark"] .calculator-card label,
+        [data-theme="dark"] .calc-form label,
+        [data-theme="dark"] .simulator-form label,
+        [data-theme="dark"] [class*="form"] label,
+        [data-theme="dark"] form label {
+            color: #ffffff !important;
+            font-weight: 600 !important;
+        }
+        
+        /* Corriger result-label et result-value qui étaient en bleu */
+        [data-theme="dark"] .result-label,
+        [data-theme="dark"] .result-value {
+            color: #ffffff !important;
+        }
+        
+        /* Titres des cards - BLANCS pas bleus */
+        [data-theme="dark"] .card h3,
+        [data-theme="dark"] .card h4,
+        [data-theme="dark"] .simulator-card h3,
+        [data-theme="dark"] .calculator-card h3,
+        [data-theme="dark"] .article-card h3,
+        [data-theme="dark"] .tool-card h3,
+        [data-theme="dark"] .glossary-item h3,
+        [data-theme="dark"] .month-card h3 {
+            color: #ffffff !important;
+        }
+        
+        /* Sous-titres et descriptions - gris clair */
+        [data-theme="dark"] .subtitle,
+        [data-theme="dark"] .description,
+        [data-theme="dark"] .simulator-subtitle,
+        [data-theme="dark"] .calc-subtitle {
+            color: #ffffff !important;
+        }
+        
+        /* Card icon - visible */
+        [data-theme="dark"] .card-icon {
+            color: #ffffff !important;
+        }
+        
+        /* Floating cards textes */
+        [data-theme="dark"] .floating-card strong,
+        [data-theme="dark"] .floating-card span,
+        [data-theme="dark"] .card-text strong,
+        [data-theme="dark"] .card-text span {
+            color: #ffffff !important;
+        }
+
+    
+        /* ========== ABSOLUTE FINAL - TOUT SOMBRE ========== */
+        /* FORCER TOUS LES FONDS À ÊTRE SOMBRES */
+        [data-theme="dark"] .simulator-card,
+        [data-theme="dark"] .calculator-card,
+        [data-theme="dark"] .calculator-container,
+        [data-theme="dark"] .calc-container,
+        [data-theme="dark"] .form-container,
+        [data-theme="dark"] .result-box,
+        [data-theme="dark"] .results-container,
+        [data-theme="dark"] .card,
+        [data-theme="dark"] .tool-card,
+        [data-theme="dark"] .article-card,
+        [data-theme="dark"] .glossary-item,
+        [data-theme="dark"] .month-card,
+        [data-theme="dark"] .deadline-card,
+        [data-theme="dark"] .profile-section,
+        [data-theme="dark"] .filter-section {
+            background: #0f2140 !important;
+            background-color: #0f2140 !important;
+        }
+        
+        /* FORCER TOUS LES LABELS/TITRES À ÊTRE BLANCS */
+        [data-theme="dark"] h1,
+        [data-theme="dark"] h2,
+        [data-theme="dark"] h3,
+        [data-theme="dark"] h4,
+        [data-theme="dark"] h5,
+        [data-theme="dark"] label,
+        [data-theme="dark"] .label,
+        [data-theme="dark"] strong,
+        [data-theme="dark"] b,
+        [data-theme="dark"] .title,
+        [data-theme="dark"] .card-title,
+        [data-theme="dark"] .section-title {
+            color: #ffffff !important;
+        }
+        
+        /* FORCER TOUS LES TEXTES À ÊTRE VISIBLES */
+        [data-theme="dark"] p,
+        [data-theme="dark"] span,
+        [data-theme="dark"] div,
+        [data-theme="dark"] li,
+        [data-theme="dark"] td,
+        [data-theme="dark"] .text,
+        [data-theme="dark"] .description,
+        [data-theme="dark"] .subtitle {
+            color: #ffffff !important;
+        }
+        
+        /* INPUTS RESTENT BLANCS POUR ÉCRIRE */
+        [data-theme="dark"] input,
+        [data-theme="dark"] select,
+        [data-theme="dark"] textarea {
+            background: #1e3a5f !important;
+            color: #ffffff !important;
+        }
+
+    
+        /* ========== INPUTS SOMBRES ========== */
+        [data-theme="dark"] input,
+        [data-theme="dark"] select,
+        [data-theme="dark"] textarea,
+        [data-theme="dark"] input[type="text"],
+        [data-theme="dark"] input[type="number"],
+        [data-theme="dark"] input[type="email"],
+        [data-theme="dark"] input[type="tel"],
+        [data-theme="dark"] .form-group input,
+        [data-theme="dark"] .form-group select,
+        [data-theme="dark"] .form-row input,
+        [data-theme="dark"] .form-row select {
+            background: #1e3a5f !important;
+            background-color: #1e3a5f !important;
+            color: #ffffff !important;
+            border-color: #2c5f8d !important;
+        }
+        [data-theme="dark"] input::placeholder,
+        [data-theme="dark"] textarea::placeholder {
+            color: #e2e8f0 !important;
+        }
+        [data-theme="dark"] input:focus,
+        [data-theme="dark"] select:focus,
+        [data-theme="dark"] textarea:focus {
+            border-color: #f87171 !important;
+            box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.2) !important;
+        }
+        [data-theme="dark"] select option {
+            background: #1e3a5f !important;
+            color: #ffffff !important;
+        }
+
+    
+        /* ========== FIX FINAL INPUTS MODE SOMBRE ========== */
+        [data-theme="dark"] input,
+        [data-theme="dark"] select,
+        [data-theme="dark"] textarea,
+        [data-theme="dark"] input[type="text"],
+        [data-theme="dark"] input[type="number"],
+        [data-theme="dark"] input[type="email"],
+        [data-theme="dark"] input[type="tel"],
+        [data-theme="dark"] .form-group input,
+        [data-theme="dark"] .form-group select,
+        [data-theme="dark"] .form-row input,
+        [data-theme="dark"] .form-row select,
+        [data-theme="dark"] .simulator-card input,
+        [data-theme="dark"] .simulator-card select,
+        [data-theme="dark"] .calculator-card input,
+        [data-theme="dark"] .calculator-card select {
+            background: #1e3a5f !important;
+            background-color: #1e3a5f !important;
+            color: #ffffff !important;
+            border: 2px solid #2c5f8d !important;
+            -webkit-text-fill-color: #ffffff !important;
+        }
+        [data-theme="dark"] input::placeholder,
+        [data-theme="dark"] textarea::placeholder {
+            color: #e2e8f0 !important;
+            -webkit-text-fill-color: #e2e8f0 !important;
+        }
+        [data-theme="dark"] select option {
+            background: #1e3a5f !important;
+            color: #ffffff !important;
+        }
+
+    
+        /* ========== TITRES SIMULATEURS MODE SOMBRE ========== */
+        [data-theme="dark"] .simulator-panel,
+        [data-theme="dark"] .simulator-card,
+        [data-theme="dark"] .calculator-panel,
+        [data-theme="dark"] .calculator-card {
+            background: #0f2140 !important;
+        }
+        [data-theme="dark"] .simulator-title,
+        [data-theme="dark"] .calculator-title,
+        [data-theme="dark"] .calc-header,
+        [data-theme="dark"] .simulator-header {
+            background: #0f2140 !important;
+        }
+        [data-theme="dark"] .simulator-title h2,
+        [data-theme="dark"] .calculator-title h2,
+        [data-theme="dark"] .simulator-panel h2,
+        [data-theme="dark"] .calculator-panel h2 {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .simulator-title p,
+        [data-theme="dark"] .calculator-title p,
+        [data-theme="dark"] .simulator-panel > p,
+        [data-theme="dark"] .calculator-panel > p {
+            color: #ffffff !important;
+        }
+
+    
+        /* ========== FORCE ABSOLUE - FOND BLEU ========== */
+        html[data-theme="dark"] .simulator-panel,
+        html[data-theme="dark"] .simulator-panel.active,
+        html[data-theme="dark"] #panel-is,
+        html[data-theme="dark"] #panel-tpme,
+        html[data-theme="dark"] .simulator-card,
+        html[data-theme="dark"] .calculator-card,
+        html[data-theme="dark"] .calculator-container,
+        html[data-theme="dark"] .calc-container,
+        html[data-theme="dark"] .form-section,
+        html[data-theme="dark"] main .simulator-panel,
+        html[data-theme="dark"] main #panel-is,
+        html[data-theme="dark"] main #panel-tpme,
+        body[data-theme="dark"] .simulator-panel,
+        body[data-theme="dark"] #panel-is,
+        body[data-theme="dark"] #panel-tpme {
+            background: #0f2140 !important;
+            background-color: #0f2140 !important;
+        }
+        html[data-theme="dark"] .simulator-title,
+        html[data-theme="dark"] .simulator-title h2,
+        body[data-theme="dark"] .simulator-title,
+        body[data-theme="dark"] .simulator-title h2 {
+            background: #0f2140 !important;
+            color: #ffffff !important;
+        }
+        html[data-theme="dark"] .simulator-title p,
+        body[data-theme="dark"] .simulator-title p {
+            color: #ffffff !important;
+        }
+
+    
+        /* ========== MASTER FIX - MODE CLAIR ========== */
+        /* Tous les textes en mode clair - FONCÉS */
+        html:not([data-theme="dark"]) h1,
+        html:not([data-theme="dark"]) h2,
+        html:not([data-theme="dark"]) h3,
+        html:not([data-theme="dark"]) h4,
+        html:not([data-theme="dark"]) h5,
+        html:not([data-theme="dark"]) h6 {
+            color: #1e3a5f !important;
+        }
+        html:not([data-theme="dark"]) p,
+        html:not([data-theme="dark"]) span,
+        html:not([data-theme="dark"]) div,
+        html:not([data-theme="dark"]) li,
+        html:not([data-theme="dark"]) td,
+        html:not([data-theme="dark"]) th,
+        html:not([data-theme="dark"]) label,
+        html:not([data-theme="dark"]) .label {
+            color: #1e293b !important;
+        }
+        /* Liens en mode clair */
+        html:not([data-theme="dark"]) a {
+            color: #1e3a5f !important;
+        }
+        html:not([data-theme="dark"]) a:hover {
+            color: #c41e3a !important;
+        }
+        /* Exceptions - éléments avec fond coloré gardent texte blanc */
+        html:not([data-theme="dark"]) .btn-primary,
+        html:not([data-theme="dark"]) .cta-button,
+        html:not([data-theme="dark"]) .calc-btn,
+        html:not([data-theme="dark"]) .calculate-btn,
+        html:not([data-theme="dark"]) .btn-calculate,
+        html:not([data-theme="dark"]) button[type="submit"],
+        html:not([data-theme="dark"]) .article-category,
+        html:not([data-theme="dark"]) .category-badge,
+        html:not([data-theme="dark"]) .tag,
+        html:not([data-theme="dark"]) .badge,
+        html:not([data-theme="dark"]) .events-count,
+        html:not([data-theme="dark"]) .event-tag,
+        html:not([data-theme="dark"]) .filter-btn.active {
+            color: #ffffff !important;
+        }
+        /* Hero avec fond gradient - texte blanc OK */
+        html:not([data-theme="dark"]) .hero h1,
+        html:not([data-theme="dark"]) .hero p,
+        html:not([data-theme="dark"]) .hero span,
+        html:not([data-theme="dark"]) .hero a,
+        html:not([data-theme="dark"]) .hero-section h1,
+        html:not([data-theme="dark"]) .hero-section p,
+        html:not([data-theme="dark"]) .page-hero h1,
+        html:not([data-theme="dark"]) .page-hero p,
+        html:not([data-theme="dark"]) .article-hero h1,
+        html:not([data-theme="dark"]) .article-hero p {
+            color: #ffffff !important;
+        }
+        /* Navigation - voir NAVIGATION FIX */
+        /* Footer avec fond bleu - texte blanc OK */
+        html:not([data-theme="dark"]) footer,
+        html:not([data-theme="dark"]) footer p,
+        html:not([data-theme="dark"]) footer a,
+        html:not([data-theme="dark"]) footer span {
+            color: #ffffff !important;
+        }
+        /* Info box avec fond bleu */
+        html:not([data-theme="dark"]) .info-box,
+        html:not([data-theme="dark"]) .info-box p,
+        html:not([data-theme="dark"]) .info-box strong {
+            color: #ffffff !important;
+        }
+        /* Month header avec fond gradient */
+        html:not([data-theme="dark"]) .month-header,
+        html:not([data-theme="dark"]) .month-header h3,
+        html:not([data-theme="dark"]) .month-header span {
+            color: #ffffff !important;
+        }
+        /* Download CTA avec fond gradient */
+        html:not([data-theme="dark"]) .download-cta,
+        html:not([data-theme="dark"]) .download-cta h3,
+        html:not([data-theme="dark"]) .download-cta p {
+            color: #ffffff !important;
+        }
+        /* Inputs en mode clair */
+        html:not([data-theme="dark"]) input,
+        html:not([data-theme="dark"]) select,
+        html:not([data-theme="dark"]) textarea {
+            background: #ffffff !important;
+            color: #1e293b !important;
+            border: 2px solid #e2e8f0 !important;
+        }
+
+    
+        /* ========== FIX TOOL-BTN ========== */
+        html:not([data-theme="dark"]) .tool-btn {
+            background: #c41e3a !important;
+            color: #ffffff !important;
+        }
+        html:not([data-theme="dark"]) .tool-btn:hover {
+            background: #991b1b !important;
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .tool-btn {
+            background: #c41e3a !important;
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .tool-btn:hover {
+            background: #f87171 !important;
+            color: #ffffff !important;
+        }
+
+    
+        /* ========== FINAL CONTRAST FIX ========== */
+        /* Mode CLAIR - forcer textes foncés sur fonds clairs */
+        html:not([data-theme="dark"]) .simulator-title h2,
+        html:not([data-theme="dark"]) .calculator-title h2,
+        html:not([data-theme="dark"]) .simulator-panel h2,
+        html:not([data-theme="dark"]) .calculator-panel h2,
+        html:not([data-theme="dark"]) .form-section h2,
+        html:not([data-theme="dark"]) .form-section h3 {
+            color: #1e3a5f !important;
+        }
+        html:not([data-theme="dark"]) .simulator-title p,
+        html:not([data-theme="dark"]) .calculator-title p,
+        html:not([data-theme="dark"]) .simulator-panel p,
+        html:not([data-theme="dark"]) .form-section p {
+            color: #e2e8f0 !important;
+        }
+        html:not([data-theme="dark"]) label,
+        html:not([data-theme="dark"]) .label,
+        html:not([data-theme="dark"]) .form-group label {
+            color: #1e293b !important;
+        }
+        html:not([data-theme="dark"]) input,
+        html:not([data-theme="dark"]) select,
+        html:not([data-theme="dark"]) textarea {
+            background: #ffffff !important;
+            color: #1e293b !important;
+        }
+        html:not([data-theme="dark"]) .tool-card h3,
+        html:not([data-theme="dark"]) .tool-card p,
+        html:not([data-theme="dark"]) .service-card h3,
+        html:not([data-theme="dark"]) .service-card p,
+        html:not([data-theme="dark"]) .trust-item h3,
+        html:not([data-theme="dark"]) .trust-item p,
+        html:not([data-theme="dark"]) .article-card h3,
+        html:not([data-theme="dark"]) .article-card p,
+        html:not([data-theme="dark"]) .glossary-item h3,
+        html:not([data-theme="dark"]) .glossary-item p {
+            color: #1e293b !important;
+        }
+        html:not([data-theme="dark"]) .breakdown-item .label,
+        html:not([data-theme="dark"]) .breakdown-item span {
+            color: #1e293b !important;
+        }
+        html:not([data-theme="dark"]) .radio-option,
+        html:not([data-theme="dark"]) .radio-option label,
+        html:not([data-theme="dark"]) .checkbox-option,
+        html:not([data-theme="dark"]) .checkbox-option label {
+            color: #1e293b !important;
+        }
+        html:not([data-theme="dark"]) .read-more,
+        html:not([data-theme="dark"]) .article-link {
+            color: #c41e3a !important;
+        }
+        html:not([data-theme="dark"]) .tool-btn {
+            background: #c41e3a !important;
+            color: #ffffff !important;
+        }
+        /* Éléments avec fond coloré - texte blanc OK */
+        html:not([data-theme="dark"]) .btn-primary,
+        html:not([data-theme="dark"]) .calc-btn,
+        html:not([data-theme="dark"]) .calculate-btn,
+        html:not([data-theme="dark"]) button[type="submit"],
+        html:not([data-theme="dark"]) .article-category,
+        html:not([data-theme="dark"]) .category-badge,
+        html:not([data-theme="dark"]) .tag,
+        html:not([data-theme="dark"]) .badge,
+        html:not([data-theme="dark"]) .filter-btn.active,
+        html:not([data-theme="dark"]) .events-count,
+        html:not([data-theme="dark"]) .month-header,
+        html:not([data-theme="dark"]) .month-header *,
+        html:not([data-theme="dark"]) .info-box,
+        html:not([data-theme="dark"]) .info-box *,
+        html:not([data-theme="dark"]) .result-main,
+        html:not([data-theme="dark"]) .result-main *,
+        html:not([data-theme="dark"]) .result-highlight,
+        html:not([data-theme="dark"]) .result-highlight *,
+        html:not([data-theme="dark"]) .net-salary,
+        html:not([data-theme="dark"]) .download-cta,
+        html:not([data-theme="dark"]) .download-cta *,
+        html:not([data-theme="dark"]) .hero h1,
+        html:not([data-theme="dark"]) .hero p,
+        html:not([data-theme="dark"]) .hero-section h1,
+        html:not([data-theme="dark"]) .hero-section p,
+        html:not([data-theme="dark"]) nav a,
+        html:not([data-theme="dark"]) .nav-links a,
+        html:not([data-theme="dark"]) footer,
+        html:not([data-theme="dark"]) footer * {
+            color: #ffffff !important;
+        }
+
+    
+        /* ========== NAVIGATION FIX ========== */
+        /* Mode CLAIR - Navigation texte FONCÉ (fond beige/blanc) */
+        html:not([data-theme="dark"]) nav a,
+        html:not([data-theme="dark"]) .nav-links a {
+            color: #1e3a5f !important;
+        }
+        html:not([data-theme="dark"]) .nav-links a:hover {
+            color: #c41e3a !important;
+        }
+        html:not([data-theme="dark"]) header .logo span:first-child {
+            color: #1e3a5f !important;
+        }
+        html:not([data-theme="dark"]) header .logo .accent {
+            color: #c41e3a !important;
+        }
+        
+        /* Mode SOMBRE - Navigation texte CLAIR */
+        [data-theme="dark"] nav a,
+        [data-theme="dark"] .nav-links a {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .nav-links a:hover {
+            color: #f87171 !important;
+        }
+        [data-theme="dark"] header .logo span:first-child {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] header .logo .accent {
+            color: #f87171 !important;
+        }
+        
+        /* ========== GLOSSAIRE FIX ========== */
+        /* Mode SOMBRE - Glossaire */
+        [data-theme="dark"] .glossary-item {
+            background: #0f2140 !important;
+            border-color: #1e3a5f !important;
+        }
+        [data-theme="dark"] .glossary-item h3 {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .glossary-item p {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .glossary-item .example,
+        [data-theme="dark"] .glossary-item .example-box {
+            background: #162d50 !important;
+            color: #f1f5f9 !important;
+        }
+        [data-theme="dark"] .glossary-item .tag,
+        [data-theme="dark"] .glossary-item .category-tag {
+            background: #1e3a5f !important;
+            color: #ffffff !important;
+        }
+        
+        /* ========== ARTICLES FIX ========== */
+        /* Mode SOMBRE - Articles */
+        [data-theme="dark"] .article-card {
+            background: #0f2140 !important;
+            border-color: #1e3a5f !important;
+        }
+        [data-theme="dark"] .article-card h3,
+        [data-theme="dark"] .article-card h3 a {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .article-card p {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .article-card .date,
+        [data-theme="dark"] .article-card .meta {
+            color: #e2e8f0 !important;
+        }
+        [data-theme="dark"] .article-card .read-more,
+        [data-theme="dark"] .article-card .article-link {
+            color: #f87171 !important;
+        }
+        [data-theme="dark"] .article-content {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .article-content h2,
+        [data-theme="dark"] .article-content h3 {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .article-content p,
+        [data-theme="dark"] .article-content li {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .article-content a {
+            color: #f87171 !important;
+        }
+        
+        /* ========== TOOL CARDS FIX ========== */
+        /* Mode CLAIR - Tool cards */
+        html:not([data-theme="dark"]) .tool-card {
+            background: #ffffff !important;
+        }
+        html:not([data-theme="dark"]) .tool-card h3 {
+            color: #1e3a5f !important;
+        }
+        html:not([data-theme="dark"]) .tool-card p {
+            color: #e2e8f0 !important;
+        }
+        html:not([data-theme="dark"]) .tool-btn {
+            background: #c41e3a !important;
+            color: #ffffff !important;
+        }
+        
+        /* Mode SOMBRE - Tool cards */
+        [data-theme="dark"] .tool-card {
+            background: #0f2140 !important;
+            border-color: #1e3a5f !important;
+        }
+        [data-theme="dark"] .tool-card h3 {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .tool-card p {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .tool-btn {
+            background: #c41e3a !important;
+            color: #ffffff !important;
+        }
+
+    
+        /* ========== FORCER TEXTES BLANCS MODE SOMBRE ========== */
+        [data-theme="dark"] h1,
+        [data-theme="dark"] h2,
+        [data-theme="dark"] h3,
+        [data-theme="dark"] h4,
+        [data-theme="dark"] h5,
+        [data-theme="dark"] h6,
+        [data-theme="dark"] p,
+        [data-theme="dark"] span,
+        [data-theme="dark"] li,
+        [data-theme="dark"] td,
+        [data-theme="dark"] th,
+        [data-theme="dark"] label,
+        [data-theme="dark"] .label,
+        [data-theme="dark"] strong,
+        [data-theme="dark"] b,
+        [data-theme="dark"] .text,
+        [data-theme="dark"] .title,
+        [data-theme="dark"] .subtitle,
+        [data-theme="dark"] .description {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] a {
+            color: #f87171 !important;
+        }
+        [data-theme="dark"] a:hover {
+            color: #fca5a5 !important;
+        }
+        /* Exceptions - garder certaines couleurs */
+        [data-theme="dark"] .tag,
+        [data-theme="dark"] .badge,
+        [data-theme="dark"] .category-tag {
+            color: #ffffff !important;
+            background: #1e3a5f !important;
+        }
+        [data-theme="dark"] input,
+        [data-theme="dark"] select,
+        [data-theme="dark"] textarea {
+            color: #ffffff !important;
+            background: #1e3a5f !important;
+        }
+        [data-theme="dark"] input::placeholder {
+            color: #94a3b8 !important;
+        }
+
+    
+        /* ========== GLOSSAIRE TERM-CARD FIX ========== */
+        [data-theme="dark"] .term-card {
+            background: #0f2140 !important;
+            border-left-color: #f87171 !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3) !important;
+        }
+        [data-theme="dark"] .term-name {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .term-def {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .term-ex {
+            background: #1e3a5f !important;
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .term-ex strong {
+            color: #f87171 !important;
+        }
+        [data-theme="dark"] .term-cat.fiscal {
+            background: #1e3a5f !important;
+            color: #60a5fa !important;
+        }
+        [data-theme="dark"] .term-cat.comptable {
+            background: #064e3b !important;
+            color: #6ee7b7 !important;
+        }
+        [data-theme="dark"] .term-cat.social {
+            background: #4c1d95 !important;
+            color: #c4b5fd !important;
+        }
+        [data-theme="dark"] .term-cat.juridique {
+            background: #78350f !important;
+            color: #fcd34d !important;
+        }
+        [data-theme="dark"] .term-cat.finance {
+            background: #831843 !important;
+            color: #f9a8d4 !important;
+        }
+        [data-theme="dark"] .section-letter {
+            color: #f87171 !important;
+        }
+        [data-theme="dark"] .alphabet-nav a {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .alphabet-nav a.disabled {
+            color: #64748b !important;
+        }
+        [data-theme="dark"] .cat-btn {
+            background: #1e3a5f !important;
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .cat-btn.active {
+            background: #c41e3a !important;
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .search-box {
+            background: #1e3a5f !important;
+        }
+        [data-theme="dark"] .search-box input {
+            background: transparent !important;
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .cta-box {
+            background: #0f2140 !important;
+        }
+        [data-theme="dark"] .cta-box h2,
+        [data-theme="dark"] .cta-box p {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .results-count {
+            color: #ffffff !important;
+        }
+
+    
+        /* ========== FINAL FINAL FIX ========== */
+        /* Info-section en mode sombre */
+        [data-theme="dark"] .info-section {
+            background: #0f2140 !important;
+            border-color: #1e3a5f !important;
+        }
+        [data-theme="dark"] .info-section h3 {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .info-item {
+            background: #0f2140 !important;
+        }
+        [data-theme="dark"] .info-item h4 {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .info-item p {
+            color: #ffffff !important;
+        }
+        
+        /* Bouton .btn en mode CLAIR */
+        html:not([data-theme="dark"]) .btn {
+            background: #c41e3a !important;
+            color: #ffffff !important;
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        html:not([data-theme="dark"]) .btn:hover {
+            background: #991b1b !important;
+            color: #ffffff !important;
+        }
+        
+        /* Bouton .btn en mode SOMBRE */
+        [data-theme="dark"] .btn {
+            background: #c41e3a !important;
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .btn:hover {
+            background: #f87171 !important;
+            color: #ffffff !important;
+        }
+        
+        /* Feature cards */
+        [data-theme="dark"] .feature-card,
+        [data-theme="dark"] .calc-feature,
+        [data-theme="dark"] .feature {
+            background: #0f2140 !important;
+        }
+        [data-theme="dark"] .feature-card h4,
+        [data-theme="dark"] .calc-feature h4,
+        [data-theme="dark"] .feature h4 {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .feature-card p,
+        [data-theme="dark"] .calc-feature p,
+        [data-theme="dark"] .feature p,
+        [data-theme="dark"] .feature-card li,
+        [data-theme="dark"] .calc-feature li,
+        [data-theme="dark"] .feature li {
+            color: #ffffff !important;
+        }
+        
+        /* CTA box */
+        [data-theme="dark"] .cta-box,
+        [data-theme="dark"] .cta-section {
+            background: #0f2140 !important;
+        }
+        [data-theme="dark"] .cta-box h2,
+        [data-theme="dark"] .cta-box h3,
+        [data-theme="dark"] .cta-section h2,
+        [data-theme="dark"] .cta-section h3 {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .cta-box p,
+        [data-theme="dark"] .cta-section p {
+            color: #ffffff !important;
+        }
+        
+        /* Trust items / Value cards */
+        [data-theme="dark"] .trust-item,
+        [data-theme="dark"] .value-card,
+        [data-theme="dark"] .trust-card {
+            background: #0f2140 !important;
+        }
+        [data-theme="dark"] .trust-item h3,
+        [data-theme="dark"] .trust-item h4,
+        [data-theme="dark"] .value-card h3,
+        [data-theme="dark"] .value-card h4,
+        [data-theme="dark"] .trust-card h3,
+        [data-theme="dark"] .trust-card h4 {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .trust-item p,
+        [data-theme="dark"] .value-card p,
+        [data-theme="dark"] .trust-card p {
+            color: #ffffff !important;
+        }
+
+    
+        /* ========== ULTIMATE FIX - OVERRIDE TOUT ========== */
+        /* MODE CLAIR - Tous les textes FONCÉS */
+        html:not([data-theme="dark"]) body,
+        html:not([data-theme="dark"]) main,
+        html:not([data-theme="dark"]) section,
+        html:not([data-theme="dark"]) article,
+        html:not([data-theme="dark"]) div:not(.hero):not(.hero-section):not(.page-hero):not(.nav-links):not(.info-box):not(.month-header):not(.download-cta):not(.result-main):not(.result-highlight) {
+            color: #1e293b;
+        }
+        html:not([data-theme="dark"]) h1:not(.hero h1):not(.hero-section h1):not(.page-hero h1),
+        html:not([data-theme="dark"]) h2:not(.hero h2),
+        html:not([data-theme="dark"]) h3:not(.info-box h3):not(.month-header h3),
+        html:not([data-theme="dark"]) h4,
+        html:not([data-theme="dark"]) h5,
+        html:not([data-theme="dark"]) h6 {
+            color: #1e3a5f !important;
+        }
+        html:not([data-theme="dark"]) p:not(.hero p):not(.hero-section p):not(.page-hero p):not(.info-box p):not(.download-cta p):not(footer p),
+        html:not([data-theme="dark"]) span:not(.hero span):not(nav span):not(footer span),
+        html:not([data-theme="dark"]) li:not(.info-box li):not(footer li),
+        html:not([data-theme="dark"]) td,
+        html:not([data-theme="dark"]) th {
+            color: #1e293b !important;
+        }
+        html:not([data-theme="dark"]) label,
+        html:not([data-theme="dark"]) .label,
+        html:not([data-theme="dark"]) .form-group label {
+            color: #1e293b !important;
+        }
+        html:not([data-theme="dark"]) input,
+        html:not([data-theme="dark"]) select,
+        html:not([data-theme="dark"]) textarea {
+            background: #ffffff !important;
+            color: #1e293b !important;
+            border: 2px solid #e2e8f0 !important;
+        }
+        /* Cards mode clair */
+        html:not([data-theme="dark"]) .card,
+        html:not([data-theme="dark"]) .article-card,
+        html:not([data-theme="dark"]) .tool-card,
+        html:not([data-theme="dark"]) .service-card,
+        html:not([data-theme="dark"]) .trust-item,
+        html:not([data-theme="dark"]) .value-card,
+        html:not([data-theme="dark"]) .feature-card,
+        html:not([data-theme="dark"]) .info-item,
+        html:not([data-theme="dark"]) .glossary-item,
+        html:not([data-theme="dark"]) .term-card,
+        html:not([data-theme="dark"]) .floating-card,
+        html:not([data-theme="dark"]) .simulator-card,
+        html:not([data-theme="dark"]) .calculator-card {
+            background: #ffffff !important;
+        }
+        html:not([data-theme="dark"]) .card h3,
+        html:not([data-theme="dark"]) .card h4,
+        html:not([data-theme="dark"]) .article-card h3,
+        html:not([data-theme="dark"]) .tool-card h3,
+        html:not([data-theme="dark"]) .service-card h3,
+        html:not([data-theme="dark"]) .trust-item h3,
+        html:not([data-theme="dark"]) .value-card h3,
+        html:not([data-theme="dark"]) .feature-card h4,
+        html:not([data-theme="dark"]) .info-item h4,
+        html:not([data-theme="dark"]) .floating-card h3 {
+            color: #1e3a5f !important;
+        }
+        html:not([data-theme="dark"]) .card p,
+        html:not([data-theme="dark"]) .article-card p,
+        html:not([data-theme="dark"]) .tool-card p,
+        html:not([data-theme="dark"]) .service-card p,
+        html:not([data-theme="dark"]) .trust-item p,
+        html:not([data-theme="dark"]) .value-card p,
+        html:not([data-theme="dark"]) .feature-card p,
+        html:not([data-theme="dark"]) .info-item p,
+        html:not([data-theme="dark"]) .floating-card p {
+            color: #475569 !important;
+        }
+        /* Navigation mode clair */
+        html:not([data-theme="dark"]) .nav-links a {
+            color: #1e3a5f !important;
+        }
+        html:not([data-theme="dark"]) .nav-links a:hover {
+            color: #c41e3a !important;
+        }
+        /* Info section mode clair */
+        html:not([data-theme="dark"]) .info-section {
+            background: #f0f9ff !important;
+            border-color: #3b82f6 !important;
+        }
+        html:not([data-theme="dark"]) .info-section h3 {
+            color: #1e3a5f !important;
+        }
+        html:not([data-theme="dark"]) .info-item h4 {
+            color: #1e3a5f !important;
+        }
+        html:not([data-theme="dark"]) .info-item p {
+            color: #475569 !important;
+        }
+        /* Boutons - texte blanc sur fond coloré */
+        html:not([data-theme="dark"]) .btn,
+        html:not([data-theme="dark"]) .btn-primary,
+        html:not([data-theme="dark"]) .calc-btn,
+        html:not([data-theme="dark"]) .calculate-btn,
+        html:not([data-theme="dark"]) .tool-btn,
+        html:not([data-theme="dark"]) button[type="submit"] {
+            background: #c41e3a !important;
+            color: #ffffff !important;
+        }
+        
+        /* MODE SOMBRE - Tous les textes BLANCS */
+        [data-theme="dark"] body,
+        [data-theme="dark"] main,
+        [data-theme="dark"] section,
+        [data-theme="dark"] article {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] h1,
+        [data-theme="dark"] h2,
+        [data-theme="dark"] h3,
+        [data-theme="dark"] h4,
+        [data-theme="dark"] h5,
+        [data-theme="dark"] h6 {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] p,
+        [data-theme="dark"] span,
+        [data-theme="dark"] li,
+        [data-theme="dark"] td,
+        [data-theme="dark"] th,
+        [data-theme="dark"] label,
+        [data-theme="dark"] strong,
+        [data-theme="dark"] b {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] a:not(.btn):not(.tool-btn):not(.nav-links a) {
+            color: #f87171 !important;
+        }
+        /* Cards mode sombre */
+        [data-theme="dark"] .card,
+        [data-theme="dark"] .article-card,
+        [data-theme="dark"] .tool-card,
+        [data-theme="dark"] .service-card,
+        [data-theme="dark"] .trust-item,
+        [data-theme="dark"] .value-card,
+        [data-theme="dark"] .feature-card,
+        [data-theme="dark"] .info-item,
+        [data-theme="dark"] .info-section,
+        [data-theme="dark"] .glossary-item,
+        [data-theme="dark"] .term-card,
+        [data-theme="dark"] .floating-card,
+        [data-theme="dark"] .simulator-card,
+        [data-theme="dark"] .calculator-card,
+        [data-theme="dark"] .simulator-panel,
+        [data-theme="dark"] .cta-box {
+            background: #0f2140 !important;
+        }
+        [data-theme="dark"] .card h3,
+        [data-theme="dark"] .card h4,
+        [data-theme="dark"] .card p,
+        [data-theme="dark"] .article-card h3,
+        [data-theme="dark"] .article-card p,
+        [data-theme="dark"] .tool-card h3,
+        [data-theme="dark"] .tool-card p,
+        [data-theme="dark"] .service-card h3,
+        [data-theme="dark"] .service-card p,
+        [data-theme="dark"] .trust-item h3,
+        [data-theme="dark"] .trust-item h4,
+        [data-theme="dark"] .trust-item p,
+        [data-theme="dark"] .value-card h3,
+        [data-theme="dark"] .value-card p,
+        [data-theme="dark"] .feature-card h4,
+        [data-theme="dark"] .feature-card p,
+        [data-theme="dark"] .info-item h4,
+        [data-theme="dark"] .info-item p,
+        [data-theme="dark"] .info-section h3,
+        [data-theme="dark"] .floating-card h3,
+        [data-theme="dark"] .floating-card p,
+        [data-theme="dark"] .cta-box h2,
+        [data-theme="dark"] .cta-box h3,
+        [data-theme="dark"] .cta-box p {
+            color: #ffffff !important;
+        }
+        /* Navigation mode sombre */
+        [data-theme="dark"] .nav-links a {
+            color: #e2e8f0 !important;
+        }
+        [data-theme="dark"] .nav-links a:hover {
+            color: #f87171 !important;
+        }
+        /* Inputs mode sombre */
+        [data-theme="dark"] input,
+        [data-theme="dark"] select,
+        [data-theme="dark"] textarea {
+            background: #1e3a5f !important;
+            color: #ffffff !important;
+            border-color: #3b82f6 !important;
+        }
+
+    </style>
+</head>
+<body>
+    <nav><div class="nav-container"><a href="index.html" class="logo"><span>First Audit</span> <span class="accent">et Conseils</span></a><ul class="nav-links"><li><a href="index.html">Accueil</a></li><li><a href="blog.html">Articles</a></li><li><a href="simulateurs.html">Simulateurs</a></li><li><a href="calendrier-fiscal.html">Calendrier</a></li><li><a href="glossaire.html">Glossaire</a></li></ul></div></nav>
+    <section class="hero"><h1>📖 Glossaire Comptable & Fiscal</h1><p>Plus de 50 termes expliqués simplement pour comprendre la comptabilité et la fiscalité au Maroc</p></section>
+    <main class="main-content">
+        <div class="search-box"><span class="icon">🔍</span><input type="text" id="searchInput" placeholder="Rechercher un terme..." onkeyup="renderGlossary()"></div>
+        <div class="results-count" id="resultsCount"></div>
+        <div class="category-filter"><button class="cat-btn active" onclick="setCategory('all',this)">Tous</button><button class="cat-btn" onclick="setCategory('fiscal',this)">Fiscal</button><button class="cat-btn" onclick="setCategory('comptable',this)">Comptable</button><button class="cat-btn" onclick="setCategory('social',this)">Social</button><button class="cat-btn" onclick="setCategory('juridique',this)">Juridique</button><button class="cat-btn" onclick="setCategory('finance',this)">Finance</button></div>
+        <div class="alphabet-nav" id="alphabetNav"></div>
+        <div id="glossaryContent"></div>
+        <div class="cta-box"><h2>🤔 Un terme vous échappe ?</h2><p>Nos experts-comptables sont là pour répondre à toutes vos questions</p><a href="index.html#contact" class="btn">📞 Nous contacter</a></div>
+    </main>
+    <footer><p>© 2026 First Audit & Conseils. Tous droits réservés.</p><p>Expert-comptable - Membre de l'Ordre des Experts Comptables du Maroc</p><div class="footer-links"><a href="index.html">Accueil</a><a href="blog.html">Articles</a><a href="simulateurs.html">Simulateurs</a><a href="calendrier-fiscal.html">Calendrier</a><a href="glossaire.html">Glossaire</a></div></footer>
+    <script>
+const terms = [
+{ term: "Acompte provisionnel", cat: "fiscal", def: "Versement anticipé d'impôt effectué par une entreprise, calculé sur la base de l'impôt de l'année précédente. Au Maroc, l'IS est payé en 4 acomptes trimestriels de 25% chacun.", ex: "Une société ayant payé 100 000 DH d'IS en 2025 devra verser 4 acomptes de 25 000 DH chacun en 2026." },
+{ term: "Actif", cat: "comptable", def: "Ensemble des biens et droits que possède une entreprise. L'actif figure à gauche du bilan et comprend l'actif immobilisé et l'actif circulant." },
+{ term: "Amortissement", cat: "comptable", def: "Constatation comptable de la dépréciation d'un actif immobilisé due à l'usure ou à l'obsolescence.", ex: "Un véhicule acheté 200 000 DH et amorti sur 5 ans génère une dotation annuelle de 40 000 DH." },
+{ term: "AMO", cat: "social", def: "Assurance Maladie Obligatoire. Régime de couverture médicale obligatoire au Maroc géré par la CNSS pour le secteur privé." },
+{ term: "Auto-entrepreneur", cat: "juridique", def: "Statut simplifié pour les personnes physiques exerçant une activité professionnelle de manière indépendante avec un CA plafonné." },
+{ term: "Balance", cat: "comptable", def: "Document comptable récapitulant l'ensemble des comptes avec leurs soldes débiteurs et créditeurs." },
+{ term: "Bénéfice", cat: "comptable", def: "Résultat positif d'une entreprise quand les produits excèdent les charges." },
+{ term: "Bilan", cat: "comptable", def: "État de synthèse présentant la situation patrimoniale de l'entreprise à une date donnée.", ex: "Le bilan au 31/12 montre un total actif de 5 millions DH équilibré avec le passif." },
+{ term: "Capital social", cat: "juridique", def: "Montant des apports effectués par les associés lors de la création de la société. Depuis 2011, il n'y a plus de capital minimum pour une SARL (peut être fixé à 1 DH). Pour une SA : minimum 300 000 DH (ou 3 millions DH si appel public à l'épargne)." },
+{ term: "Charges déductibles", cat: "fiscal", def: "Dépenses que l'entreprise peut soustraire de son résultat imposable pour réduire sa base d'imposition." },
+{ term: "Chiffre d'affaires", cat: "comptable", def: "Montant total des ventes de biens ou services réalisées par une entreprise sur une période donnée, hors taxes.", ex: "CA 2025 = 2 500 000 DH HT." },
+{ term: "CNSS", cat: "social", def: "Caisse Nationale de Sécurité Sociale. Organisme marocain gérant le régime de sécurité sociale des salariés du secteur privé." },
+{ term: "Compte de résultat", cat: "comptable", def: "État de synthèse récapitulant les produits et les charges de l'exercice pour déterminer le résultat net." },
+{ term: "Cotisation minimale", cat: "fiscal", def: "Montant minimum d'impôt dû par une entreprise, même en cas de déficit. Au Maroc : 0,25% du CA avec un minimum de 3 000 DH." },
+{ term: "Créance", cat: "comptable", def: "Somme d'argent qu'un tiers doit à l'entreprise. Les créances clients représentent les ventes non encore encaissées." },
+{ term: "Crédit d'impôt", cat: "fiscal", def: "Réduction d'impôt accordée par l'État pour encourager certains comportements ou investissements." },
+{ term: "Déclaration fiscale", cat: "fiscal", def: "Document officiel transmis à l'administration fiscale déclarant les revenus, bénéfices ou opérations imposables." },
+{ term: "Déficit", cat: "comptable", def: "Résultat négatif d'une entreprise. Le déficit fiscal peut être reporté sur les exercices suivants (4 ans au Maroc)." },
+{ term: "Dotation aux amortissements", cat: "comptable", def: "Charge comptable constatant la dépréciation annuelle des immobilisations. Réduit le résultat imposable sans sortie de trésorerie." },
+{ term: "Droit d'enregistrement", cat: "fiscal", def: "Impôt perçu lors de certaines opérations juridiques : création de société, cession de parts, acquisition immobilière." },
+{ term: "EBITDA", cat: "finance", def: "Earnings Before Interest, Taxes, Depreciation and Amortization. Indicateur de performance opérationnelle." },
+{ term: "Exercice comptable", cat: "comptable", def: "Période de 12 mois pour laquelle les comptes sont arrêtés, généralement l'année civile au Maroc." },
+{ term: "Exonération", cat: "fiscal", def: "Dispense totale ou partielle du paiement d'un impôt accordée par la loi." },
+{ term: "Facture", cat: "comptable", def: "Document commercial obligatoire détaillant une vente ou prestation avec mentions légales obligatoires." },
+{ term: "Fait générateur", cat: "fiscal", def: "Événement qui donne naissance à l'obligation fiscale. Pour la TVA, c'est la livraison ou l'achèvement de la prestation." },
+{ term: "Fonds de roulement", cat: "finance", def: "Différence entre les capitaux permanents et l'actif immobilisé. Mesure la capacité à financer le cycle d'exploitation." },
+{ term: "Grand livre", cat: "comptable", def: "Registre comptable reprenant l'ensemble des comptes avec leurs mouvements." },
+{ term: "Immobilisation", cat: "comptable", def: "Bien destiné à servir de façon durable à l'activité de l'entreprise, inscrit à l'actif et amorti." },
+{ term: "Impôt sur le Revenu (IR)", cat: "fiscal", def: "Impôt prélevé sur les revenus des personnes physiques au Maroc. Barème progressif de 0% à 38%." },
+{ term: "Impôt sur les Sociétés (IS)", cat: "fiscal", def: "Impôt sur les bénéfices des sociétés. Taux de 20% pour bénéfices < 100 M DH, 35% au-delà, 40% pour établissements financiers.", ex: "Une SARL avec 5 M DH de bénéfice paie 1 M DH d'IS (5M x 20%)." },
+{ term: "Journal comptable", cat: "comptable", def: "Registre chronologique où sont enregistrées toutes les opérations comptables de l'entreprise." },
+{ term: "Lettre de mission", cat: "juridique", def: "Contrat entre un expert-comptable et son client définissant la nature de la mission et les honoraires." },
+{ term: "Liasse fiscale", cat: "fiscal", def: "Ensemble des documents comptables et fiscaux à transmettre à l'administration fiscale." },
+{ term: "Marge brute", cat: "finance", def: "Différence entre le chiffre d'affaires et le coût d'achat des marchandises vendues." },
+{ term: "Passif", cat: "comptable", def: "Ensemble des ressources de l'entreprise : capitaux propres et dettes, figurant à droite du bilan." },
+{ term: "Plan comptable", cat: "comptable", def: "Liste normalisée des comptes utilisés en comptabilité. Au Maroc : Plan Comptable Général des Entreprises (PCGE)." },
+{ term: "Plus-value", cat: "fiscal", def: "Gain réalisé lors de la cession d'un actif quand le prix de vente excède la valeur nette comptable." },
+{ term: "Provision", cat: "comptable", def: "Charge enregistrée pour faire face à un risque probable ou à une dépréciation d'actif." },
+{ term: "Résultat fiscal", cat: "fiscal", def: "Base de calcul de l'impôt obtenue après réintégrations et déductions au résultat comptable." },
+{ term: "Retenue à la source", cat: "fiscal", def: "Prélèvement d'impôt effectué directement par le débiteur d'un revenu avant versement au bénéficiaire." },
+{ term: "SARL", cat: "juridique", def: "Société à Responsabilité Limitée. Forme juridique la plus répandue au Maroc. Pas de capital minimum (librement fixé par les associés depuis 2011), responsabilité limitée aux apports, 1 à 50 associés." },
+{ term: "SAS", cat: "juridique", def: "Société par Actions Simplifiée. Forme juridique offrant une grande flexibilité statutaire." },
+{ term: "Solde Intermédiaire de Gestion (SIG)", cat: "comptable", def: "Indicateurs calculés à partir du compte de résultat pour analyser la formation du résultat." },
+{ term: "Taxe professionnelle", cat: "fiscal", def: "Impôt local dû par les entreprises, calculé sur la valeur locative des locaux professionnels." },
+{ term: "Taxe sur la Valeur Ajoutée (TVA)", cat: "fiscal", def: "Impôt indirect sur la consommation. Taux normal 20%, taux réduits 14%, 10% et 7%.", ex: "Vente de 10 000 DH HT = 12 000 DH TTC (avec TVA 20%)." },
+{ term: "TPME", cat: "juridique", def: "Très Petites et Moyennes Entreprises. Catégorie bénéficiant d'avantages fiscaux et programmes d'aide au Maroc." },
+{ term: "Trésorerie", cat: "finance", def: "Ensemble des disponibilités immédiates de l'entreprise : caisse et comptes bancaires." },
+{ term: "Valeur ajoutée", cat: "comptable", def: "Richesse créée par l'entreprise, différence entre la production et les consommations intermédiaires." },
+{ term: "Zone franche d'exportation", cat: "fiscal", def: "Zone géographique bénéficiant d'un régime fiscal privilégié pour attirer les investissements." }
+];
+
+let currentCat = 'all';
+const catLabels = { fiscal: 'Fiscal', comptable: 'Comptable', social: 'Social', juridique: 'Juridique', finance: 'Finance' };
+
+function setCategory(cat, btn) {
+    currentCat = cat;
+    document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderGlossary();
+}
+
+function renderGlossary() {
+    const search = document.getElementById('searchInput').value.toLowerCase();
+    const filtered = terms.filter(t => {
+        const matchSearch = t.term.toLowerCase().includes(search) || t.def.toLowerCase().includes(search);
+        const matchCat = currentCat === 'all' || t.cat === currentCat;
+        return matchSearch && matchCat;
+    });
+
+    document.getElementById('resultsCount').textContent = filtered.length + ' terme' + (filtered.length > 1 ? 's' : '') + ' trouvé' + (filtered.length > 1 ? 's' : '');
+
+    const grouped = {};
+    filtered.forEach(t => {
+        const letter = t.term.charAt(0).toUpperCase();
+        if (!grouped[letter]) grouped[letter] = [];
+        grouped[letter].push(t);
+    });
+
+    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+    document.getElementById('alphabetNav').innerHTML = alphabet.map(l => 
+        '<a href="#letter-' + l + '" class="' + (grouped[l] ? '' : 'disabled') + '">' + l + '</a>'
+    ).join('');
+
+    let html = '';
+    Object.keys(grouped).sort().forEach(letter => {
+        html += '<h2 class="section-letter" id="letter-' + letter + '">' + letter + '</h2>';
+        grouped[letter].forEach(t => {
+            html += '<div class="term-card"><div class="term-header"><span class="term-name">' + t.term + '</span><span class="term-cat ' + t.cat + '">' + catLabels[t.cat] + '</span></div><p class="term-def">' + t.def + '</p>';
+            if (t.ex) html += '<div class="term-ex"><strong>Exemple :</strong> ' + t.ex + '</div>';
+            html += '</div>';
+        });
+    });
+
+    if (filtered.length === 0) {
+        html = '<div style="text-align:center;padding:3rem;color:var(--color-gray)"><p style="font-size:3rem">🔍</p><p>Aucun terme trouvé.</p></div>';
+    }
+
+    document.getElementById('glossaryContent').innerHTML = html;
+}
+
+document.addEventListener('click', function(e) {
+    if (e.target.matches('.alphabet-nav a')) {
+        e.preventDefault();
+        const el = document.getElementById(e.target.getAttribute('href').substring(1));
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+});
+
+renderGlossary();
+    </script>
+
+    <!-- Bouton Mode Sombre -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Changer de thème">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+    </button>
+
+
+    <script>
+        // Mode Sombre Toggle
+        const themeToggle = document.getElementById("themeToggle");
+        const html = document.documentElement;
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) { html.setAttribute("data-theme", savedTheme); }
+        if (themeToggle) {
+            themeToggle.addEventListener("click", () => {
+                const currentTheme = html.getAttribute("data-theme");
+                const newTheme = currentTheme === "dark" ? "light" : "dark";
+                html.setAttribute("data-theme", newTheme);
+                localStorage.setItem("theme", newTheme);
+            });
+        }
+    </script>
+
+</body>
+</html>
