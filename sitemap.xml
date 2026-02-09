@@ -16,6 +16,27 @@
   </url>
 
   <url>
+    <loc>https://firstaudit.ma/outils</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://firstaudit.ma/salaire-net__1_</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://firstaudit.ma/simulateurs__1_</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://firstaudit.ma/creer-entreprise</loc>
     <lastmod>2026-01-08</lastmod>
     <changefreq>monthly</changefreq>
@@ -51,9 +72,44 @@
   </url>
 
   <url>
+    <loc>https://firstaudit.ma/tpme-maroc</loc>
+    <lastmod>2026-01-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://firstaudit.ma/digitalisation-comptable</loc>
     <lastmod>2026-01-10</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://firstaudit.ma/recettes-fiscales-2025</loc>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://firstaudit.ma/mutations-2026</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://firstaudit.ma/notification-dgimpots</loc>
+    <lastmod>2026-01-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://firstaudit.ma/tendances-creation-2025</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
