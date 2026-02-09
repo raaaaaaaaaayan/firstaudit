@@ -1,0 +1,21 @@
+{
+  "name": "First Audit & Conseils",
+  "short_name": "First Audit",
+  "description": "Cabinet d'expertise comptable à Rabat",
+  "icons": [
+    {
+      "src": "/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#1e3a5f",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/"
+}
