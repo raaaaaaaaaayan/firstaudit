@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://firstaudit.ma/sitemap.xml
+
+# Pages importantes
+Allow: /
+Allow: /blog
+Allow: /salaire-net__1_
+Allow: /calendrier-fiscal
+Allow: /simulateurs__1_
+Allow: /glossaire
+Allow: /outils
+Allow: /loi-finances-2026
+Allow: /impot-societes-2026
+Allow: /creer-entreprise
+Allow: /tpme-maroc
+Allow: /digitalisation-comptable
+Allow: /recettes-fiscales-2025
+Allow: /mutations-2026
+Allow: /notification-dgimpots
+Allow: /tendances-creation-2025
