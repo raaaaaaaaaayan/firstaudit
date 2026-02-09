@@ -3,3 +3,34 @@ Allow: /
 
 Sitemap: https://firstaudit.ma/sitemap.xml
 
+# Pages importantes - Articles
+Allow: /articles
+Allow: /article-loi-finances-2026
+Allow: /article-cgi-2026
+Allow: /article-creation-entreprise
+Allow: /article-creations-entreprises-2025
+Allow: /article-digitalisation-comptable
+Allow: /article-dispositif-tpme
+Allow: /article-notification-electronique-2026
+Allow: /article-recettes-fiscales-2025
+
+# Pages importantes - Outils et calculateurs
+Allow: /calculateur-salaire-net
+Allow: /calendrier-fiscal
+Allow: /simulateurs
+Allow: /glossaire
+
+# Bloquer les fichiers système
+Disallow: /cgi-bin/
+Disallow: /*.php$
+Disallow: /*.inc$
+Disallow: /*.gz$
+
+# Autoriser CSS, JS et images pour le rendu
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.webp$
+
