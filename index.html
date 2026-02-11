@@ -33,6 +33,10 @@
 <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png">
 <link rel="manifest" href="/site.webmanifest">
 
+    <!-- Préconnexion Google Fonts pour améliorer les performances -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -499,10 +503,12 @@
             position: absolute;
             bottom: -5px;
             left: 0;
-            width: 0;
+            width: 100%;
             height: 2px;
             background: var(--color-secondary);
-            transition: width 0.3s ease;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
         }
 
         .nav-links a:hover {
@@ -510,7 +516,7 @@
         }
 
         .nav-links a:hover::after {
-            width: 100%;
+            transform: scaleX(1);
         }
 
         /* Hero Section */
@@ -681,15 +687,16 @@
             content: '';
             position: absolute;
             top: 0;
-            left: -100%;
+            left: 0;
             width: 100%;
             height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
+            transform: translateX(-100%);
+            transition: transform 0.5s;
         }
 
         .hero-feature-item:hover::before {
-            left: 100%;
+            transform: translateX(100%);
         }
 
         .hero-feature-item:nth-child(1) { animation-delay: 0.3s; }
@@ -793,15 +800,16 @@
             content: '';
             position: absolute;
             top: 0;
-            left: -100%;
+            left: 0;
             width: 100%;
             height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s;
+            transform: translateX(-100%);
+            transition: transform 0.5s;
         }
 
         .cta-primary:hover::before {
-            left: 100%;
+            transform: translateX(100%);
         }
 
         .cta-primary:hover {
@@ -1699,10 +1707,12 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 0;
+            width: 100%;
             height: 4px;
             background: var(--color-secondary);
-            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .partner-card:hover {
@@ -1711,7 +1721,7 @@
         }
 
         .partner-card:hover::before {
-            width: 100%;
+            transform: scaleX(1);
         }
 
         .partner-logo {
@@ -5119,7 +5129,12 @@
         <div class="section-container">
             <div class="expert-content">
                 <div class="expert-image">
-                    <img src="expert-comptable.webp" alt="El Hassan Boukhanni - Expert-Comptable">
+                    <img src="expert-comptable.webp" 
+                         alt="El Hassan Boukhanni - Expert-Comptable"
+                         width="315"
+                         height="329"
+                         loading="lazy"
+                         decoding="async">
                     <div class="expert-badge">
                         <span>✓</span> Expert-Comptable DPLÉ
                     </div>
