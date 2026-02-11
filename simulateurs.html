@@ -2584,11 +2584,12 @@
         html:not([data-theme="dark"]) footer span {
             color: #ffffff !important;
         }
-        /* Info box avec fond bleu */
+        /* Info box avec fond bleu - Texte NOIR en mode clair pour contraste maximum */
         html:not([data-theme="dark"]) .info-box,
         html:not([data-theme="dark"]) .info-box p,
+        html:not([data-theme="dark"]) .info-box li,
         html:not([data-theme="dark"]) .info-box strong {
-            color: #ffffff !important;
+            color: #000000 !important;
         }
         /* Month header avec fond gradient */
         html:not([data-theme="dark"]) .month-header,
@@ -2701,8 +2702,6 @@
         html:not([data-theme="dark"]) .events-count,
         html:not([data-theme="dark"]) .month-header,
         html:not([data-theme="dark"]) .month-header *,
-        html:not([data-theme="dark"]) .info-box,
-        html:not([data-theme="dark"]) .info-box *,
         html:not([data-theme="dark"]) .result-main,
         html:not([data-theme="dark"]) .result-main *,
         html:not([data-theme="dark"]) .result-highlight,
@@ -3186,6 +3185,17 @@
             background: #1e3a5f !important;
             color: #ffffff !important;
             border-color: #3b82f6 !important;
+        }
+
+        /* ========== FIX FINAL - INFO-BOX MODE CLAIR ========== */
+        /* Règle ultra-spécifique pour garantir visibilité */
+        html:not([data-theme="dark"]) .info-box p,
+        html:not([data-theme="dark"]) .info-box p strong,
+        html:not([data-theme="dark"]) .info-box strong,
+        html:not([data-theme="dark"]) .info-box li,
+        html:not([data-theme="dark"]) .info-box span {
+            color: #000000 !important;
+            background: transparent !important;
         }
 
     </style>
