@@ -370,15 +370,19 @@
         }
 
         [data-theme="dark"] .map-info {
-            background: #ffffff;
+            background: #ffffff !important;
         }
 
-        [data-theme="dark"] .map-info p {
-            color: #1e3a5f;
+        [data-theme="dark"] .map-info p,
+        [data-theme="dark"] .map-info .address-text {
+            color: #1e3a5f !important;
+            background: transparent !important;
         }
 
-        [data-theme="dark"] .map-info a {
-            color: #3b82f6;
+        [data-theme="dark"] .map-info a,
+        [data-theme="dark"] .map-directions {
+            color: #ffffff !important;
+            background: #1e3a5f !important;
         }
 
         [data-theme="dark"] footer p {
@@ -4981,6 +4985,7 @@
         </div>
     </nav>
 
+    <main>
     <!-- Hero Section -->
     <section id="accueil" class="hero">
         <div class="hero-content">
@@ -5279,6 +5284,8 @@
         <span class="icon-sun">☀️</span>
         <span class="icon-moon">🌙</span>
     </button>
+
+    </main>
 
     <!-- Footer -->
     <footer>
