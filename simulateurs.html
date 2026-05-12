@@ -3271,7 +3271,14 @@
 
             <div class="info-box">
                 <span class="icon">ℹ️</span>
-                <p><strong>Barème IS 2026 (convergence LF 2023 achevée) :</strong> Taux de <strong>20 %</strong> pour un bénéfice ≤ 100 millions DH, et <strong>35 %</strong> au-delà. La cotisation minimale reste de 0,25 % du chiffre d'affaires (3 000 DH plancher).</p>
+                <p><strong>Barème IS 2026 (convergence LF 2023 achevée) — 4 catégories :</strong></p>
+                <ul style="margin:0.4rem 0 0 1.2rem;">
+                    <li><strong>PME</strong> (bénéfice ≤ 100 M DH) : <strong>20 %</strong></li>
+                    <li><strong>Grande entreprise</strong> (bénéfice &gt; 100 M DH) : <strong>35 %</strong></li>
+                    <li><strong>Banques, assurances, réassurance, BAM, CDG</strong> : <strong>40 %</strong> (quel que soit le bénéfice)</li>
+                    <li><strong>CFC</strong> (Casa Finance City) <strong>+ ZAI</strong> (Zones d'Accélération Industrielle) : <strong>20 %</strong> (quel que soit le bénéfice)</li>
+                </ul>
+                <p style="margin-top:0.5rem;"><strong>Cotisation minimale :</strong> 0,25 % du CA, plancher 3 000 DH — <em>exonération les 36 premiers mois d'activité</em>.</p>
             </div>
 
             <div class="form-row">
@@ -3284,7 +3291,9 @@
                     <select id="type-societe">
                         <option value="standard">Société commerciale / industrielle</option>
                         <option value="export">Société exportatrice</option>
-                        <option value="casa-finance">Casa Finance City</option>
+                        <option value="casa-finance">CFC — Casa Finance City</option>
+                        <option value="zai">ZAI — Zone d'Accélération Industrielle</option>
+                        <option value="credit">Banque / Assurance / Réassurance / BAM / CDG</option>
                     </select>
                 </div>
             </div>
@@ -3443,30 +3452,37 @@
             let cm = 0;
             let impotFinal = 0;
 
-            // 1. Determiner le taux IS (LF 2026, convergence achevee)
-            if (rf > 100000000) {
-                taux = 35;
-            } else {
+            // 1. Determiner le taux IS (LF 2026, 4 categories)
+            if (typeSociete === 'credit') {
+                // Banques, assurances, reassurance, BAM, CDG -> 40 % (peu importe BNF)
+                taux = 40;
+            } else if (typeSociete === 'casa-finance' || typeSociete === 'zai') {
+                // CFC + ZAI -> 20 % (peu importe BNF)
                 taux = 20;
-            }
-            
-            // 2️⃣ Calcul IS
-            if (rf > 0) {
-                isAmount = rf * (taux / 100);
             } else {
-                isAmount = 0;
+                // Standard / Export : PME 20 %, GE 35 % selon BNF
+                taux = rf > 100000000 ? 35 : 20;
             }
-            
-            // 3️⃣ Cotisation Minimale (CM)
-            // CM standard = 0,25% du résultat fiscal (simplifié pour ce simulateur)
-            // Minimum légal = 3 000 DH
-            if (rf <= 0) {
+
+            // 2. Calcul IS
+            isAmount = rf > 0 ? rf * (taux / 100) : 0;
+
+            // 3. Cotisation Minimale (CM)
+            //    0,25 % du resultat fiscal (simplification : devrait etre sur le CA),
+            //    plancher 3 000 DH. Exoneration les 36 premiers mois d'activite.
+            const currentYear = new Date().getFullYear();
+            const ageAnnees = anneeCreation > 0 ? (currentYear - anneeCreation) : null;
+            const cmExoneree = ageAnnees !== null && ageAnnees < 3;
+
+            if (cmExoneree) {
+                cm = 0;
+            } else if (rf <= 0) {
                 cm = 3000;
             } else {
                 cm = Math.max(rf * 0.0025, 3000);
             }
-            
-            // 4️⃣ Impôt à payer = max(IS, CM)
+
+            // 4. Impot final a payer = max(IS, CM)
             impotFinal = Math.max(isAmount, cm);
             
             // Afficher les résultats

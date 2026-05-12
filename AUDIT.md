@@ -54,12 +54,16 @@ Branche : `claude/improve-website-audit-WPJZ3`.
 - Texte de l'info-box mis à jour pour décrire les 6 tranches et la règle frais pro à 2 paliers.
 
 **`simulateurs.html`** — Simulateur IS :
-- Texte info-box réécrit : « Barème IS 2026 (convergence LF 2023 achevée) : 20 % pour bénéfice ≤ 100 M DH, 35 % au-delà ».
-- Option « Établissement de crédit / Assurance » retirée du formulaire (la mention 40 % banques/assurances n'a pas été validée).
-- Logique JS `calculerIS()` simplifiée : 2 taux flat (20 % / 35 %) au lieu de la condition `credit → 40 %`.
+- Texte info-box réécrit avec les **4 catégories LF 2026** : PME (20 %), GE (35 %), Banques/Assurances/Réassurance/BAM/CDG (40 %), CFC + ZAI (20 % peu importe BNF).
+- Options de formulaire enrichies : ajout de **« ZAI — Zone d'Accélération Industrielle »**, libellé « CFC » explicité, libellé Banque/Assurance étendu (Réassurance, BAM, CDG).
+- Logique JS `calculerIS()` mise à jour :
+  - `credit` → 40 %
+  - `casa-finance` / `zai` → 20 % (forcé, indépendant du BNF)
+  - `standard` / `export` → 20 % si BNF ≤ 100 M, sinon 35 %
+- **Cotisation minimale** : ajout de l'exonération **36 premiers mois** (`anneeCreation` désormais utilisée). CM = 0 si l'entreprise a moins de 3 ans.
 
 **`glossaire.html`** :
-- Entrée **IS** : alignée sur « 20 % ≤ 100 M DH, 35 % au-delà ». La mention 40 % établissements financiers a été retirée.
+- Entrée **IS** : alignée sur les **4 catégories LF 2026** (PME / GE / Banques+assurances / CFC+ZAI), avec mention de la CM 0,25 % et de l'exonération 36 mois.
 - Entrée **TVA** : ne mentionne plus 14 % et 7 % (supprimés par convergence LF 2024 → LF 2026). Désormais : 20 % normal, 10 % réduit, 0 % exonération.
 
 **`loi-finances-2026.html`** :
