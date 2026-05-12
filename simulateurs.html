@@ -22,7 +22,21 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png">
+<link rel="canonical" href="https://firstaudit.ma/simulateurs">
 <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta property="og:image" content="https://firstaudit.ma/expert-comptable.webp">
+    <meta property="og:image:width" content="630">
+    <meta property="og:image:height" content="658">
+    <meta property="og:image:alt" content="First Audit & Conseils - Expert Comptable Rabat">
+    <meta name="twitter:image" content="https://firstaudit.ma/expert-comptable.webp">
+    <meta property="og:site_name" content="First Audit & Conseils">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://firstaudit.ma/simulateurs">
+    <meta property="og:title" content="Simulateurs Fiscaux 2026 Maroc | First Audit">
+    <meta property="og:locale" content="fr_MA">
+    <meta name="twitter:card" content="summary_large_image">
 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
@@ -3208,19 +3222,20 @@
         }
 
     </style>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="index" class="logo"><span>First Audit</span> <span class="accent">et Conseils</span></a>
+            <a href="/" class="logo"><span>First Audit</span> <span class="accent">et Conseils</span></a>
             <ul class="nav-links">
-                <li><a href="index">Accueil</a></li>
-                <li><a href="index#services">Services</a></li>
-                <li><a href="blog">Articles</a></li>
-                <li><a href="calendrier-fiscal">Calendrier Fiscal</a></li>
-                <li><a href="glossaire">Glossaire</a></li>
-                <li><a href="index#contact">Contact</a></li>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/#services">Services</a></li>
+                <li><a href="/blog">Articles</a></li>
+                <li><a href="/calendrier-fiscal">Calendrier Fiscal</a></li>
+                <li><a href="/glossaire">Glossaire</a></li>
+                <li><a href="/#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -3233,6 +3248,11 @@
 
     <!-- Main Content -->
     <main class="main-content">
+        <div class="info-box" style="background:#fef3c7; border-left:4px solid #f59e0b; padding:1rem 1.5rem; margin-bottom:2rem; border-radius:8px;">
+            <strong>⚠️ Simulateurs indicatifs</strong>
+            <p style="margin:0.5rem 0 0;">Les résultats fournis sont des <strong>estimations à titre informatif</strong> et ne constituent ni un conseil fiscal personnalisé, ni un document opposable à la DGI. Pour une analyse fiscale fiable adaptée à votre situation, contactez nos experts-comptables.</p>
+        </div>
+
         <!-- Tabs -->
         <div class="tabs-container">
             <button class="tab-btn active" onclick="showTab('is')">
@@ -3252,7 +3272,14 @@
 
             <div class="info-box">
                 <span class="icon">ℹ️</span>
-                <p><strong>Barème IS 2026 :</strong> Taux de 20% pour les bénéfices < 100 millions DH, et 35% au-delà. Les établissements de crédit et assurances sont soumis à un taux de 40%.</p>
+                <p><strong>Barème IS 2026 (convergence LF 2023 achevée) — 4 catégories :</strong></p>
+                <ul style="margin:0.4rem 0 0 1.2rem;">
+                    <li><strong>PME</strong> (bénéfice ≤ 100 M DH) : <strong>20 %</strong></li>
+                    <li><strong>Grande entreprise</strong> (bénéfice &gt; 100 M DH) : <strong>35 %</strong></li>
+                    <li><strong>Banques, assurances, réassurance, BAM, CDG</strong> : <strong>40 %</strong> (quel que soit le bénéfice)</li>
+                    <li><strong>CFC</strong> (Casa Finance City) <strong>+ ZAI</strong> (Zones d'Accélération Industrielle) : <strong>20 %</strong> (quel que soit le bénéfice)</li>
+                </ul>
+                <p style="margin-top:0.5rem;"><strong>Cotisation minimale :</strong> 0,25 % du CA, plancher 3 000 DH — <em>exonération les 36 premiers mois d'activité</em>.</p>
             </div>
 
             <div class="form-row">
@@ -3265,8 +3292,9 @@
                     <select id="type-societe">
                         <option value="standard">Société commerciale / industrielle</option>
                         <option value="export">Société exportatrice</option>
-                        <option value="casa-finance">Casa Finance City</option>
-                        <option value="credit">Établissement de crédit / Assurance</option>
+                        <option value="casa-finance">CFC — Casa Finance City</option>
+                        <option value="zai">ZAI — Zone d'Accélération Industrielle</option>
+                        <option value="credit">Banque / Assurance / Réassurance / BAM / CDG</option>
                     </select>
                 </div>
             </div>
@@ -3303,7 +3331,7 @@
                 <div class="cta-box">
                     <h4>Optimisez votre fiscalité</h4>
                     <p>Nos experts peuvent vous aider à réduire légalement votre charge fiscale</p>
-                    <a href="index.html#contact" class="btn-cta">Demander un rendez-vous</a>
+                    <a href="/#contact" class="btn-cta">Demander un rendez-vous</a>
                 </div>
             </div>
         </div>
@@ -3378,7 +3406,7 @@
                 <div class="cta-box">
                     <h4>🎯 Maximisez vos avantages fiscaux</h4>
                     <p>Nos experts vous accompagnent pour bénéficier de tous les dispositifs auxquels vous avez droit</p>
-                    <a href="index#contact" class="btn-cta">Être accompagné</a>
+                    <a href="/#contact" class="btn-cta">Être accompagné</a>
                 </div>
             </div>
         </div>
@@ -3389,11 +3417,11 @@
         <p>&copy; 2026 First Audit & Conseils. Tous droits réservés.</p>
         <p>Expert-comptable - Membre de l'Ordre des Experts Comptables du Maroc</p>
         <div class="footer-links">
-            <a href="index">Accueil</a>
-            <a href="blog">Articles</a>
-            <a href="calendrier-fiscal">Calendrier Fiscal</a>
-            <a href="glossaire">Glossaire</a>
-            <a href="index#contact">Contact</a>
+            <a href="/">Accueil</a>
+            <a href="/blog">Articles</a>
+            <a href="/calendrier-fiscal">Calendrier Fiscal</a>
+            <a href="/glossaire">Glossaire</a>
+            <a href="/#contact">Contact</a>
         </div>
     </footer>
 
@@ -3424,37 +3452,38 @@
             let isAmount = 0;
             let cm = 0;
             let impotFinal = 0;
-            
-            // 1️⃣ Déterminer le taux IS
+
+            // 1. Determiner le taux IS (LF 2026, 4 categories)
             if (typeSociete === 'credit') {
-                // Établissement de crédit / Assurance → 40% (prioritaire, quel que soit le résultat)
+                // Banques, assurances, reassurance, BAM, CDG -> 40 % (peu importe BNF)
                 taux = 40;
+            } else if (typeSociete === 'casa-finance' || typeSociete === 'zai') {
+                // CFC + ZAI -> 20 % (peu importe BNF)
+                taux = 20;
             } else {
-                // Société commerciale / industrielle
-                if (rf >= 100000000) {
-                    taux = 35;
-                } else {
-                    taux = 20;
-                }
+                // Standard / Export : PME 20 %, GE 35 % selon BNF
+                taux = rf > 100000000 ? 35 : 20;
             }
-            
-            // 2️⃣ Calcul IS
-            if (rf > 0) {
-                isAmount = rf * (taux / 100);
-            } else {
-                isAmount = 0;
-            }
-            
-            // 3️⃣ Cotisation Minimale (CM)
-            // CM standard = 0,25% du résultat fiscal (simplifié pour ce simulateur)
-            // Minimum légal = 3 000 DH
-            if (rf <= 0) {
+
+            // 2. Calcul IS
+            isAmount = rf > 0 ? rf * (taux / 100) : 0;
+
+            // 3. Cotisation Minimale (CM)
+            //    0,25 % du resultat fiscal (simplification : devrait etre sur le CA),
+            //    plancher 3 000 DH. Exoneration les 36 premiers mois d'activite.
+            const currentYear = new Date().getFullYear();
+            const ageAnnees = anneeCreation > 0 ? (currentYear - anneeCreation) : null;
+            const cmExoneree = ageAnnees !== null && ageAnnees < 3;
+
+            if (cmExoneree) {
+                cm = 0;
+            } else if (rf <= 0) {
                 cm = 3000;
             } else {
                 cm = Math.max(rf * 0.0025, 3000);
             }
-            
-            // 4️⃣ Impôt à payer = max(IS, CM)
+
+            // 4. Impot final a payer = max(IS, CM)
             impotFinal = Math.max(isAmount, cm);
             
             // Afficher les résultats
