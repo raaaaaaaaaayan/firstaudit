@@ -2604,16 +2604,20 @@
         </div>
 
         <div class="info-box">
-            <h4>📋 Calcul conforme à la législation marocaine 2026</h4>
+            <h4>📋 Calcul conforme à la législation marocaine 2026 (LF 2026)</h4>
             <ul>
-                <li><strong>CNSS salariale :</strong> 4,48% du salaire brut (plafonné à 6 000 DH de salaire = 268,80 DH max)</li>
-                <li><strong>AMO (Assurance Maladie) :</strong> 2,26% du salaire brut (non plafonné)</li>
-                <li><strong>Base IR (après CNSS & AMO) :</strong> Brut - CNSS - AMO</li>
-                <li><strong>Frais professionnels :</strong> 20% de la Base IR (plafonné à 2 500 DH/mois)</li>
-                <li><strong>SNI (Salaire Net Imposable) :</strong> Base IR - Frais professionnels</li>
-                <li><strong>Charges de famille :</strong> 30 DH par personne à charge (max 6 personnes) - Uniquement si marié(e)</li>
-                <li><strong>IR :</strong> Barème progressif 2026 appliqué sur le RNI (SNI - Charges famille)</li>
-                <li><strong>📌 Note :</strong> Les montants sont arrondis au dirham le plus proche (pratique standard acceptée)</li>
+                <li><strong>CNSS salariale :</strong> 4,48 % du salaire brut, plafonné à 6 000 DH de salaire (= 268,80 DH max)</li>
+                <li><strong>AMO (Assurance Maladie) :</strong> 2,26 % du salaire brut (non plafonné)</li>
+                <li><strong>Frais professionnels (LF 2026) :</strong>
+                    <ul style="margin:0.3rem 0 0 1.2rem;">
+                        <li>Brut annuel ≤ 78 000 DH → <strong>35 %</strong>, plafond 30 000 DH/an (2 500 DH/mois)</li>
+                        <li>Brut annuel &gt; 78 000 DH → <strong>25 %</strong>, plafond 35 000 DH/an (≈ 2 916,67 DH/mois)</li>
+                    </ul>
+                </li>
+                <li><strong>SNI (Salaire Net Imposable) :</strong> Brut − CNSS − AMO − Frais professionnels</li>
+                <li><strong>Charges de famille :</strong> 30 DH par personne à charge (max 6 personnes) − uniquement si marié(e)</li>
+                <li><strong>IR :</strong> Barème progressif LF 2026 à 6 tranches (0 %, 10 %, 20 %, 30 %, 34 %, 37 %) appliqué sur le RNI mensuel (SNI − Charges famille)</li>
+                <li><strong>📌 Note :</strong> Les montants sont arrondis au dirham le plus proche (pratique standard acceptée).</li>
             </ul>
         </div>
 
@@ -2707,22 +2711,22 @@
             </div>
 
             <div class="breakdown-item negative">
-                <span class="label">- CNSS (4,48% plafonné 6 000 DH)</span>
+                <span class="label">- CNSS (4,48 % plafonné 6 000 DH)</span>
                 <span class="amount" id="cnssDetailIR">- 268 DH</span>
             </div>
 
             <div class="breakdown-item negative">
-                <span class="label">- AMO (2,26%)</span>
+                <span class="label">- AMO (2,26 %)</span>
                 <span class="amount" id="amoDetailIR">- 226 DH</span>
             </div>
 
             <div class="breakdown-item positive" style="background: #fef3c7;">
-                <span class="label">= Base IR (après CNSS & AMO)</span>
+                <span class="label">= Base IR (après CNSS &amp; AMO)</span>
                 <span class="amount" id="baseIRDetail">9,506 DH</span>
             </div>
 
             <div class="breakdown-item positive">
-                <span class="label">- Frais professionnels (20%, max 2 500 DH)</span>
+                <span class="label" id="fraisProLabel">- Frais professionnels (LF 2026)</span>
                 <span class="amount" id="fraisProDetail">- 1,901 DH</span>
             </div>
 
@@ -2766,12 +2770,16 @@
     </footer>
 
     <script>
-        // Barème IR 2026 Maroc (MENSUEL)
+        // Bareme IR 2026 Maroc (MENSUEL = bareme annuel LF 2026 / 12)
+        // 6 tranches, taux marginal max 37 % (le 38 % a ete supprime par la LF 2026)
+        // Format : { borne: plafond superieur de la tranche, taux: taux marginal }
         const baremeIR = [
-            { max: 2500, taux: 0 },
-            { min: 2501, max: 4166, taux: 0.10 },
-            { min: 4167, max: 6666, taux: 0.20 },
-            { min: 6667, max: 15000, taux: 0.30 }
+            { borne: 3333,     taux: 0    }, // annuel 0 a 40 000
+            { borne: 5000,     taux: 0.10 }, // annuel 40 001 a 60 000
+            { borne: 6666,     taux: 0.20 }, // annuel 60 001 a 80 000
+            { borne: 8333,     taux: 0.30 }, // annuel 80 001 a 100 000
+            { borne: 15000,    taux: 0.34 }, // annuel 100 001 a 180 000
+            { borne: Infinity, taux: 0.37 }  // annuel > 180 000
         ];
 
         function updatePersonnesChargeState() {
@@ -2796,45 +2804,43 @@
             const salaireBrut = parseFloat(document.getElementById('salaireBrut').value) || 0;
             const situation = document.querySelector('input[name="situation"]:checked').value;
             const personnesCharge = situation === 'celibataire' ? 0 : parseInt(document.getElementById('personnesCharge').value) || 0;
-            
-            // 1. CNSS salariale : 4.48% plafonné à 6 000 DH de salaire
+
+            // 1. CNSS salariale : 4,48 % plafonne a 6 000 DH (plafond LF 2026)
             const cnss = Math.round(Math.min(salaireBrut, 6000) * 0.0448);
-            
-            // 2. AMO : 2.26% non plafonné
+
+            // 2. AMO : 2,26 % non plafonne
             const amo = Math.round(salaireBrut * 0.0226);
-            
-            // 3. Base IR (Salaire Net Social) = après CNSS & AMO
-            const baseIR = salaireBrut - cnss - amo;
-            
-            // 4. Frais professionnels : 20% de la Base IR plafonné à 2 500 DH/mois
-            const fraisPro = Math.round(Math.min(baseIR * 0.20, 2500));
-            
-            // 5. Salaire Net Imposable (SNI)
-            const sni = baseIR - fraisPro;
-            
-            // 6. Charges de famille : 30 DH par personne (max 6), seulement si marié
+
+            // 3. Frais professionnels (LF 2026, base = salaire brut imposable) :
+            //    - Brut annuel <= 78 000 DH : 35 % plafonne a 30 000/an (2 500/mois)
+            //    - Brut annuel >  78 000 DH : 25 % plafonne a 35 000/an (2 916,67/mois)
+            const brutAnnuel = salaireBrut * 12;
+            const fraisProTaux = brutAnnuel <= 78000 ? 0.35 : 0.25;
+            const fraisProPlafond = brutAnnuel <= 78000 ? 2500 : (35000 / 12);
+            const fraisPro = Math.round(Math.min(salaireBrut * fraisProTaux, fraisProPlafond));
+
+            // 4. Salaire Net Imposable (SNI) = Brut - CNSS - AMO - Frais pro
+            const sni = salaireBrut - cnss - amo - fraisPro;
+
+            // 5. Charges de famille : 30 DH par personne (max 6), seulement si marie
             const chargesFamille = Math.min(personnesCharge, 6) * 30;
-            
-            // 7. Revenu Net Imposable (RNI)
+
+            // 6. Revenu Net Imposable (RNI)
             const rni = sni - chargesFamille;
-            
-            // 8. Calcul IR selon barème progressif MENSUEL
+
+            // Base IR = brut - cotisations sociales (affichee dans le detail)
+            const baseIR = salaireBrut - cnss - amo;
+
+            // 7. Calcul IR selon le bareme progressif MENSUEL LF 2026 (6 tranches)
             let irMensuel = 0;
-            
-            if (rni > 6667) {
-                // Tranche 4 : au-delà de 6667 à 30%
-                irMensuel += (Math.min(rni, 15000) - 6667) * 0.30;
+            let bornePrec = 0;
+            for (const t of baremeIR) {
+                if (rni <= bornePrec) break;
+                const baseTranche = Math.min(rni, t.borne) - bornePrec;
+                irMensuel += baseTranche * t.taux;
+                bornePrec = t.borne;
             }
-            if (rni > 4167) {
-                // Tranche 3 : de 4167 à 6666 à 20%
-                irMensuel += (Math.min(rni, 6666) - 4167) * 0.20;
-            }
-            if (rni > 2500) {
-                // Tranche 2 : de 2501 à 4166 à 10%
-                irMensuel += (Math.min(rni, 4166) - 2500) * 0.10;
-            }
-            // Tranche 1 : 0 à 2500 à 0% (rien à calculer)
-            
+
             // Arrondir l'IR au dirham le plus proche
             irMensuel = Math.round(irMensuel);
             
@@ -2854,6 +2860,9 @@
             document.getElementById('cnssDetailIR').textContent = '- ' + formatNumber(cnss) + ' DH';
             document.getElementById('amoDetailIR').textContent = '- ' + formatNumber(amo) + ' DH';
             document.getElementById('baseIRDetail').textContent = formatNumber(Math.round(baseIR)) + ' DH';
+            const tauxPct = (fraisProTaux * 100).toFixed(0);
+            document.getElementById('fraisProLabel').textContent =
+                `- Frais professionnels (${tauxPct} %, plafond ${formatNumber(Math.round(fraisProPlafond))} DH/mois)`;
             document.getElementById('fraisProDetail').textContent = '- ' + formatNumber(fraisPro) + ' DH';
             document.getElementById('sniDetail').textContent = formatNumber(Math.round(sni)) + ' DH';
             document.getElementById('chargesDetail').textContent = '- ' + formatNumber(chargesFamille) + ' DH';

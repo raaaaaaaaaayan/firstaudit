@@ -3,6 +3,8 @@
 Document d'audit du site, des fixes appliqués et des points à valider/poursuivre.
 Branche : `claude/improve-website-audit-WPJZ3`.
 
+> **Mise à jour 2026-05-12 (2e passe)** — Les corrections fiscales listées en §2 ont été **validées par l'utilisateur contre sa base fiscale** et appliquées dans un 2e commit. Voir §1.6 ci-dessous.
+
 ---
 
 ## 1. Corrections appliquées dans ce commit
@@ -40,9 +42,34 @@ Branche : `claude/improve-website-audit-WPJZ3`.
 
 - **Disclaimer "calcul indicatif / non opposable DGI"** ajouté en tête des pages `salaire-net.html` et `simulateurs.html`. Important pour la responsabilité légale d'un expert-comptable.
 
+### 1.6 Corrections fiscales (2e passe, validées par l'utilisateur)
+
+**`salaire-net.html`** — Calculateur de salaire net :
+- **Barème IR mensuel** : remplacé l'ancien barème pré-LF 2025 (4 tranches max 30 %) par le barème LF 2026 à **6 tranches** (0 / 10 / 20 / 30 / 34 / 37 %), équivalent annuel 0 / 40k / 60k / 80k / 100k / 180k.
+- **Frais professionnels** : remplacé l'ancienne règle « 20 % de la base IR plafonné à 2 500 DH » par la règle LF 2026 :
+  - Brut annuel ≤ 78 000 DH → **35 %** plafonné à 30 000 DH/an (2 500 DH/mois)
+  - Brut annuel > 78 000 DH → **25 %** plafonné à 35 000 DH/an (≈ 2 917 DH/mois)
+- **CNSS** : conservé à 6 000 DH/mois (confirmé par l'utilisateur — la LF 2026 n'a PAS relevé le plafond, contrairement à mon hypothèse initiale).
+- Label dynamique pour les frais pro (affiche le taux et plafond effectivement appliqués).
+- Texte de l'info-box mis à jour pour décrire les 6 tranches et la règle frais pro à 2 paliers.
+
+**`simulateurs.html`** — Simulateur IS :
+- Texte info-box réécrit : « Barème IS 2026 (convergence LF 2023 achevée) : 20 % pour bénéfice ≤ 100 M DH, 35 % au-delà ».
+- Option « Établissement de crédit / Assurance » retirée du formulaire (la mention 40 % banques/assurances n'a pas été validée).
+- Logique JS `calculerIS()` simplifiée : 2 taux flat (20 % / 35 %) au lieu de la condition `credit → 40 %`.
+
+**`glossaire.html`** :
+- Entrée **IS** : alignée sur « 20 % ≤ 100 M DH, 35 % au-delà ». La mention 40 % établissements financiers a été retirée.
+- Entrée **TVA** : ne mentionne plus 14 % et 7 % (supprimés par convergence LF 2024 → LF 2026). Désormais : 20 % normal, 10 % réduit, 0 % exonération.
+
+**`loi-finances-2026.html`** :
+- Section « TVA : Harmonisation et simplification » réécrite : la convergence LF 2024 → LF 2026 est désormais présentée comme **achevée** au 1er janvier 2026, avec 2 taux principaux (20 % et 10 %) + le taux 0 %. Suppression des mentions 14 % et 7 %.
+
 ---
 
 ## 2. À valider AVEC TA BASE FISCALE (non modifié par prudence)
+
+> **Mise à jour 2e passe** : Les points 2.1 à 2.6 ci-dessous ont été **validés et appliqués** dans la 2e passe (voir §1.6). Cette section est conservée pour traçabilité.
 
 Je n'ai pas modifié les calculs fiscaux car certaines valeurs dépendent de l'application effective de la LF 2026 et de tes sources de référence. **À valider avec un expert-comptable / la base DGI avant publication.**
 

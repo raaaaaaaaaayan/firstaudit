@@ -3271,7 +3271,7 @@
 
             <div class="info-box">
                 <span class="icon">ℹ️</span>
-                <p><strong>Barème IS 2026 :</strong> Taux de 20% pour les bénéfices < 100 millions DH, et 35% au-delà. Les établissements de crédit et assurances sont soumis à un taux de 40%.</p>
+                <p><strong>Barème IS 2026 (convergence LF 2023 achevée) :</strong> Taux de <strong>20 %</strong> pour un bénéfice ≤ 100 millions DH, et <strong>35 %</strong> au-delà. La cotisation minimale reste de 0,25 % du chiffre d'affaires (3 000 DH plancher).</p>
             </div>
 
             <div class="form-row">
@@ -3285,7 +3285,6 @@
                         <option value="standard">Société commerciale / industrielle</option>
                         <option value="export">Société exportatrice</option>
                         <option value="casa-finance">Casa Finance City</option>
-                        <option value="credit">Établissement de crédit / Assurance</option>
                     </select>
                 </div>
             </div>
@@ -3443,18 +3442,12 @@
             let isAmount = 0;
             let cm = 0;
             let impotFinal = 0;
-            
-            // 1️⃣ Déterminer le taux IS
-            if (typeSociete === 'credit') {
-                // Établissement de crédit / Assurance → 40% (prioritaire, quel que soit le résultat)
-                taux = 40;
+
+            // 1. Determiner le taux IS (LF 2026, convergence achevee)
+            if (rf > 100000000) {
+                taux = 35;
             } else {
-                // Société commerciale / industrielle
-                if (rf >= 100000000) {
-                    taux = 35;
-                } else {
-                    taux = 20;
-                }
+                taux = 20;
             }
             
             // 2️⃣ Calcul IS
