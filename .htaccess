@@ -1,72 +1,112 @@
 # Fichier .htaccess pour FirstAudit.ma
-# À placer à la racine de votre site
+# Place a la racine du site
 
-# Activer le module de réécriture
 RewriteEngine On
 RewriteBase /
 
 # ========================================
-# REDIRECTIONS 301 : .html vers sans .html
+# REDIRECTIONS 301 : .html -> sans .html
 # ========================================
-# Ceci corrige le problème des 14 pages "Sans objet"
-
-# Rediriger toutes les URLs .html vers sans .html
+# Rediriger toutes les URLs .html vers la version sans .html
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)\.html$ /$1 [R=301,L]
 
 # ========================================
-# PAGES SPÉCIFIQUES (au cas où)
+# CONTENU DUPLIQUE : index -> racine
 # ========================================
-
-# Articles
-Redirect 301 /article-cgi-2026.html https://firstaudit.ma/article-cgi-2026
-Redirect 301 /article-creation-entreprise.html https://firstaudit.ma/article-creation-entreprise
-Redirect 301 /article-creations-entreprises-2025.html https://firstaudit.ma/article-creations-entreprises-2025
-Redirect 301 /article-digitalisation-comptable.html https://firstaudit.ma/article-digitalisation-comptable
-Redirect 301 /article-dispositif-tpme.html https://firstaudit.ma/article-dispositif-tpme
-Redirect 301 /article-loi-finances-2026.html https://firstaudit.ma/article-loi-finances-2026
-Redirect 301 /article-notification-electronique-2026.html https://firstaudit.ma/article-notification-electronique-2026
-Redirect 301 /article-recettes-fiscales-2025.html https://firstaudit.ma/article-recettes-fiscales-2025
-
-# Pages outils
-Redirect 301 /articles.html https://firstaudit.ma/articles
-Redirect 301 /calculateur-salaire-net.html https://firstaudit.ma/calculateur-salaire-net
-Redirect 301 /calendrier-fiscal.html https://firstaudit.ma/calendrier-fiscal
-Redirect 301 /glossaire.html https://firstaudit.ma/glossaire
-Redirect 301 /simulateurs.html https://firstaudit.ma/simulateurs
-
-# ========================================
-# CONTENU DUPLIQUÉ - Index
-# ========================================
-# Rediriger /index vers /
 Redirect 301 /index https://firstaudit.ma/
 Redirect 301 /index.html https://firstaudit.ma/
 
 # ========================================
-# SÉCURITÉ
+# REDIRECTIONS D'ANCIENNES URLS (legacy)
+# Pages renommees - garder pour preserver SEO et liens externes
 # ========================================
-# Protéger les fichiers sensibles
+Redirect 301 /article-cgi-2026                     https://firstaudit.ma/impot-societes-2026
+Redirect 301 /article-creation-entreprise          https://firstaudit.ma/creer-entreprise
+Redirect 301 /article-creations-entreprises-2025   https://firstaudit.ma/tendances-creation-2025
+Redirect 301 /article-digitalisation-comptable     https://firstaudit.ma/digitalisation-comptable
+Redirect 301 /article-dispositif-tpme              https://firstaudit.ma/tpme-maroc
+Redirect 301 /article-loi-finances-2026            https://firstaudit.ma/loi-finances-2026
+Redirect 301 /article-notification-electronique-2026 https://firstaudit.ma/notification-dgimpots
+Redirect 301 /article-recettes-fiscales-2025       https://firstaudit.ma/recettes-fiscales-2025
+Redirect 301 /article-mutations-entreprise-2026    https://firstaudit.ma/mutations-2026
+Redirect 301 /articles                             https://firstaudit.ma/blog
+Redirect 301 /calculateur-salaire-net              https://firstaudit.ma/salaire-net
+
+# ========================================
+# SECURITE
+# ========================================
+# Compatible Apache 2.2 et 2.4
 <Files .htaccess>
-Order allow,deny
-Deny from all
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
 </Files>
 
+# Bloquer l'acces aux fichiers de doc/source potentiels
+<FilesMatch "\.(md|log|bak|sql|env)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
 # ========================================
-# PERFORMANCE
+# PERFORMANCE - Compression GZIP
 # ========================================
-# Activer la compression GZIP
 <IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json application/xml image/svg+xml
 </IfModule>
 
-# Cache des fichiers statiques
+# ========================================
+# PERFORMANCE - Cache Browser
+# ========================================
 <IfModule mod_expires.c>
   ExpiresActive On
+  # Images : 1 an
   ExpiresByType image/jpg "access plus 1 year"
   ExpiresByType image/jpeg "access plus 1 year"
   ExpiresByType image/png "access plus 1 year"
   ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/avif "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+  # Polices : 1 an
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  # CSS/JS : 1 mois
   ExpiresByType text/css "access plus 1 month"
   ExpiresByType application/javascript "access plus 1 month"
+  # HTML : 1 jour (pour pouvoir mettre a jour les pages)
+  ExpiresByType text/html "access plus 1 day"
+  # Manifest / autres
+  ExpiresByType application/manifest+json "access plus 1 week"
+  ExpiresByType application/xml "access plus 1 hour"
 </IfModule>
+
+# ========================================
+# HEADERS DE SECURITE
+# ========================================
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+  # HSTS (a activer apres validation HTTPS)
+  # Header set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+</IfModule>
+
+# ========================================
+# ERREURS
+# ========================================
+# Pas de redirection 404 -> / (cela genere des soft-404 mal vus par Google).
+# Pour une vraie page 404, creer un fichier 404.html puis decommenter :
+# ErrorDocument 404 /404.html
