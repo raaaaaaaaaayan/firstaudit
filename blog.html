@@ -1,659 +1,102 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head> 
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17941133676"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-17941133676');
-</script>
-    <meta charset="UTF-8">
-   <link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png">
-<link rel="manifest" href="/site.webmanifest">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <meta property="og:image" content="https://firstaudit.ma/expert-comptable.webp">
-    <meta property="og:image:width" content="630">
-    <meta property="og:image:height" content="658">
-    <meta property="og:image:alt" content="First Audit & Conseils - Expert Comptable Rabat">
-    <meta name="twitter:image" content="https://firstaudit.ma/expert-comptable.webp">
-    <meta property="og:site_name" content="First Audit & Conseils">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://firstaudit.ma/blog">
-    <meta property="og:title" content="Articles & Actualites Comptables | First Audit">
-    <meta property="og:locale" content="fr_MA">
-    <meta name="twitter:card" content="summary_large_image">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Articles & Actualités Comptables | First Audit et Conseils Rabat</title>
-    <meta name="description" content="Actualités fiscales et comptables au Maroc 2026. CGI, loi de finances, création entreprise, TPME. Articles experts par First Audit.">
-    <meta name="keywords" content="actualités fiscales Maroc, CGI 2026, loi finances Maroc, comptabilité Maroc, articles expert comptable">
-   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
-   <link rel="canonical" href="https://firstaudit.ma/blog">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --color-primary: #1e3a5f;
-            --color-secondary: #2c5f8d;
-            --color-accent: #4a90c8;
-            --color-gray: #64748b;
-            --color-light: #f8fafc;
-            --spacing-xs: 0.5rem;
-            --spacing-sm: 1rem;
-            --spacing-md: 1.5rem;
-            --spacing-lg: 2rem;
-            --spacing-xl: 4rem;
-        }
-
-        body {
-            font-family: 'Lato', sans-serif;
-            color: #0f1922;
-            line-height: 1.7;
-            background: var(--color-light);
-        }
-
-        /* ========== NAVIGATION CORRIGÉE ========== */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        /* Logo corrigé - sans espace bizarre */
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            font-weight: 700;
-            text-decoration: none;
-            display: inline-block;
-        }
-        .logo .first-part {
-            color: #1e3a5f;
-        }
-        .logo .accent {
-            color: #c41e3a;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--color-primary);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: #c41e3a;
-        }
-
-        /* Menu Hamburger - NOUVEAU */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            z-index: 1001;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: #1e3a5f;
-            border-radius: 3px;
-            transition: all 0.3s ease;
-        }
-
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(8px, 8px);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
-        }
-
-        /* Responsive Mobile */
-        @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                height: 100vh;
-                width: 280px;
-                background: white;
-                flex-direction: column;
-                padding: 6rem 2rem 2rem;
-                gap: 1.5rem;
-                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-                transition: right 0.3s ease;
-            }
-
-            .nav-links.active {
-                right: 0;
-            }
-
-            .nav-links li {
-                border-bottom: 1px solid #e2e8f0;
-                padding-bottom: 1rem;
-            }
-
-            .nav-links a {
-                font-size: 1.1rem;
-                display: block;
-                width: 100%;
-            }
-        }
-
-        /* Hero Articles */
-        .articles-hero {
-            margin-top: 80px;
-            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-
-        .articles-hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .articles-hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-            opacity: 0.95;
-        }
-
-        /* Articles Section */
-        .articles-section {
-            padding: var(--spacing-xl) var(--spacing-md);
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .articles-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--spacing-lg);
-        }
-
-        @media (max-width: 1200px) {
-            .articles-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .articles-grid {
-                grid-template-columns: 1fr;
-            }
-            .articles-hero h1 {
-                font-size: 2rem;
-            }
-        }
-
-        .article-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(30, 58, 95, 0.08);
-            transition: all 0.4s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .article-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(30, 58, 95, 0.15);
-            border-left: 4px solid #c41e3a;
-        }
-
-        .article-image {
-            position: relative;
-            width: 100%;
-            height: 220px;
-            overflow: hidden;
-        }
-
-        .article-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .article-card:hover .article-image img {
-            transform: scale(1.1);
-        }
-
-        .article-category {
-            position: absolute;
-            top: 1rem;
-            left: 1rem;
-            background: #c41e3a;
-            color: white;
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            z-index: 1;
-        }
-
-        .article-content {
-            padding: var(--spacing-lg);
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .article-meta {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: var(--spacing-sm);
-            font-size: 0.85rem;
-            color: var(--color-gray);
-        }
-
-        .article-content h3 {
-            font-size: 1.3rem;
-            color: var(--color-primary);
-            margin-bottom: var(--spacing-sm);
-            font-family: 'Playfair Display', serif;
-            line-height: 1.4;
-            font-weight: 600;
-        }
-
-        .article-content p {
-            color: var(--color-gray);
-            line-height: 1.7;
-            margin-bottom: var(--spacing-md);
-            flex: 1;
-        }
-
-        .article-link {
-            color: #c41e3a;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: gap 0.3s ease;
-        }
-
-        .article-link:hover {
-            gap: 1rem;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--color-primary);
-            color: white;
-            text-align: center;
-            padding: 3rem 2rem;
-            margin-top: 4rem;
-        }
-
-        footer p {
-            margin: 0.5rem 0;
-            opacity: 0.9;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            opacity: 0.9;
-            transition: opacity 0.3s;
-        }
-
-        .footer-links a:hover {
-            opacity: 1;
-        }
-    
-        /* ========== MODE SOMBRE ========== */
-        .theme-toggle {
-            position: fixed;
-            bottom: 2rem;
-            left: 2rem;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: #ffffff;
-            border: 2px solid #e2e8f0;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            z-index: 1000;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-        [data-theme="dark"] .theme-toggle { background: #1e3a5f; border-color: #2c5f8d; }
-        .theme-toggle:hover { transform: scale(1.1); }
-        .theme-toggle .icon-sun, .theme-toggle .icon-moon { position: absolute; transition: all 0.3s ease; }
-        .theme-toggle .icon-sun { opacity: 1; }
-        .theme-toggle .icon-moon { opacity: 0; }
-        [data-theme="dark"] .theme-toggle .icon-sun { opacity: 0; }
-        [data-theme="dark"] .theme-toggle .icon-moon { opacity: 1; }
-        [data-theme="dark"] body { background: #0a1628 !important; color: #ffffff; }
-        [data-theme="dark"] nav { background: rgba(10, 22, 40, 0.98) !important; }
-        [data-theme="dark"] .hamburger span { background: #ffffff; }
-        [data-theme="dark"] .nav-links { background: #0f2140 !important; }
-        [data-theme="dark"] .nav-links a { color: #ffffff !important; }
-        [data-theme="dark"] .nav-links a:hover { color: #f87171 !important; }
-        [data-theme="dark"] .nav-links li { border-bottom-color: #2c5f8d !important; }
-        [data-theme="dark"] .logo .first-part { color: #ffffff !important; }
-        [data-theme="dark"] .logo .accent { color: #f87171 !important; }
-        [data-theme="dark"] .article-card { background: #0f2140 !important; }
-        [data-theme="dark"] .article-card h3 { color: #ffffff !important; }
-        [data-theme="dark"] .article-card p { color: #e2e8f0 !important; }
-        [data-theme="dark"] .article-meta { color: #94a3b8 !important; }
-        [data-theme="dark"] .article-link { color: #f87171 !important; }
-        [data-theme="dark"] footer { background: #050d18 !important; }
-        [data-theme="dark"] footer p, [data-theme="dark"] footer a { color: #e2e8f0 !important; }
-    </style>
+<!doctype html>
+<html lang="fr-MA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Analyses comptables et fiscales au Maroc | First Audit</title>
+  <meta name="description" content="Analyses pratiques sur la fiscalité, la comptabilité, l’audit et la gestion d’entreprise au Maroc, rédigées et vérifiées par First Audit et Conseils.">
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+  <link rel="canonical" href="https://firstaudit.ma/blog">
+  <link rel="alternate" hreflang="fr-MA" href="https://firstaudit.ma/blog"><link rel="alternate" hreflang="en-MA" href="https://firstaudit.ma/en/insights/"><link rel="alternate" hreflang="es-MA" href="https://firstaudit.ma/es/recursos/"><link rel="alternate" hreflang="ar-MA" href="https://firstaudit.ma/ar/articles/"><link rel="alternate" hreflang="x-default" href="https://firstaudit.ma/blog">
+  <link rel="icon" href="/favicon.ico">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_MA">
+  <meta property="og:site_name" content="First Audit et Conseils">
+  <meta property="og:title" content="Analyses comptables et fiscales au Maroc">
+  <meta property="og:description" content="La règle expliquée. L’impact mis en perspective.">
+  <meta property="og:url" content="https://firstaudit.ma/blog">
+  <meta property="og:image" content="https://firstaudit.ma/assets/images/hero-cabinet-firstaudit.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"CollectionPage","name":"Analyses First Audit et Conseils","url":"https://firstaudit.ma/blog","inLanguage":"fr-MA","isPartOf":{"@id":"https://firstaudit.ma/#website"},"about":["Fiscalité marocaine","Comptabilité","Audit","Conseil aux entreprises"]}
+  </script>
 </head>
-<body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <a href="/" class="logo">
-                <span class="first-part">First Audit </span><span class="accent">et Conseils</span>
-            </a>
-            
-            <!-- Menu Hamburger -->
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-
-            <ul class="nav-links" id="navLinks">
-               <li><a href="/">Accueil</a></li>
-               <li><a href="/#services">Services</a></li>
-               <li><a href="/blog" class="active">Articles</a></li>
-               <li><a href="/#contact">Contact</a></li>
-            </ul>
-        </div>
+<body class="blog-page">
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Navigation principale">
+      <a class="brand" href="/"><span class="brand-copy"><strong>First Audit</strong><small>et Conseils</small></span></a>
+      <ul class="nav-links" data-menu><li><a href="/#expertises">Expertises</a></li><li><a href="/outils">Outils &amp; ressources</a></li><li><a href="/blog" aria-current="page">Analyses</a></li><li><a href="/#cabinet">Le cabinet</a></li></ul>
+      <div class="nav-actions"><div class="language-switcher" aria-label="Langues"><a href="/blog">FR</a><a href="/en/insights/">EN</a><a href="/es/recursos/">ES</a><a href="/ar/articles/" lang="ar">العربية</a></div><a class="button button-primary" href="/#contact">Prendre rendez-vous ↗</a></div>
+      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" data-menu-toggle><span></span></button>
     </nav>
+  </header>
 
-    <!-- Hero -->
-    <section class="articles-hero">
-        <h1>Articles & Actualités</h1>
-        <p>Conseils, informations et analyses pour optimiser la gestion de votre entreprise</p>
+  <main id="contenu">
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Analyses &amp; décryptages</p>
+        <h1>Comprendre la règle.<br>Décider avec justesse.</h1>
+        <p class="lead">Fiscalité, comptabilité, audit et vie de l’entreprise au Maroc. Chaque contenu technique indique sa date, son périmètre et ses sources.</p>
+      </div>
     </section>
 
-    <!-- Articles -->
-    <section class="articles-section">
-        <div class="articles-grid">
-            <!-- Article 1 -->
-            <article class="article-card">
-                <div class="article-image">
-                    <div class="article-category">Fiscalité</div>
-                    <img src="https://industries.ma/wp-content/uploads/2025/12/Loi-des-Finances-LF-2026-Voici-les-principales-mesures-fiscales.png" alt="Loi de Finances 2026 - Principales mesures fiscales" loading="lazy" decoding="async" width="600" height="400">
-                </div>
-                <div class="article-content">
-                    <div class="article-meta">
-                        <span class="article-date">📅 15 Janvier 2026</span>
-                        <span class="article-reading">⏱️ 5 min</span>
-                    </div>
-                    <h3>Loi de Finances 2026 : Ce qui change pour les entreprises</h3>
-                    <p>Découvrez les principales nouveautés fiscales de la Loi de Finances 2026 et leur impact sur votre entreprise. Mesures IS, TVA et avantages fiscaux.</p>
-                    <a href="/loi-finances-2026" class="article-link">Lire l'article →</a>
-                </div>
-            </article>
+    <div class="filter-bar">
+      <div class="container filter-shell" role="group" aria-label="Filtrer les analyses">
+        <button class="filter-button active" type="button" data-filter="all">Tout</button>
+        <button class="filter-button" type="button" data-filter="fiscalite">Fiscalité</button>
+        <button class="filter-button" type="button" data-filter="comptabilite">Comptabilité</button>
+        <button class="filter-button" type="button" data-filter="entreprendre">Entreprendre</button>
+        <button class="filter-button" type="button" data-filter="audit">Audit</button>
+        <button class="filter-button" type="button" data-filter="social">Paie &amp; CNSS</button>
+        <button class="filter-button" type="button" data-filter="actualite">Actualité</button>
+      </div>
+    </div>
 
-            <!-- Article 2 -->
-            <article class="article-card">
-                <div class="article-image">
-                    <div class="article-category">Comptabilité</div>
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="Article comptabilité" loading="lazy" decoding="async" width="600" height="400">
-                </div>
-                <div class="article-content">
-                    <div class="article-meta">
-                        <span class="article-date">📅 10 Janvier 2026</span>
-                        <span class="article-reading">⏱️ 4 min</span>
-                    </div>
-                    <h3>Digitalisation comptable : Guide pratique pour les PME</h3>
-                    <p>Comment moderniser votre gestion comptable avec les outils digitaux. Avantages, étapes et meilleures pratiques pour réussir votre transition.</p>
-                    <a href="/digitalisation-comptable" class="article-link">Lire l'article →</a>
-                </div>
-            </article>
-
-            <!-- Article 3 -->
-            <article class="article-card">
-                <div class="article-image">
-                    <div class="article-category">Conseil</div>
-                    <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&h=400&fit=crop" alt="Article conseil" loading="lazy" decoding="async" width="600" height="400">
-                </div>
-                <div class="article-content">
-                    <div class="article-meta">
-                        <span class="article-date">📅 5 Janvier 2026</span>
-                        <span class="article-reading">⏱️ 6 min</span>
-                    </div>
-                    <h3>Créer son entreprise au Maroc : Les étapes essentielles</h3>
-                    <p>Guide complet pour entrepreneurs : choix de la forme juridique, démarches administratives, business plan et conseils pour bien démarrer.</p>
-                    <a href="/creer-entreprise" class="article-link">Lire l'article →</a>
-                </div>
-            </article>
-
-            <!-- Article 4 -->
-            <article class="article-card">
-                <div class="article-image">
-                    <div class="article-category">Actualités</div>
-                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&h=400&fit=crop" alt="Code Général des Impôts" loading="lazy" decoding="async" width="600" height="400">
-                </div>
-                <div class="article-content">
-                    <div class="article-meta">
-                        <span class="article-date">📅 31 Décembre 2025</span>
-                        <span class="article-reading">⏱️ 4 min</span>
-                    </div>
-                    <h3>La DGI publie l'édition 2026 du Code général des impôts</h3>
-                    <p>Découvrez le nouveau CGI 2026 avec toutes les modifications de la Loi de Finances. Structure, nouveautés et téléchargement du document officiel.</p>
-                   <a href="/impot-societes-2026" class="article-link">Lire l'article →</a>
-                </div>
-            </article>
-
-            <!-- Article 5 -->
-            <article class="article-card">
-                <div class="article-image">
-                    <div class="article-category">Actualités</div>
-                    <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&h=400&fit=crop" alt="Dispositif TPME" loading="lazy" decoding="async" width="600" height="400">
-                </div>
-                <div class="article-content">
-                    <div class="article-meta">
-                        <span class="article-date">📅 6 Janvier 2026</span>
-                        <span class="article-reading">⏱️ 5 min</span>
-                    </div>
-                    <h3>Nouveau dispositif TPME : 89 projets pour 1,28 MMDH</h3>
-                    <p>Un mois après son lancement, le dispositif de soutien aux TPME affiche des résultats prometteurs avec 5000 emplois à créer et 40 000 emplois par an attendus.</p>
-                    <a href="/tpme-maroc" class="article-link">Lire l'article →</a>
-                </div>
-            </article>
-
-            <!-- Article 6 -->
-            <article class="article-card">
-                <div class="article-image">
-                    <div class="article-category">Finances Publiques</div>
-                    <img src="https://images.unsplash.com/photo-1579621970795-87facc2f976d?w=600&h=400&fit=crop" alt="Finances publiques" loading="lazy" decoding="async" width="600" height="400">
-                </div>
-                <div class="article-content">
-                    <div class="article-meta">
-                        <span class="article-date">📅 24 Décembre 2025</span>
-                        <span class="article-reading">⏱️ 6 min</span>
-                    </div>
-                    <h3>Recettes fiscales : 301,9 MMDH à fin novembre 2025</h3>
-                    <p>Performance exceptionnelle des finances publiques avec une croissance de 14,5%. IS en hausse de 28,9%, IR à +14,6% grâce à la régularisation volontaire.</p>
-                  <a href="/recettes-fiscales-2025" class="article-link">Lire l'article →</a>
-                </div>
-            </article>
-
-            <!-- Article 7 -->
-            <article class="article-card">
-                <div class="article-image">
-                    <div class="article-category">Fiscalité</div>
-                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=400&fit=crop" alt="Déclarations entreprise" loading="lazy" decoding="async" width="600" height="400">
-                </div>
-                <div class="article-content">
-                    <div class="article-meta">
-                        <span class="article-date">📅 3 Février 2026</span>
-                        <span class="article-reading">⏱️ 5 min</span>
-                    </div>
-                    <h3>Déclarations de mutation d'entreprise : ce qui change en 2026</h3>
-                    <p>Article 150 CGI 2026 : dématérialisation obligatoire, procédures collectives, sanctions renforcées. Guide complet des nouvelles obligations.</p>
-                    <a href="/mutations-2026" class="article-link">Lire l'article →</a>
-                </div>
-            </article>
-
-            <!-- Article 8 -->
-            <article class="article-card">
-                <div class="article-image">
-                    <div class="article-category">Actualités</div>
-                    <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&h=400&fit=crop" alt="Notification électronique" loading="lazy" decoding="async" width="600" height="400">
-                </div>
-                <div class="article-content">
-                    <div class="article-meta">
-                        <span class="article-date">📅 30 Janvier 2026</span>
-                        <span class="article-reading">⏱️ 4 min</span>
-                    </div>
-                    <h3>Votre email devient un canal officiel opposable</h3>
-                    <p>Article 219-II CGI 2026 : notification électronique = lettre recommandée. Formulaire ADC450B-26 obligatoire, vigilance requise sur votre boîte mail.</p>
-                    <a href="/notification-dgimpots" class="article-link">Lire l'article →</a>
-                </div>
-            </article>
-
-            <!-- Article 9 -->
-            <article class="article-card">
-                <div class="article-image">
-                    <div class="article-category">Actualités</div>
-                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&h=400&fit=crop" alt="Création entreprises" loading="lazy" decoding="async" width="600" height="400">
-                </div>
-                <div class="article-content">
-                    <div class="article-meta">
-                        <span class="article-date">📅 3 Février 2026</span>
-                        <span class="article-reading">⏱️ 3 min</span>
-                    </div>
-                    <h3>Plus de 100.700 entreprises créées à fin novembre 2025</h3>
-                    <p>Baromètre OMPIC : 100.776 créations, Commerce 35,75%, Casa-Settat en tête avec 31.361 entreprises. SARL-AU domine à 64,9%.</p>
-                    <a href="/tendances-creation-2025" class="article-link">Lire l'article →</a>
-                </div>
-            </article>
+    <section class="section">
+      <div class="container">
+        <header class="section-header"><div><p class="eyebrow">Sélection du cabinet</p><h2>Les derniers contenus.</h2></div><p class="lead">Les anciennes publications non suffisamment sourcées sont retirées de cette sélection jusqu’à leur révision.</p></header>
+        <div class="library-grid">
+          <!-- scheduled-articles:start -->
+<a class="library-card" href="/articles/impot-societes-maroc-2026-taux-calcul" data-category="fiscalite"><span class="tag">Impôt sur les sociétés</span><h2>Impôt sur les sociétés au Maroc en 2026 : taux, calcul et cotisation minimale</h2><p>Comprendre les taux d’IS 2026 au Maroc, la cotisation minimale, la contribution sociale de solidarité et les acomptes provisionnels.</p><footer><span>11 juillet 2026</span><span>9 min →</span></footer></a>
+          <a class="library-card" href="/articles/tva-maroc-2026-taux-exonerations" data-category="fiscalite"><span class="tag">TVA</span><h2>TVA au Maroc en 2026 : taux, exonérations et méthode de qualification</h2><p>Guide pratique de la TVA marocaine en 2026 : champ d’application, taux de 10 % et 20 %, exonérations, droit à déduction et exigibilité.</p><footer><span>11 juillet 2026</span><span>10 min →</span></footer></a>
+          <a class="library-card" href="/articles/cloture-comptable-maroc-checklist" data-category="comptabilite"><span class="tag">Comptabilité</span><h2>Clôture comptable au Maroc : checklist complète avant les états de synthèse</h2><p>Checklist de clôture comptable au Maroc : pièces, rapprochements, stocks, immobilisations, cut-off, fiscalité et contrôle des états de synthèse.</p><footer><span>11 juillet 2026</span><span>11 min →</span></footer></a>
+          <a class="library-card" href="/articles/charges-non-deductibles-is-maroc" data-category="fiscalite"><span class="tag">IS</span><h2>Charges non déductibles de l’IS au Maroc : les contrôles essentiels</h2><p>Paiements en espèces, cadeaux, véhicules, amendes, provisions et pièces justificatives : les principaux risques de réintégration fiscale au Maroc.</p><footer><span>11 juillet 2026</span><span>9 min →</span></footer></a>
+          <a class="library-card" href="/articles/bulletin-paie-maroc-cnss-ir" data-category="social"><span class="tag">Paie &amp; CNSS</span><h2>Bulletin de paie au Maroc : comprendre le brut, la CNSS, l’AMO et l’IR</h2><p>Lecture pratique du bulletin de paie marocain : salaire brut, cotisations CNSS et AMO, frais professionnels, IR, net et coût employeur.</p><footer><span>11 juillet 2026</span><span>9 min →</span></footer></a>
+          <a class="library-card" href="/articles/creer-sarl-maroc-etapes" data-category="entreprendre"><span class="tag">Création d’entreprise</span><h2>Créer une SARL au Maroc : décisions, étapes et obligations après l’immatriculation</h2><p>Guide de création d’une SARL au Maroc : associés, capital, statuts, siège, formalités, compte bancaire, fiscalité et organisation comptable.</p><footer><span>11 juillet 2026</span><span>10 min →</span></footer></a>
+          <a class="library-card" href="/articles/amortissements-comptables-fiscaux-maroc" data-category="comptabilite"><span class="tag">Immobilisations</span><h2>Amortissements comptables et fiscaux au Maroc : méthode et points de vigilance</h2><p>Coût d’entrée, date de mise en service, durée, valeur résiduelle, amortissement linéaire ou dégressif et retraitements fiscaux au Maroc.</p><footer><span>11 juillet 2026</span><span>9 min →</span></footer></a>
+          <a class="library-card" href="/articles/declaration-tva-maroc-delais-controles" data-category="fiscalite"><span class="tag">TVA</span><h2>Déclaration de TVA au Maroc : périodicité, délais et contrôles avant dépôt</h2><p>Préparer une déclaration de TVA au Maroc : régime mensuel ou trimestriel, TVA collectée, déductible, crédit, rapprochements et justificatifs.</p><footer><span>11 juillet 2026</span><span>9 min →</span></footer></a>
+          <a class="library-card" href="/articles/audit-comptes-maroc-demarche" data-category="audit"><span class="tag">Audit &amp; assurance</span><h2>Audit des comptes au Maroc : démarche, preuves et rapport du commissaire aux comptes</h2><p>Comprendre l’audit légal et contractuel au Maroc : acceptation, risques, contrôle interne, tests, circularisation, conclusions et rapport.</p><footer><span>11 juillet 2026</span><span>10 min →</span></footer></a>
+          <a class="library-card" href="/articles/investissement-etranger-maroc-change-fiscalite" data-category="entreprendre"><span class="tag">International</span><h2>Investissement étranger au Maroc : change, fiscalité et documents à sécuriser</h2><p>Investir au Maroc : financement en devises, compte bancaire, création de société, fiscalité, transfert des dividendes et traçabilité documentaire.</p><footer><span>11 juillet 2026</span><span>11 min →</span></footer></a>
+          <!-- scheduled-articles:end -->
+          <a class="library-card" href="/notification-dgimpots" data-category="fiscalite actualite"><span class="tag">Fiscalité 2026</span><h2>Notification électronique : portée des articles 145-X et 219-II</h2><p>Ce qui est obligatoire, ce qui produit un effet juridique et les points de vigilance.</p><footer><span>CGI 2026</span><span>Lecture 5 min →</span></footer></a>
+          <a class="library-card" href="/impot-societes-2026" data-category="fiscalite"><span class="tag">Référence</span><h2>Code général des impôts 2026 : accès et mode d’emploi</h2><p>Structure du CGI, versions officielles et méthode pour retrouver une disposition.</p><footer><span>Mis à jour en 2026</span><span>Lire →</span></footer></a>
+          <a class="library-card" href="/loi-finances-2026" data-category="fiscalite actualite"><span class="tag">LF 2026</span><h2>Loi de finances 2026 : mesures vérifiées pour les entreprises</h2><p>Une synthèse nettoyée des affirmations non sourcées, fondée sur les textes officiels.</p><footer><span>DGI · MEF</span><span>Lire →</span></footer></a>
+          <a class="library-card" href="/creer-entreprise" data-category="entreprendre"><span class="tag">Guide</span><h2>Créer une entreprise au Maroc : les décisions à préparer</h2><p>Forme juridique, gouvernance, fiscalité, banque et organisation comptable.</p><footer><span>Entreprendre</span><span>Lire →</span></footer></a>
+          <a class="library-card" href="/digitalisation-comptable" data-category="comptabilite"><span class="tag">Organisation</span><h2>Digitaliser sa comptabilité sans perdre le contrôle</h2><p>Pièces, validation, piste d’audit, archivage et séparation des responsabilités.</p><footer><span>Comptabilité</span><span>Lire →</span></footer></a>
+          <a class="library-card" href="/mutations-2026" data-category="fiscalite actualite"><span class="tag">Obligations</span><h2>Modifications et cessation : obligations déclaratives à vérifier</h2><p>Les événements d’entreprise concernés et les références à consulter avant d’agir.</p><footer><span>CGI 2026</span><span>Lire →</span></footer></a>
+          <a class="library-card" href="/tpme-maroc" data-category="entreprendre actualite"><span class="tag">Investissement</span><h2>Dispositif TPME : chiffres, éligibilité et précautions</h2><p>Ce que disent les communications publiques et ce qui doit être confirmé selon le projet.</p><footer><span>TPME</span><span>Lire →</span></footer></a>
+          <a class="library-card" href="/recettes-fiscales-2025" data-category="actualite fiscalite"><span class="tag">Conjoncture</span><h2>Recettes fiscales 2025 : lecture des données publiques</h2><p>Une mise en contexte des chiffres du Trésor, distincte d’une recommandation fiscale.</p><footer><span>Données publiques</span><span>Lire →</span></footer></a>
+          <a class="library-card" href="/tendances-creation-2025" data-category="actualite entreprendre"><span class="tag">Baromètre</span><h2>Créations d’entreprises : tendances observées en 2025</h2><p>Volumes, secteurs et formes juridiques à partir des données publiées.</p><footer><span>OMPIC</span><span>Lire →</span></footer></a>
         </div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 First Audit & Conseils - Tous droits réservés</p>
-        <p>Expert-Comptable DPLE | Membre de l'Ordre des Experts Comptables du Maroc</p>
-        <div class="footer-links">
-            <a href="/">Accueil</a>
-            <a href="/#services">Services</a>
-            <a href="/blog">Articles</a>
-            <a href="/#contact">Contact</a>
-        </div>
-    </footer>
+    <section class="section section-white">
+      <div class="container contact-panel">
+        <div class="contact-copy"><p class="eyebrow">Besoin d’une réponse adaptée ?</p><h2>Une analyse générale ne remplace pas votre dossier.</h2><p class="lead">Pour une position fiscale, comptable ou juridique engageante, le cabinet vérifie les faits, les pièces et la règle applicable à la date de l’opération.</p><div class="hero-actions"><a class="button button-primary" href="/#contact">Contacter le cabinet</a><a class="button button-secondary" href="/outils">Voir les ressources</a></div></div>
+        <div class="contact-side"><div><strong>First Audit et Conseils</strong><span>Rabat · Maroc</span></div></div>
+      </div>
+    </section>
+  </main>
 
-    <!-- Bouton Mode Sombre -->
-    <button class="theme-toggle" id="themeToggle" aria-label="Changer de thème">
-        <span class="icon-sun">☀️</span>
-        <span class="icon-moon">🌙</span>
-    </button>
-
-    <script>
-        // ========== MENU HAMBURGER ========== //
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-
-        // Fermer le menu quand on clique sur un lien
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
-        });
-
-        // Fermer le menu si on clique en dehors
-        document.addEventListener('click', (e) => {
-            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-            }
-        });
-
-        // ========== MODE SOMBRE ========== //
-        const themeToggle = document.getElementById("themeToggle");
-        const html = document.documentElement;
-        const savedTheme = localStorage.getItem("theme");
-        
-        if (savedTheme) { 
-            html.setAttribute("data-theme", savedTheme); 
-        }
-        
-        if (themeToggle) {
-            themeToggle.addEventListener("click", () => {
-                const currentTheme = html.getAttribute("data-theme");
-                const newTheme = currentTheme === "dark" ? "light" : "dark";
-                html.setAttribute("data-theme", newTheme);
-                localStorage.setItem("theme", newTheme);
-            });
-        }
-    </script>
-
+  <footer class="site-footer">
+    <div class="container footer-grid"><div class="footer-brand"><a class="brand" href="/"><span class="brand-logo-crop" aria-hidden="true"></span><span class="brand-copy"><strong>First Audit</strong><small>Audit &amp; Conseils</small></span></a><p>Cabinet d’expertise comptable à Rabat.</p></div><div class="footer-column"><strong>Cabinet</strong><a href="/#expertises">Expertises</a><a href="/#cabinet">Notre approche</a><a href="/#contact">Contact</a></div><div class="footer-column"><strong>Ressources</strong><a href="/outils">Tous les outils</a><a href="/salaire-net">Salaire net</a><a href="/calendrier-fiscal">Calendrier fiscal</a></div><div class="footer-column"><strong>Contact</strong><a href="tel:+212661263721">+212 661 26 37 21</a><a href="mailto:support@firstaudit.ma">support@firstaudit.ma</a></div></div>
+    <div class="container footer-bottom"><span>© 2026 First Audit et Conseils.</span><span>Contenus informatifs, à confirmer selon votre situation.</span></div>
+  </footer>
+  <script src="/assets/js/site.js" defer></script>
 </body>
 </html>

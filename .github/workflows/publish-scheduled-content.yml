@@ -1,0 +1,55 @@
+name: Publier les articles programmés
+
+on:
+  schedule:
+    - cron: '15 7 * * *'
+  workflow_dispatch:
+    inputs:
+      publish_date:
+        description: 'Date de simulation ISO facultative'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: firstaudit-scheduled-content
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le site
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Installer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Générer les contenus arrivés à échéance
+        env:
+          PUBLISH_DATE: ${{ inputs.publish_date }}
+        run: node scripts/publish-content.mjs
+
+      - name: Generer les versions multilingues
+        run: node scripts/generate-i18n.mjs
+
+      - name: Vérifier les calculateurs
+        run: node tests/calculators.test.js
+
+      - name: Publier les fichiers générés
+        run: |
+          if git diff --quiet; then
+            echo "Aucun article à publier aujourd'hui."
+            exit 0
+          fi
+          git config user.name "First Audit Editorial Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add articles blog.html sitemap.xml sitemap-i18n.xml en es ar services
+          git commit -m "content: publication programmée"
+          git push

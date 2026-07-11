@@ -3,6 +3,7 @@ Allow: /
 
 # Sitemap
 Sitemap: https://firstaudit.ma/sitemap.xml
+Sitemap: https://firstaudit.ma/sitemap-i18n.xml
 
 # Bloquer fichiers système inutiles
 Disallow: /cgi-bin/

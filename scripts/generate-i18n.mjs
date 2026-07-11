@@ -1,0 +1,154 @@
+import { mkdir, writeFile } from 'node:fs/promises';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const root = join(dirname(fileURLToPath(import.meta.url)), '..');
+const site = 'https://firstaudit.ma';
+const today = '2026-07-11';
+const contact = { phone: '+212 661 26 37 21', phoneHref: '+212661263721', email: 'support@firstaudit.ma', address: 'N°3, 1er étage, Immeuble 32, Rue Jabal Tazeka, Rabat, Maroc' };
+const officialCgi = 'https://www.finances.gov.ma/Publication/dgi/2025/CGI-2026-FR.pdf';
+
+const locales = {
+  fr: { hreflang: 'fr-MA', lang: 'fr-MA', dir: 'ltr', home: '/', insights: '/blog', label: 'FR', nav: ['Services', 'Ressources', 'Analyses', 'Contact'], cta: 'Prendre rendez-vous', read: 'Lire le guide', all: 'Toutes les analyses', source: 'Source officielle', updated: 'Mis à jour le 11 juillet 2026' },
+  en: { hreflang: 'en-MA', lang: 'en-MA', dir: 'ltr', home: '/en/', insights: '/en/insights/', label: 'EN', nav: ['Services', 'Resources', 'Insights', 'Contact'], cta: 'Book a consultation', read: 'Read the guide', all: 'All insights', source: 'Official source', updated: 'Updated 11 July 2026' },
+  es: { hreflang: 'es-MA', lang: 'es-MA', dir: 'ltr', home: '/es/', insights: '/es/recursos/', label: 'ES', nav: ['Servicios', 'Recursos', 'Análisis', 'Contacto'], cta: 'Solicitar una cita', read: 'Leer la guía', all: 'Todos los análisis', source: 'Fuente oficial', updated: 'Actualizado el 11 de julio de 2026' },
+  ar: { hreflang: 'ar-MA', lang: 'ar-MA', dir: 'rtl', home: '/ar/', insights: '/ar/articles/', label: 'العربية', nav: ['الخدمات', 'الموارد', 'المقالات', 'اتصل بنا'], cta: 'احجز موعداً', read: 'اقرأ الدليل', all: 'كل المقالات', source: 'المصدر الرسمي', updated: 'آخر تحديث: 11 يوليو 2026' }
+};
+
+const home = {
+  en: { title: 'Chartered Accountant in Morocco | Accounting, Tax & Audit', description: 'Chartered accounting firm in Rabat, Morocco: accounting, tax advisory, statutory audit, payroll and company formation for Moroccan and international businesses.', eyebrow: 'Chartered accountant · Rabat, Morocco', h1: 'Reliable numbers.<br>Better decisions.', lead: 'Accounting, audit and tax advisory delivered with clarity, independence and close support for businesses operating in Morocco.', proof: ['Member of the Moroccan Order', '15+ years of experience', '100+ clients supported'], servicesTitle: 'Expert support at every stage of your business.', resourcesTitle: 'Practical resources for doing business in Morocco.', formTitle: 'Tell us about your business.', formLead: 'Share your question and our firm will contact you to understand the facts and identify the right engagement.' },
+  es: { title: 'Asesoría contable en Marruecos | Fiscalidad, Auditoría y Empresas', description: 'Despacho de expertos contables en Rabat: contabilidad, asesoramiento fiscal, auditoría, nóminas y creación de empresas en Marruecos.', eyebrow: 'Experto contable · Rabat, Marruecos', h1: 'Cifras fiables.<br>Decisiones más seguras.', lead: 'Contabilidad, auditoría y asesoramiento fiscal con rigor, independencia y cercanía para empresas que operan en Marruecos.', proof: ['Miembro de la Orden marroquí', 'Más de 15 años de experiencia', 'Más de 100 clientes acompañados'], servicesTitle: 'Acompañamiento experto en cada etapa de su empresa.', resourcesTitle: 'Recursos prácticos para hacer negocios en Marruecos.', formTitle: 'Hablemos de su empresa.', formLead: 'Explíquenos su situación y el despacho le contactará para identificar la misión adecuada.' },
+  ar: { title: 'خبير محاسب في المغرب | المحاسبة والضرائب والتدقيق', description: 'مكتب خبرة محاسبية في الرباط يقدم خدمات المحاسبة والاستشارة الضريبية والتدقيق والأجور وتأسيس الشركات في المغرب.', eyebrow: 'خبير محاسب · الرباط، المغرب', h1: 'أرقام موثوقة.<br>قرارات أكثر اطمئناناً.', lead: 'محاسبة وتدقيق واستشارة ضريبية بدقة واستقلالية ومواكبة قريبة للشركات العاملة في المغرب.', proof: ['عضو هيئة الخبراء المحاسبين بالمغرب', 'أكثر من 15 سنة من الخبرة', 'مواكبة أكثر من 100 عميل'], servicesTitle: 'خبرة متكاملة في كل مرحلة من مراحل شركتك.', resourcesTitle: 'موارد عملية لممارسة الأعمال في المغرب.', formTitle: 'حدثنا عن شركتك.', formLead: 'أرسل طلبك وسيتواصل معك المكتب لفهم وضعيتك وتحديد المهمة المناسبة.' }
+};
+
+const clusters = [
+  {
+    key: 'accounting', type: 'service', paths: { fr: '/services/expertise-comptable/', en: '/en/accounting-services/', es: '/es/contabilidad/', ar: '/ar/accounting/' },
+    content: {
+      fr: ['Expertise comptable au Maroc', 'Tenue, révision et supervision comptable pour produire des comptes fiables et piloter votre activité au Maroc.', 'Des comptes fiables pour piloter votre entreprise.', ['Tenue et révision comptable', 'Situations intermédiaires et clôture', 'Reporting financier et tableaux de bord']],
+      en: ['Accounting services in Morocco', 'Bookkeeping, review and financial reporting for companies operating in Morocco, with clear controls and management information.', 'Reliable accounts for better business decisions.', ['Bookkeeping and accounting review', 'Interim accounts and year-end closing', 'Financial reporting and dashboards']],
+      es: ['Servicios contables en Marruecos', 'Contabilidad, revisión y reporting financiero para empresas que operan en Marruecos, con controles claros e información útil para la dirección.', 'Cuentas fiables para dirigir mejor su empresa.', ['Contabilidad y revisión', 'Cierres y estados intermedios', 'Reporting financiero y cuadros de mando']],
+      ar: ['خدمات المحاسبة في المغرب', 'مسك ومراجعة الحسابات وإعداد التقارير المالية للشركات العاملة في المغرب مع ضوابط واضحة ومعلومات مفيدة للإدارة.', 'حسابات موثوقة لاتخاذ قرارات أفضل.', ['مسك ومراجعة الحسابات', 'الإقفال والوضعيات المرحلية', 'التقارير المالية ولوحات القيادة']]
+    }
+  },
+  {
+    key: 'tax', type: 'service', paths: { fr: '/services/conseil-fiscal/', en: '/en/tax-advisory/', es: '/es/asesoria-fiscal/', ar: '/ar/tax-advisory/' },
+    content: {
+      fr: ['Conseil fiscal au Maroc', 'Conseil fiscal, déclarations et sécurisation des opérations selon le Code général des impôts marocain.', 'Comprendre la règle avant de décider.', ['Déclarations fiscales et revue de conformité', 'Structuration des opérations', 'Assistance en cas de contrôle fiscal']],
+      en: ['Tax advisory in Morocco', 'Moroccan tax advice, compliance reviews and transaction support based on the applicable General Tax Code.', 'Understand the tax rule before you decide.', ['Tax returns and compliance reviews', 'Transaction and investment structuring', 'Tax audit assistance']],
+      es: ['Asesoramiento fiscal en Marruecos', 'Asesoramiento tributario, revisión del cumplimiento y apoyo a operaciones conforme al Código General de Impuestos marroquí.', 'Comprender la norma antes de decidir.', ['Declaraciones y revisión fiscal', 'Estructuración de operaciones', 'Asistencia en inspecciones fiscales']],
+      ar: ['الاستشارة الضريبية في المغرب', 'استشارة ضريبية ومراجعة الامتثال ومواكبة العمليات وفق المدونة العامة للضرائب المغربية.', 'افهم القاعدة الضريبية قبل اتخاذ القرار.', ['التصاريح ومراجعة الامتثال', 'هيكلة العمليات والاستثمارات', 'المواكبة أثناء المراقبة الضريبية']]
+    }
+  },
+  {
+    key: 'audit', type: 'service', paths: { fr: '/services/audit-commissariat-comptes/', en: '/en/audit-assurance/', es: '/es/auditoria/', ar: '/ar/audit/' },
+    content: {
+      fr: ['Audit et commissariat aux comptes au Maroc', 'Audit légal, audit contractuel et revue du contrôle interne pour renforcer la fiabilité de l’information financière.', 'Renforcer la confiance dans vos comptes.', ['Commissariat aux comptes', 'Audit financier et contractuel', 'Contrôle interne et cartographie des risques']],
+      en: ['Audit and assurance in Morocco', 'Statutory audit, contractual audit and internal-control reviews to strengthen confidence in financial information.', 'Build confidence in your financial statements.', ['Statutory audit', 'Financial and contractual audit', 'Internal control and risk mapping']],
+      es: ['Auditoría y aseguramiento en Marruecos', 'Auditoría legal o contractual y revisión del control interno para reforzar la fiabilidad de la información financiera.', 'Más confianza en sus estados financieros.', ['Auditoría legal', 'Auditoría financiera y contractual', 'Control interno y mapa de riesgos']],
+      ar: ['التدقيق ومراقبة الحسابات في المغرب', 'تدقيق قانوني أو تعاقدي ومراجعة الرقابة الداخلية لتعزيز موثوقية المعلومات المالية.', 'عزز الثقة في قوائمك المالية.', ['مراقبة الحسابات', 'التدقيق المالي والتعاقدي', 'الرقابة الداخلية وخريطة المخاطر']]
+    }
+  },
+  {
+    key: 'formation', type: 'service', paths: { fr: '/services/creation-entreprise-maroc/', en: '/en/company-formation-morocco/', es: '/es/crear-empresa-marruecos/', ar: '/ar/company-formation/' },
+    content: {
+      fr: ['Création d’entreprise au Maroc', 'Choix de la forme, statuts, immatriculation, fiscalité et organisation comptable pour lancer une société au Maroc.', 'Créer sur des bases claires et durables.', ['Choix de la forme juridique', 'Formalités et immatriculation', 'Organisation fiscale, bancaire et comptable']],
+      en: ['Company formation in Morocco', 'Legal form, incorporation, tax registration, banking and accounting setup for Moroccan and foreign founders.', 'Set up your Moroccan company on solid foundations.', ['Choice of legal form', 'Incorporation and registrations', 'Tax, banking and accounting setup']],
+      es: ['Crear una empresa en Marruecos', 'Forma jurídica, constitución, alta fiscal, banco y organización contable para emprendedores marroquíes y extranjeros.', 'Cree su empresa sobre bases sólidas.', ['Elección de la forma jurídica', 'Constitución y registros', 'Organización fiscal, bancaria y contable']],
+      ar: ['تأسيس شركة في المغرب', 'اختيار الشكل القانوني والتأسيس والتسجيل الضريبي والبنكي وتنظيم المحاسبة للمستثمرين المغاربة والأجانب.', 'أسس شركتك على قواعد واضحة ومتينة.', ['اختيار الشكل القانوني', 'إجراءات التأسيس والتسجيل', 'التنظيم الضريبي والبنكي والمحاسبي']]
+    }
+  },
+  {
+    key: 'is2026', type: 'article', paths: { fr: '/articles/impot-societes-maroc-2026-taux-calcul', en: '/en/insights/corporate-tax-morocco-2026/', es: '/es/recursos/impuesto-sociedades-marruecos-2026/', ar: '/ar/articles/corporate-tax-morocco-2026/' },
+    content: {
+      en: ['Corporate income tax in Morocco 2026', 'A practical overview of Moroccan corporate tax rates, the minimum contribution and instalments under the 2026 General Tax Code.', 'Corporate tax in Morocco: rates, minimum contribution and controls.', ['The general rate is 20% when taxable profit is below MAD 100 million.', 'A 35% rate applies at or above that threshold, subject to statutory exceptions.', 'Specific financial institutions are subject to a 40% rate.']],
+      es: ['Impuesto sobre sociedades en Marruecos 2026', 'Guía práctica sobre los tipos del IS, la cotización mínima y los anticipos conforme al Código General de Impuestos 2026.', 'IS en Marruecos: tipos, cotización mínima y controles.', ['El tipo general es del 20% cuando el beneficio fiscal es inferior a 100 millones de MAD.', 'Se aplica un 35% a partir de dicho umbral, con las excepciones legales.', 'Determinadas entidades financieras están sujetas al 40%.']],
+      ar: ['الضريبة على الشركات في المغرب 2026', 'دليل عملي حول أسعار الضريبة على الشركات والمساهمة الدنيا والتسبيقات وفق المدونة العامة للضرائب لسنة 2026.', 'الضريبة على الشركات: الأسعار والمساهمة الدنيا ومراقبة الحساب.', ['السعر العام هو 20٪ عندما يقل الربح الصافي الجبائي عن 100 مليون درهم.', 'يطبق سعر 35٪ ابتداءً من هذا الحد مع مراعاة الاستثناءات القانونية.', 'تخضع بعض المؤسسات المالية لسعر 40٪.']]
+    }
+  },
+  {
+    key: 'vat2026', type: 'article', paths: { fr: '/articles/tva-maroc-2026-taux-exonerations', en: '/en/insights/vat-morocco-2026/', es: '/es/recursos/iva-marruecos-2026/', ar: '/ar/articles/vat-morocco-2026/' },
+    content: {
+      en: ['VAT in Morocco 2026', 'Understand the scope of Moroccan VAT, the 20% standard rate, the main 10% reduced rate, exemptions and deduction requirements.', 'VAT in Morocco: qualify the transaction before calculating the tax.', ['Check whether the transaction falls within the scope of Moroccan VAT.', 'Distinguish exemptions with and without deduction rights.', 'Confirm the applicable rate, taxable event and supporting documents.']],
+      es: ['IVA en Marruecos 2026', 'Ámbito del IVA marroquí, tipo general del 20%, principal tipo reducido del 10%, exenciones y derecho a deducción.', 'IVA en Marruecos: califique la operación antes de calcular.', ['Verifique si la operación entra en el ámbito del IVA marroquí.', 'Distinga las exenciones con y sin derecho a deducción.', 'Confirme el tipo, el devengo y los justificantes.']],
+      ar: ['الضريبة على القيمة المضافة في المغرب 2026', 'نطاق الضريبة على القيمة المضافة والسعر العادي 20٪ والسعر المخفض الرئيسي 10٪ والإعفاءات وشروط الخصم.', 'حدد طبيعة العملية قبل احتساب الضريبة على القيمة المضافة.', ['تحقق من خضوع العملية للضريبة المغربية.', 'ميز بين الإعفاء مع حق الخصم والإعفاء بدونه.', 'أكد السعر والاستحقاق والوثائق المثبتة.']]
+    }
+  },
+  {
+    key: 'sarl', type: 'article', paths: { fr: '/articles/creer-sarl-maroc-etapes', en: '/en/insights/set-up-sarl-morocco/', es: '/es/recursos/crear-sarl-marruecos/', ar: '/ar/articles/set-up-sarl-morocco/' },
+    content: {
+      en: ['Setting up an SARL in Morocco', 'Key decisions and steps for incorporating a Moroccan limited liability company, from shareholders and articles to tax and accounting setup.', 'How to set up an SARL in Morocco on sound foundations.', ['Define shareholders, governance and capital.', 'Prepare the articles and complete legal registrations.', 'Set up banking, tax, payroll and accounting processes.']],
+      es: ['Crear una SARL en Marruecos', 'Decisiones y etapas para constituir una sociedad de responsabilidad limitada en Marruecos y organizar sus obligaciones.', 'Cómo crear una SARL en Marruecos sobre bases sólidas.', ['Defina socios, gobierno y capital.', 'Prepare los estatutos y complete los registros.', 'Organice banco, fiscalidad, nómina y contabilidad.']],
+      ar: ['تأسيس شركة ذات مسؤولية محدودة في المغرب', 'القرارات والمراحل الأساسية لتأسيس شركة ذات مسؤولية محدودة وتنظيم التزاماتها القانونية والضريبية والمحاسبية.', 'كيف تؤسس شركة ذات مسؤولية محدودة على أسس سليمة.', ['حدد الشركاء والحكامة ورأس المال.', 'أعد النظام الأساسي وأتمم التسجيلات.', 'نظم الحساب البنكي والضرائب والأجور والمحاسبة.']]
+    }
+  }
+];
+
+const escape = (value) => String(value).replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' })[char]);
+const pathToFile = (urlPath) => urlPath === '/' ? join(root, 'index.html') : join(root, urlPath.replace(/^\//, ''), urlPath.endsWith('/') ? 'index.html' : 'index.html');
+const absolute = (path) => `${site}${path}`;
+const alternates = (paths) => Object.entries(paths).map(([key, path]) => `<link rel="alternate" hreflang="${locales[key].hreflang}" href="${absolute(path)}">`).join('') + `<link rel="alternate" hreflang="x-default" href="${absolute(paths.fr)}">`;
+const languageSwitch = (paths) => `<div class="language-switcher" aria-label="Language">${Object.entries(paths).map(([key, path]) => `<a href="${path}" lang="${locales[key].lang}">${locales[key].label}</a>`).join('')}</div>`;
+
+function head({ locale, title, description, path, paths, type = 'website', schema }) {
+  return `<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escape(title)} | First Audit</title><meta name="description" content="${escape(description)}"><meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large"><link rel="canonical" href="${absolute(path)}">${alternates(paths)}<link rel="icon" href="/favicon.ico"><meta property="og:type" content="${type}"><meta property="og:locale" content="${locale.hreflang.replace('-', '_')}"><meta property="og:site_name" content="First Audit et Conseils"><meta property="og:title" content="${escape(title)}"><meta property="og:description" content="${escape(description)}"><meta property="og:url" content="${absolute(path)}"><meta property="og:image" content="${site}/assets/images/hero-approved-firstaudit.png"><meta name="twitter:card" content="summary_large_image"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/assets/css/site.css"><script type="application/ld+json">${JSON.stringify(schema).replaceAll('<', '\\u003c')}</script></head>`;
+}
+
+function header(key, paths) {
+  const l = locales[key];
+  return `<header class="site-header"><nav class="nav-shell i18n-nav" aria-label="Navigation"><a class="brand" href="${l.home}"><span class="brand-copy"><strong>First Audit</strong><small>et Conseils</small></span></a><ul class="nav-links" data-menu><li><a href="${l.home}#services">${l.nav[0]}</a></li><li><a href="${l.home}#resources">${l.nav[1]}</a></li><li><a href="${l.insights}">${l.nav[2]}</a></li><li><a href="${l.home}#contact">${l.nav[3]}</a></li><li class="mobile-language-item">${languageSwitch(paths)}</li></ul><div class="nav-actions">${languageSwitch(paths)}<a class="button button-primary" href="${l.home}#contact">${l.cta}</a></div><button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" data-menu-toggle><span></span></button></nav></header>`;
+}
+
+function footer(key) {
+  const l = locales[key];
+  return `<footer class="site-footer"><div class="container footer-grid"><div class="footer-brand"><a class="brand" href="${l.home}"><span class="brand-copy"><strong>First Audit</strong><small>et Conseils</small></span></a><p>${contact.address}</p></div><div class="footer-column"><strong>${l.nav[0]}</strong>${clusters.filter((c) => c.type === 'service').map((c) => `<a href="${c.paths[key]}">${escape(c.content[key]?.[0] || c.content.fr[0])}</a>`).join('')}</div><div class="footer-column"><strong>${l.nav[1]}</strong><a href="${l.insights}">${l.all}</a><a href="${officialCgi}" target="_blank" rel="noopener">CGI 2026 ↗</a></div><div class="footer-column"><strong>${l.nav[3]}</strong><a href="tel:${contact.phoneHref}">${contact.phone}</a><a href="mailto:${contact.email}">${contact.email}</a></div></div><div class="container footer-bottom"><span>© 2026 First Audit et Conseils.</span><span>${l.updated}</span></div></footer><script src="/assets/js/site.js" defer></script>`;
+}
+
+function businessSchema(key, path) {
+  return { '@context': 'https://schema.org', '@type': ['AccountingService', 'ProfessionalService'], '@id': `${site}/#cabinet`, name: 'First Audit et Conseils', url: absolute(path), description: home[key].description, telephone: contact.phoneHref, email: contact.email, address: { '@type': 'PostalAddress', streetAddress: 'N°3, 1er étage, Immeuble 32, Rue Jabal Tazeka', addressLocality: 'Rabat', addressCountry: 'MA' }, areaServed: { '@type': 'Country', name: 'Morocco' } };
+}
+
+function contactForm(key) {
+  const labels = {
+    en: ['Name', 'Professional email', 'Phone', 'Service', 'Your message', 'Send my request', 'Select a service'],
+    es: ['Nombre', 'Email profesional', 'Teléfono', 'Servicio', 'Su mensaje', 'Enviar mi solicitud', 'Seleccione un servicio'],
+    ar: ['الاسم', 'البريد الإلكتروني المهني', 'الهاتف', 'الخدمة', 'رسالتك', 'أرسل طلبي', 'اختر خدمة']
+  }[key];
+  return `<form class="contact-form" action="https://formspree.io/f/xkodwrnl" method="POST" data-formspree><input type="hidden" name="_subject" value="First Audit · ${key.toUpperCase()} website enquiry"><input class="form-honeypot" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true"><div class="contact-form-grid"><label>${labels[0]}<input name="name" required autocomplete="name"></label><label>${labels[1]}<input name="email" type="email" required autocomplete="email"></label><label>${labels[2]}<input name="phone" type="tel" autocomplete="tel"></label><label>${labels[3]}<select name="service" required><option value="">${labels[6]}</option>${clusters.filter((c) => c.type === 'service').map((c) => `<option>${escape(c.content[key][0])}</option>`).join('')}</select></label><label class="full">${labels[4]}<textarea name="message" rows="4" required></textarea></label></div><div class="contact-form-footer"><button class="button button-primary" type="submit">${labels[5]} →</button></div><p class="form-status" data-form-status aria-live="polite"></p></form>`;
+}
+
+function renderHome(key) {
+  const l = locales[key]; const c = home[key]; const paths = { fr: '/', en: '/en/', es: '/es/', ar: '/ar/' };
+  const services = clusters.filter((item) => item.type === 'service').map((item, index) => `<a class="i18n-service-card" href="${item.paths[key]}"><span>0${index + 1}</span><h2>${escape(item.content[key][0])}</h2><p>${escape(item.content[key][1])}</p><b>→</b></a>`).join('');
+  const articles = clusters.filter((item) => item.type === 'article').map((item) => `<a class="i18n-insight-card" href="${item.paths[key]}"><span>${escape(item.content[key][0])}</span><strong>${escape(item.content[key][2])}</strong><b>${l.read} →</b></a>`).join('');
+  return `<!doctype html><html lang="${l.lang}" dir="${l.dir}">${head({ locale: l, title: c.title, description: c.description, path: l.home, paths, schema: businessSchema(key, l.home) })}<body class="i18n-page"><a class="skip-link" href="#content">Skip</a>${header(key, paths)}<main id="content"><section class="page-hero i18n-home-hero"><div class="container"><p class="eyebrow">${c.eyebrow}</p><h1>${c.h1}</h1><p class="lead">${c.lead}</p><div class="page-hero-actions"><a class="button button-primary" href="#contact">${l.cta}</a><a class="button button-secondary" href="#services">${l.nav[0]}</a></div><div class="i18n-proof">${c.proof.map((p) => `<span>${p}</span>`).join('')}</div></div></section><section class="section" id="services"><div class="container"><header class="section-header"><div><p class="eyebrow">${l.nav[0]}</p><h2>${c.servicesTitle}</h2></div></header><div class="i18n-service-grid">${services}</div></div></section><section class="section section-white" id="resources"><div class="container"><header class="section-header"><div><p class="eyebrow">${l.nav[1]}</p><h2>${c.resourcesTitle}</h2></div><a class="text-link" href="${l.insights}">${l.all} →</a></header><div class="i18n-insight-grid">${articles}</div></div></section><section id="contact"><div class="container contact-banner contact-banner-form"><div class="contact-intro"><p class="eyebrow">${l.nav[3]}</p><h2>${c.formTitle}</h2><p>${c.formLead}</p><div class="contact-lines"><a href="tel:${contact.phoneHref}">${contact.phone}</a><a href="mailto:${contact.email}">${contact.email}</a><span>${contact.address}</span></div></div>${contactForm(key)}</div></section></main>${footer(key)}</body></html>`;
+}
+
+function renderContentPage(key, cluster) {
+  const l = locales[key]; const data = cluster.content[key]; const path = cluster.paths[key]; const paths = cluster.paths;
+  const schema = cluster.type === 'article' ? { '@context': 'https://schema.org', '@type': 'Article', headline: data[0], description: data[1], datePublished: today, dateModified: today, inLanguage: l.lang, mainEntityOfPage: absolute(path), author: { '@type': 'AccountingService', name: 'First Audit et Conseils', url: site }, publisher: { '@type': 'AccountingService', name: 'First Audit et Conseils', url: site } } : { '@context': 'https://schema.org', '@type': 'Service', name: data[0], description: data[1], provider: { '@type': 'AccountingService', name: 'First Audit et Conseils', url: site }, areaServed: { '@type': 'Country', name: 'Morocco' } };
+  const title = data[0]; const description = data[1];
+  return `<!doctype html><html lang="${l.lang}" dir="${l.dir}">${head({ locale: l, title, description, path, paths, type: cluster.type === 'article' ? 'article' : 'website', schema })}<body class="i18n-page">${header(key, paths)}<main><section class="page-hero i18n-content-hero"><div class="container"><p class="eyebrow">First Audit · Morocco</p><h1>${escape(data[2])}</h1><p class="lead">${escape(description)}</p><div class="page-hero-actions"><a class="button button-primary" href="${l.home}#contact">${l.cta}</a><a class="button button-secondary" href="${l.insights}">${l.all}</a></div></div></section><section class="section"><div class="container i18n-article-shell"><article><p class="i18n-intro">${escape(description)}</p><div class="article-callout"><strong>${cluster.type === 'article' ? data[0] : l.nav[0]}</strong><ul>${data[3].map((item) => `<li>${escape(item)}</li>`).join('')}</ul></div><h2>${escape(data[2])}</h2>${data[3].map((item) => `<section><h3>${escape(item)}</h3><p>${escape(description)} ${cluster.type === 'article' ? l.updated : ''}</p></section>`).join('')}<div class="calendar-source"><strong>${l.source}</strong><a href="${officialCgi}" target="_blank" rel="noopener">Code général des impôts 2026 ↗</a></div></article><aside><div class="aside-cta"><span>First Audit et Conseils</span><strong>${escape(data[2])}</strong><a class="button button-primary" href="${l.home}#contact">${l.cta}</a></div><div class="article-related"><span>${l.all}</span>${clusters.filter((item) => item.type === cluster.type && item.key !== cluster.key).slice(0, 3).map((item) => `<a href="${item.paths[key]}"><strong>${escape(item.content[key][0])}</strong></a>`).join('')}<a class="all-articles-link" href="${l.insights}">${l.all} →</a></div></aside></div></section></main>${footer(key)}</body></html>`;
+}
+
+function renderInsights(key) {
+  const l = locales[key]; const paths = { fr: '/blog', en: '/en/insights/', es: '/es/recursos/', ar: '/ar/articles/' };
+  const titles = { en: ['Accounting and tax insights for Morocco', 'Practical, dated and source-backed accounting, tax and audit guidance for businesses operating or investing in Morocco.'], es: ['Análisis contables y fiscales sobre Marruecos', 'Guías prácticas, fechadas y documentadas sobre contabilidad, fiscalidad y auditoría para empresas que operan en Marruecos.'], ar: ['مقالات محاسبية وضريبية حول المغرب', 'أدلة عملية ومؤرخة ومدعمة بالمصادر حول المحاسبة والضرائب والتدقيق للشركات العاملة أو المستثمرة في المغرب.'] }[key];
+  const cards = clusters.filter((item) => item.type === 'article').map((item) => `<a class="library-card" href="${item.paths[key]}" data-category="fiscalite"><span class="tag">2026</span><h2>${escape(item.content[key][0])}</h2><p>${escape(item.content[key][1])}</p><footer><span>${l.updated}</span><span>${l.read} →</span></footer></a>`).join('');
+  return `<!doctype html><html lang="${l.lang}" dir="${l.dir}">${head({ locale: l, title: titles[0], description: titles[1], path: l.insights, paths, schema: { '@context': 'https://schema.org', '@type': 'CollectionPage', name: titles[0], url: absolute(l.insights), inLanguage: l.lang } })}<body class="i18n-page blog-page">${header(key, paths)}<main><section class="page-hero"><div class="container"><p class="eyebrow">First Audit · Morocco</p><h1>${titles[0]}</h1><p class="lead">${titles[1]}</p></div></section><section class="section"><div class="container"><div class="library-grid">${cards}</div></div></section></main>${footer(key)}</body></html>`;
+}
+
+for (const cluster of clusters.filter((item) => item.type === 'service')) {
+  const file = pathToFile(cluster.paths.fr); await mkdir(dirname(file), { recursive: true }); await writeFile(file, renderContentPage('fr', cluster), 'utf8');
+}
+
+for (const key of ['en', 'es', 'ar']) {
+  const homeFile = join(root, key, 'index.html'); await mkdir(dirname(homeFile), { recursive: true }); await writeFile(homeFile, renderHome(key), 'utf8');
+  const insightsFile = pathToFile(locales[key].insights); await mkdir(dirname(insightsFile), { recursive: true }); await writeFile(insightsFile, renderInsights(key), 'utf8');
+  for (const cluster of clusters) { const file = pathToFile(cluster.paths[key]); await mkdir(dirname(file), { recursive: true }); await writeFile(file, renderContentPage(key, cluster), 'utf8'); }
+}
+
+const sitemapClusters = [{ paths: { fr: '/', en: '/en/', es: '/es/', ar: '/ar/' } }, { paths: { fr: '/blog', en: '/en/insights/', es: '/es/recursos/', ar: '/ar/articles/' } }, ...clusters];
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${sitemapClusters.flatMap(({ paths }) => Object.entries(paths).map(([key, path]) => `  <url>\n    <loc>${absolute(path)}</loc>\n    ${Object.entries(paths).map(([altKey, altPath]) => `<xhtml:link rel="alternate" hreflang="${locales[altKey].hreflang}" href="${absolute(altPath)}"/>`).join('\n    ')}\n    <xhtml:link rel="alternate" hreflang="x-default" href="${absolute(paths.fr)}"/>\n    <lastmod>${today}</lastmod>\n  </url>`)).join('\n')}\n</urlset>\n`;
+await writeFile(join(root, 'sitemap-i18n.xml'), sitemap, 'utf8');
+console.log('Versions EN, ES et AR générées avec leurs clusters hreflang.');

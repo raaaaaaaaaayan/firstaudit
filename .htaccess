@@ -59,6 +59,9 @@ Redirect 301 /calculateur-salaire-net              https://firstaudit.ma/salaire
   </IfModule>
 </FilesMatch>
 
+# Les sources éditoriales et scripts de génération ne sont jamais servis.
+RedirectMatch 404 ^/(scripts|tests|tmp|output)(/|$)
+
 # ========================================
 # PERFORMANCE - Compression GZIP
 # ========================================

@@ -4,7 +4,7 @@
   <!-- Accueil -->
   <url>
     <loc>https://firstaudit.ma/</loc>
-    <lastmod>2026-05-12</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,7 +12,7 @@
   <!-- Blog / Articles -->
   <url>
     <loc>https://firstaudit.ma/blog</loc>
-    <lastmod>2026-05-12</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -20,19 +20,31 @@
   <!-- Outils et calculateurs - Tres importants pour le SEO -->
   <url>
     <loc>https://firstaudit.ma/outils</loc>
-    <lastmod>2026-05-12</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://firstaudit.ma/salaire-net</loc>
-    <lastmod>2026-05-12</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://firstaudit.ma/simulateurs</loc>
-    <lastmod>2026-05-12</lastmod>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://firstaudit.ma/tva</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://firstaudit.ma/retenue-source</loc>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -52,7 +64,7 @@
   <!-- Articles fiscaux 2026 - Haute priorite -->
   <url>
     <loc>https://firstaudit.ma/loi-finances-2026</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -64,7 +76,7 @@
   </url>
   <url>
     <loc>https://firstaudit.ma/notification-dgimpots</loc>
-    <lastmod>2026-01-30</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -108,5 +120,68 @@
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
+
+  <!-- scheduled-articles:start -->
+  <url>
+    <loc>https://firstaudit.ma/articles/impot-societes-maroc-2026-taux-calcul</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://firstaudit.ma/articles/tva-maroc-2026-taux-exonerations</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://firstaudit.ma/articles/cloture-comptable-maroc-checklist</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://firstaudit.ma/articles/charges-non-deductibles-is-maroc</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://firstaudit.ma/articles/bulletin-paie-maroc-cnss-ir</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://firstaudit.ma/articles/creer-sarl-maroc-etapes</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://firstaudit.ma/articles/amortissements-comptables-fiscaux-maroc</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://firstaudit.ma/articles/declaration-tva-maroc-delais-controles</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://firstaudit.ma/articles/audit-comptes-maroc-demarche</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://firstaudit.ma/articles/investissement-etranger-maroc-change-fiscalite</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+          <!-- scheduled-articles:end -->
 
 </urlset>
