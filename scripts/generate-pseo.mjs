@@ -1,4 +1,4 @@
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -59,4 +59,20 @@ for (const city of cities) { const file = join(root, 'maroc', city.slug, 'index.
 const urls = ['/maroc/', ...cities.map((city) => `/maroc/${city.slug}/`)];
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((path, index) => `  <url><loc>${site}${path}</loc><lastmod>${updated}</lastmod><changefreq>monthly</changefreq><priority>${index === 0 ? '0.9' : '0.7'}</priority></url>`).join('\n')}\n</urlset>\n`;
 await writeFile(join(root, 'sitemap-pseo.xml'), sitemap, 'utf8');
+
+const mainSitemapPath = join(root, 'sitemap.xml');
+const mainSitemap = await readFile(mainSitemapPath, 'utf8');
+const startMarker = '  <!-- geo-pseo:start -->';
+const endMarker = '  <!-- geo-pseo:end -->';
+const mainEntries = urls.map((path, index) => `  <url>\n    <loc>${site}${path}</loc>\n    <lastmod>${updated}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>${index === 0 ? '0.9' : '0.7'}</priority>\n  </url>`).join('\n');
+const block = `${startMarker}\n${mainEntries}\n${endMarker}`;
+let updatedMain;
+if (mainSitemap.includes(startMarker) && mainSitemap.includes(endMarker)) {
+  const start = mainSitemap.indexOf(startMarker);
+  const end = mainSitemap.indexOf(endMarker) + endMarker.length;
+  updatedMain = `${mainSitemap.slice(0, start)}${block}${mainSitemap.slice(end)}`;
+} else {
+  updatedMain = mainSitemap.replace('</urlset>', `${block}\n\n</urlset>`);
+}
+await writeFile(mainSitemapPath, updatedMain, 'utf8');
 console.log(`${urls.length} pages GEO/pSEO générées.`);
