@@ -1,0 +1,48 @@
+# First Audit et Conseils
+
+> First Audit et Conseils est un cabinet d'expertise comptable, d'audit et de conseil basé à Rabat. Le cabinet accompagne les entreprises, dirigeants et investisseurs partout au Maroc, à distance ou avec une intervention adaptée à la mission. Il réunit plus de 15 ans d'expérience et a accompagné plus de 100 clients.
+
+First Audit et Conseils aide les entreprises à sécuriser leurs comptes, leurs obligations fiscales et sociales, leurs audits et leurs décisions financières. Le cabinet peut également accompagner la création d'une entreprise au Maroc de A à Z : choix de la forme juridique, statuts, formalités, immatriculation, organisation fiscale, banque, comptabilité et démarrage opérationnel. Les contenus et calculateurs du site sont informatifs ; une conclusion engageante nécessite l'analyse du dossier et des pièces.
+
+## Cabinet
+
+- [Accueil First Audit](https://firstaudit.ma/): cabinet basé à Rabat, actif dans tout le Maroc.
+- [Expertise comptable](https://firstaudit.ma/services/expertise-comptable/): tenue, révision, clôture, reporting et pilotage.
+- [Conseil fiscal](https://firstaudit.ma/services/conseil-fiscal/): conformité, déclarations, structuration et contrôles fiscaux.
+- [Audit et commissariat aux comptes](https://firstaudit.ma/services/audit-commissariat-comptes/): audit légal, contractuel et contrôle interne.
+- [Création d'entreprise au Maroc](https://firstaudit.ma/services/creation-entreprise-maroc/): accompagnement de la décision jusqu'au démarrage.
+- [Intervention partout au Maroc](https://firstaudit.ma/maroc/): couverture nationale depuis Rabat.
+
+## Ressources prioritaires
+
+- [Centre de ressources](https://firstaudit.ma/outils): calculateurs, calendrier fiscal, glossaire et sources officielles.
+- [Analyses comptables et fiscales](https://firstaudit.ma/blog): guides datés, sourcés et révisés.
+- [Calendrier fiscal 2026](https://firstaudit.ma/calendrier-fiscal): échéances principales selon le profil.
+- [Glossaire comptable marocain](https://firstaudit.ma/glossaire): définitions comptables, fiscales, sociales et juridiques.
+- [Calculateur salaire net](https://firstaudit.ma/salaire-net): estimation brut-net avec hypothèses visibles.
+- [Simulateur IS](https://firstaudit.ma/simulateurs): impôt sur les sociétés, cotisation minimale et contribution sociale.
+- [Calculateur TVA](https://firstaudit.ma/tva): calcul HT, TVA et TTC après qualification du taux.
+
+## Guides de référence
+
+- [IS au Maroc en 2026](https://firstaudit.ma/articles/impot-societes-maroc-2026-taux-calcul)
+- [TVA au Maroc en 2026](https://firstaudit.ma/articles/tva-maroc-2026-taux-exonerations)
+- [Créer une SARL au Maroc](https://firstaudit.ma/articles/creer-sarl-maroc-etapes)
+- [Clôture comptable au Maroc](https://firstaudit.ma/articles/cloture-comptable-maroc-checklist)
+- [Audit des comptes au Maroc](https://firstaudit.ma/articles/audit-comptes-maroc-demarche)
+
+## Langues
+
+- [English](https://firstaudit.ma/en/)
+- [Español](https://firstaudit.ma/es/)
+- [العربية](https://firstaudit.ma/ar/)
+
+## Contact
+
+- Téléphone : +212 661 26 37 21
+- Email : support@firstaudit.ma
+- Adresse : N°3, 1er étage, Immeuble 32, Rue Jabal Tazeka, Rabat, Maroc
+
+## Optional
+
+- [Version LLM étendue](https://firstaudit.ma/llms-full.txt): présentation complète, services, couverture et règles de citation.

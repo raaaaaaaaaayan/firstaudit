@@ -39,6 +39,7 @@ jobs:
       - name: Generer les versions multilingues
         run: |
           node scripts/generate-i18n.mjs
+          node scripts/generate-pseo.mjs
           node scripts/update-favicons.mjs
 
       - name: Vérifier les calculateurs
@@ -52,6 +53,6 @@ jobs:
           fi
           git config user.name "First Audit Editorial Bot"
           git config user.email "actions@users.noreply.github.com"
-          git add articles blog.html sitemap.xml sitemap-i18n.xml en es ar services
+          git add articles blog.html sitemap.xml sitemap-i18n.xml sitemap-pseo.xml en es ar services maroc
           git commit -m "content: publication programmée"
           git push
