@@ -208,7 +208,7 @@ h3 { line-height: 1.25; }
 .form-status { min-height: 1.2em; margin: 11px 0 0; font-size: .65rem; font-weight: 700; }
 .form-status.success { color: var(--success); }
 .form-status.error { color: var(--red-700); }
-.form-honeypot { position: absolute !important; left: -9999px !important; }
+.form-honeypot { width: 1px !important; height: 1px !important; position: absolute !important; overflow: hidden !important; clip: rect(0 0 0 0) !important; clip-path: inset(50%) !important; white-space: nowrap !important; }
 
 /* Shared footer */
 .site-footer { padding: 30px 0 42px; color: rgba(255,255,255,.7); background: var(--navy-950); }
@@ -433,7 +433,7 @@ h3 { line-height: 1.25; }
 }
 
 /* International SEO landing pages */
-.i18n-home-hero { min-height: 640px; display: flex; align-items: center; }
+.i18n-home-hero { min-height: 640px; display: flex; align-items: center; background: linear-gradient(90deg, rgba(0,27,54,.96) 0%, rgba(0,27,54,.9) 46%, rgba(0,27,54,.28) 75%, rgba(0,27,54,.12) 100%), var(--navy-950) url("/assets/images/hero-approved-firstaudit.png") center/cover no-repeat; }
 .i18n-home-hero .container { padding-top: 24px; }
 .i18n-home-hero h1 { max-width: 820px; }
 .i18n-proof { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 30px; }
@@ -460,6 +460,10 @@ h3 { line-height: 1.25; }
 .i18n-article-shell p { color: #455366; }
 [dir="rtl"] { font-family: "Segoe UI", Tahoma, Arial, sans-serif; }
 [dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] .brand-copy { font-family: Georgia, "Times New Roman", serif; letter-spacing: 0; }
+[dir="rtl"] .brand, [dir="rtl"] .brand-copy { direction: ltr; text-align: left; unicode-bidi: isolate; }
+[dir="rtl"] .brand-copy { flex-direction: row; }
+[dir="rtl"] .brand-copy strong { font-family: var(--serif); }
+[dir="rtl"] .brand-copy small { font-family: var(--serif); }
 [dir="rtl"] .eyebrow { letter-spacing: .05em; }
 [dir="rtl"] .eyebrow::after { margin-inline-start: 0; }
 [dir="rtl"] .article-callout, [dir="rtl"] .calendar-source { border-left: 1px solid var(--line); border-right: 3px solid var(--blue-500); }
