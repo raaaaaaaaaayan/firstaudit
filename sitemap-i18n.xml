@@ -73,6 +73,42 @@
     <lastmod>2026-07-11</lastmod>
   </url>
   <url>
+    <loc>https://firstaudit.ma/outils</loc>
+    <xhtml:link rel="alternate" hreflang="fr-MA" href="https://firstaudit.ma/outils"/>
+    <xhtml:link rel="alternate" hreflang="en-MA" href="https://firstaudit.ma/en/resources/"/>
+    <xhtml:link rel="alternate" hreflang="es-MA" href="https://firstaudit.ma/es/herramientas/"/>
+    <xhtml:link rel="alternate" hreflang="ar-MA" href="https://firstaudit.ma/ar/resources/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://firstaudit.ma/outils"/>
+    <lastmod>2026-07-11</lastmod>
+  </url>
+  <url>
+    <loc>https://firstaudit.ma/en/resources/</loc>
+    <xhtml:link rel="alternate" hreflang="fr-MA" href="https://firstaudit.ma/outils"/>
+    <xhtml:link rel="alternate" hreflang="en-MA" href="https://firstaudit.ma/en/resources/"/>
+    <xhtml:link rel="alternate" hreflang="es-MA" href="https://firstaudit.ma/es/herramientas/"/>
+    <xhtml:link rel="alternate" hreflang="ar-MA" href="https://firstaudit.ma/ar/resources/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://firstaudit.ma/outils"/>
+    <lastmod>2026-07-11</lastmod>
+  </url>
+  <url>
+    <loc>https://firstaudit.ma/es/herramientas/</loc>
+    <xhtml:link rel="alternate" hreflang="fr-MA" href="https://firstaudit.ma/outils"/>
+    <xhtml:link rel="alternate" hreflang="en-MA" href="https://firstaudit.ma/en/resources/"/>
+    <xhtml:link rel="alternate" hreflang="es-MA" href="https://firstaudit.ma/es/herramientas/"/>
+    <xhtml:link rel="alternate" hreflang="ar-MA" href="https://firstaudit.ma/ar/resources/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://firstaudit.ma/outils"/>
+    <lastmod>2026-07-11</lastmod>
+  </url>
+  <url>
+    <loc>https://firstaudit.ma/ar/resources/</loc>
+    <xhtml:link rel="alternate" hreflang="fr-MA" href="https://firstaudit.ma/outils"/>
+    <xhtml:link rel="alternate" hreflang="en-MA" href="https://firstaudit.ma/en/resources/"/>
+    <xhtml:link rel="alternate" hreflang="es-MA" href="https://firstaudit.ma/es/herramientas/"/>
+    <xhtml:link rel="alternate" hreflang="ar-MA" href="https://firstaudit.ma/ar/resources/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://firstaudit.ma/outils"/>
+    <lastmod>2026-07-11</lastmod>
+  </url>
+  <url>
     <loc>https://firstaudit.ma/services/expertise-comptable/</loc>
     <xhtml:link rel="alternate" hreflang="fr-MA" href="https://firstaudit.ma/services/expertise-comptable/"/>
     <xhtml:link rel="alternate" hreflang="en-MA" href="https://firstaudit.ma/en/accounting-services/"/>

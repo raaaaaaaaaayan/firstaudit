@@ -37,7 +37,9 @@ jobs:
         run: node scripts/publish-content.mjs
 
       - name: Generer les versions multilingues
-        run: node scripts/generate-i18n.mjs
+        run: |
+          node scripts/generate-i18n.mjs
+          node scripts/update-favicons.mjs
 
       - name: Vérifier les calculateurs
         run: node tests/calculators.test.js
