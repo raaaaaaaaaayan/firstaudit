@@ -123,6 +123,12 @@
 
   <!-- scheduled-articles:start -->
   <url>
+    <loc>https://firstaudit.ma/articles/acomptes-provisionnels-is-maroc</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://firstaudit.ma/articles/impot-societes-maroc-2026-taux-calcul</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>yearly</changefreq>
