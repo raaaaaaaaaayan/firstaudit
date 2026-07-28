@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const site = 'https://firstaudit.ma';
 const today = '2026-07-11';
-const contact = { phone: '+212 661 26 37 21', phoneHref: '+212661263721', email: 'support@firstaudit.ma', address: 'N°3, 1er étage, Immeuble 32, Rue Jabal Tazeka, Rabat, Maroc' };
+const contact = { phone: '+212 661 26 37 21', phoneHref: '+212661263721', email: 'contact@firstaudit.ma', address: 'N°3, 1er étage, Immeuble 32, Rue Jabal Tazeka, Rabat, Maroc' };
 const officialCgi = 'https://www.finances.gov.ma/Publication/dgi/2025/CGI-2026-FR.pdf';
 
 const locales = {

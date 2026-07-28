@@ -66,7 +66,7 @@
         status.textContent = 'Merci. Votre demande a bien été envoyée au cabinet.';
         status.classList.add('success');
       } catch {
-        status.textContent = 'L’envoi n’a pas abouti. Vous pouvez nous écrire à support@firstaudit.ma.';
+        status.textContent = 'L’envoi n’a pas abouti. Vous pouvez nous écrire à contact@firstaudit.ma.';
         status.classList.add('error');
       } finally {
         submit.disabled = false;
