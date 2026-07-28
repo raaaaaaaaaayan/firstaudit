@@ -123,6 +123,12 @@
 
   <!-- scheduled-articles:start -->
   <url>
+    <loc>https://firstaudit.ma/articles/autoliquidation-tva-maroc-services-non-resident</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://firstaudit.ma/articles/retenue-source-tva-maroc-75-100</loc>
     <lastmod>2026-07-24</lastmod>
     <changefreq>yearly</changefreq>
