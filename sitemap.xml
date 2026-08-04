@@ -123,6 +123,12 @@
 
   <!-- scheduled-articles:start -->
   <url>
+    <loc>https://firstaudit.ma/articles/comptabilite-immobilisations-maroc</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://firstaudit.ma/articles/tva-export-services-maroc</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>yearly</changefreq>
