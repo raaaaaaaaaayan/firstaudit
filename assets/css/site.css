@@ -78,7 +78,7 @@ h3 { line-height: 1.25; }
 .hero { min-height: 680px; position: relative; display: flex; align-items: center; overflow: hidden; padding: 118px 0 48px; color: #fff; background: var(--navy-950) url("/assets/images/hero-approved-firstaudit.png") center/cover no-repeat; }
 .hero-grid { display: grid; grid-template-columns: minmax(0, .96fr) minmax(360px, 1.04fr); align-items: center; }
 .hero-copy { max-width: 640px; padding-top: 30px; }
-.hero .eyebrow { color: var(--blue-500); }
+.hero .eyebrow { color: #b9e5ff; text-shadow: 0 1px 12px rgba(0,27,54,.55); }
 .hero-copy h1 { margin-bottom: 22px; color: #fff; font-size: clamp(3.15rem, 5vw, 4.55rem); line-height: 1.04; }
 .hero-copy h1 em { color: #fff; font-style: normal; }
 .hero-copy .lead { max-width: 560px; color: rgba(255,255,255,.88); line-height: 1.8; }
