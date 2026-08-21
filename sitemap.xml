@@ -123,6 +123,12 @@
 
   <!-- scheduled-articles:start -->
   <url>
+    <loc>https://firstaudit.ma/articles/auto-entrepreneur-maroc-fiscalite-obligations</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://firstaudit.ma/articles/ir-professionnel-rnr-rns-cpu-maroc</loc>
     <lastmod>2026-08-18</lastmod>
     <changefreq>yearly</changefreq>
