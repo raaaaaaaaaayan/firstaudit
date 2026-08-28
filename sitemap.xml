@@ -123,6 +123,12 @@
 
   <!-- scheduled-articles:start -->
   <url>
+    <loc>https://firstaudit.ma/articles/charges-sociales-patronales-maroc-cout-employeur</loc>
+    <lastmod>2026-08-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://firstaudit.ma/articles/revenus-fonciers-maroc-ir-location</loc>
     <lastmod>2026-08-25</lastmod>
     <changefreq>yearly</changefreq>
