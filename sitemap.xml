@@ -123,6 +123,12 @@
 
   <!-- scheduled-articles:start -->
   <url>
+    <loc>https://firstaudit.ma/articles/damancom-declaration-cnss-maroc</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://firstaudit.ma/articles/charges-sociales-patronales-maroc-cout-employeur</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>yearly</changefreq>
