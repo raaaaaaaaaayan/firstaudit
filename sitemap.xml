@@ -123,6 +123,12 @@
 
   <!-- scheduled-articles:start -->
   <url>
+    <loc>https://firstaudit.ma/articles/assemblee-generale-approbation-comptes-maroc</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://firstaudit.ma/articles/damancom-declaration-cnss-maroc</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>yearly</changefreq>
