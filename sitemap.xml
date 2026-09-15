@@ -123,6 +123,12 @@
 
   <!-- scheduled-articles:start -->
   <url>
+    <loc>https://firstaudit.ma/articles/due-diligence-acquisition-entreprise-maroc</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://firstaudit.ma/articles/controle-fiscal-maroc-preparation</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>yearly</changefreq>
